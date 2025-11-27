@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roboflow Image Recognition Test</title>
+  <title>Kunstwerk-Erkennung</title>
   <style>
     * {
       margin: 0;
@@ -113,13 +113,12 @@
   </style>
 </head>
 <body>
-  <h1>ðŸŽ¨ Artwork Recognition Test</h1>
+  <h1>🎨 Kunstwerk-Erkennung</h1>
 
   <div class="container">
     <video id="camera" autoplay playsinline muted></video>
     <canvas id="canvas"></canvas>
 
-    <input id="fileInput" type="file" accept="image/*" style="padding:0.5rem;border-radius:6px;" />
     <button id="startBtn">Kamera starten</button>
 
     <div id="result">
@@ -127,13 +126,13 @@
     </div>
 
     <div class="info">
-      Nutzt jetzt ein lokales TensorFlow.js-Modell (offline) oder wähle ein Bild über "Datei auswählen".<br>
-      <strong>Wichtig für Smartphone:</strong> Öffne die Seite über HTTPS (GitHub Pages / Netlify oder localhost).
+      Nutzt ein lokales TensorFlow.js-Modell für offline Erkennung.<br>
+      <strong>Smartphone:</strong> Öffne über HTTPS (GitHub Pages / Netlify).
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0/dist/tf.min.js"></script>
-  <script src="script.js?v=3"></script>
+  <script src="recognition.js"></script>
 </body>
 </html>
 
