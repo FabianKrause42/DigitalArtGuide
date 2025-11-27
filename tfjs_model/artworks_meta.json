@@ -1,0 +1,14 @@
+[
+  { "class_name": "Artwork1", "artist": "Wilhelm Trübner", "title": "Waldnymphe (Rückenakt)" },
+  { "class_name": "Artwork10", "artist": "Maria Caspar-Filser", "title": "Garmisch-Partenkirchen mit Kramer im Frühjahr" },
+  { "class_name": "Artwork11", "artist": "Adolf Hölzel", "title": "Brücke über die Amper bei Dachau" },
+  { "class_name": "Artwork12", "artist": "Ida Kerkovius", "title": "Selbstbildnis" },
+  { "class_name": "Artwork2", "artist": "Heinrich von Zügel", "title": "Vor dem Einlaß" },
+  { "class_name": "Artwork3", "artist": "Max Slevogt", "title": "Frau Helen Lewin" },
+  { "class_name": "Artwork4", "artist": "Bernhard Pankok", "title": "Zypressen in den Albaner Bergen" },
+  { "class_name": "Artwork5", "artist": "Fritz von Uhde", "title": "Gang nach Emmaus" },
+  { "class_name": "Artwork6", "artist": "Franz von Stuck", "title": "Schäfer mit weidenden Schafen" },
+  { "class_name": "Artwork7", "artist": "Franz von Lenbach", "title": "Prof. Dr. Theodor Gomperz" },
+  { "class_name": "Artwork8", "artist": "Hugo Freiherr von Habermann der Ältere", "title": "Mädchenbildnis" },
+  { "class_name": "Artwork9", "artist": "Hans Thoma", "title": "Zwischen den Gartenmauern von Sorrent" }
+]

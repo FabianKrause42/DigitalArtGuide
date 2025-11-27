@@ -8,6 +8,7 @@ const MODEL_PATH = './tfjs_model/model.json';
 const CLASS_NAMES_PATH = './tfjs_model/class_names.json';
 const FRAME_INTERVAL = 1500; // ms zwischen Vorhersagen
 const CONFIDENCE_THRESHOLD = 0.5;
+const ARTWORKS_META_PATH = './tfjs_model/artworks_meta.json';
 
 // DOM elements
 const videoEl = document.getElementById('camera');
@@ -19,8 +20,10 @@ const startBtn = document.getElementById('startBtn');
 let stream = null;
 let frameIntervalId = null;
 let isRunning = false;
+
 let artModel = null;
 let classNames = null;
+let artworksMeta = null;
 
 async function loadArtModel() {
   try {
@@ -32,6 +35,13 @@ async function loadArtModel() {
     } catch (e) {
       console.warn('class_names.json nicht gefunden, benutze Indizes', e);
       classNames = null;
+    }
+    try {
+      const metaResp = await fetch(ARTWORKS_META_PATH);
+      artworksMeta = await metaResp.json();
+    } catch (e) {
+      console.warn('artworks_meta.json nicht gefunden, Metadaten werden nicht angezeigt', e);
+      artworksMeta = null;
     }
     resultEl.innerHTML = '<div class="result-status">Modell geladen</div>';
   } catch (err) {
@@ -127,16 +137,29 @@ async function captureAndPredictLoop() {
 }
 
 function displayModelResult(r) {
-  if (!r) { 
-    resultEl.innerHTML = '<div class="result-empty">Keine Erkennung</div>'; 
-    return; 
+  if (!r) {
+    resultEl.innerHTML = '<div class="result-empty">Keine Erkennung</div>';
+    return;
   }
   const pct = (r.confidence * 100).toFixed(1);
+  let meta = null;
+  if (artworksMeta && artworksMeta.length > 0) {
+    // Suche nach passendem Metadaten-Eintrag (per Index oder className)
+    meta = artworksMeta.find(m => m.class_name == r.className || m.class_name == String(r.classIndex));
+  }
   if (r.confidence >= CONFIDENCE_THRESHOLD) {
     resultEl.innerHTML = `
       <div class="result-class">🎨 ${r.className}</div>
       <div class="result-confidence">Sicherheit: ${pct}%</div>
       <div class="result-status">✓ Erkannt</div>
+      ${meta ? `
+        <div class="meta-block">
+          <div><b>Titel:</b> ${meta.title || '-'}</div>
+          <div><b>Künstler:</b> ${meta.artist || '-'}</div>
+          <div><b>Jahr:</b> ${meta.year || '-'}</div>
+          <div><b>Beschreibung:</b> ${meta.description || '-'}</div>
+        </div>
+      ` : ''}
     `;
   } else {
     resultEl.innerHTML = `<div class="result-empty">Unsicher: ${pct}%</div>`;
