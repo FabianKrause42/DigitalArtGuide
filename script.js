@@ -1,13 +1,151 @@
 /**
- * Roboflow Image Recognition Test App - FIXED VERSION
- * 
- * Diese App öffnet die Kamera, nimmt alle 1-2 Sekunden ein Frame,
- * sendet es an den Roboflow API Endpoint und zeigt die Erkennungsergebnisse.
+ * TF.js Image Recognition Test App
+ * Replaces Roboflow REST calls with local TensorFlow.js inference.
  */
 
-// === Konfiguration ===
-const ROBOFLOW_API_KEY = 'l2LvnfFF1hhRi5dFwcJY';
-const ROBOFLOW_MODEL_ID = 'artrecognition-test-u48k2';
+// Configuration
+const MODEL_PATH = './tfjs_model/model.json';
+const CLASS_NAMES_PATH = './tfjs_model/class_names.json';
+const FRAME_INTERVAL = 1500; // ms between predictions
+
+// DOM elements
+const videoEl = document.getElementById('camera');
+const canvasEl = document.getElementById('canvas');
+const resultEl = document.getElementById('result');
+const startBtn = document.getElementById('startBtn');
+const fileInput = document.getElementById('fileInput');
+
+// State
+let stream = null;
+let frameIntervalId = null;
+let isRunning = false;
+let artModel = null;
+let classNames = null;
+
+async function loadArtModel() {
+  try {
+    resultEl.innerHTML = '<div class="result-status">Modell wird geladen…</div>';
+    artModel = await tf.loadLayersModel(MODEL_PATH);
+    try {
+      const resp = await fetch(CLASS_NAMES_PATH);
+      classNames = await resp.json();
+    } catch (e) {
+      console.warn('class_names.json nicht gefunden, benutze Indizes', e);
+      classNames = null;
+    }
+    resultEl.innerHTML = '<div class="result-status">Modell geladen</div>';
+  } catch (err) {
+    console.error('Fehler beim Laden des Modells:', err);
+    resultEl.innerHTML = '<div class="result-empty">Fehler beim Laden des Modells. Konsole prüfen.</div>';
+  }
+}
+
+function preprocessImageForArtModel(imageOrCanvas) {
+  return tf.tidy(() => {
+    let tensor = tf.browser.fromPixels(imageOrCanvas);
+    if (tensor.shape[2] === 4) tensor = tensor.slice([0, 0, 0], [-1, -1, 3]);
+    tensor = tf.image.resizeBilinear(tensor, [224, 224]);
+    tensor = tensor.toFloat().div(127.5).sub(1.0);
+    tensor = tensor.expandDims(0);
+    return tensor;
+  });
+}
+
+async function predictArtwork(imageOrCanvas) {
+  if (!artModel) {
+    await loadArtModel();
+    if (!artModel) throw new Error('Modell konnte nicht geladen werden');
+  }
+  return tf.tidy(() => {
+    const inputTensor = preprocessImageForArtModel(imageOrCanvas);
+    let logits = artModel.predict(inputTensor);
+    if (Array.isArray(logits)) logits = logits[0];
+    let probsTensor = logits;
+    const maxVal = probsTensor.max().dataSync()[0];
+    if (!(maxVal <= 1.01 && maxVal >= 0)) probsTensor = tf.softmax(logits);
+    const probs = probsTensor.dataSync();
+    let bestIndex = 0;
+    let bestVal = probs[0];
+    for (let i = 1; i < probs.length; i++) {
+      if (probs[i] > bestVal) { bestVal = probs[i]; bestIndex = i; }
+    }
+    const name = classNames && classNames[bestIndex] ? classNames[bestIndex] : String(bestIndex);
+    inputTensor.dispose();
+    if (probsTensor !== logits) probsTensor.dispose();
+    return { className: name, classIndex: bestIndex, confidence: Number(bestVal) };
+  });
+}
+
+async function startCamera() {
+  try {
+    startBtn.disabled = true; startBtn.textContent = 'Kamera wird geöffnet...';
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error('getUserMedia nicht unterstützt. HTTPS/Browser prüfen.');
+    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+    videoEl.srcObject = stream;
+    await new Promise(resolve => { videoEl.onloadedmetadata = () => { videoEl.play(); resolve(); }; });
+    canvasEl.width = videoEl.videoWidth; canvasEl.height = videoEl.videoHeight;
+    isRunning = true; startBtn.textContent = 'Kamera läuft...'; startBtn.disabled = true;
+    captureAndPredictLoop();
+  } catch (err) {
+    console.error('Fehler beim Starten der Kamera:', err);
+    resultEl.innerHTML = `<div class="result-empty">Kamera-Fehler: ${err.message}</div>`;
+    startBtn.disabled = false; startBtn.textContent = 'Kamera starten';
+  }
+}
+
+async function captureAndPredictLoop() {
+  if (!isRunning) return;
+  try {
+    const ctx = canvasEl.getContext('2d');
+    ctx.drawImage(videoEl, 0, 0, canvasEl.width, canvasEl.height);
+    try {
+      const res = await predictArtwork(canvasEl);
+      displayModelResult(res);
+    } catch (e) {
+      console.error('Vorhersage-Fehler:', e);
+      resultEl.innerHTML = '<div class="result-empty">Vorhersage-Fehler</div>';
+    }
+  } catch (e) {
+    console.error('Capture-Fehler:', e);
+  }
+  if (isRunning) frameIntervalId = setTimeout(captureAndPredictLoop, FRAME_INTERVAL);
+}
+
+async function handleFileInput(file) {
+  if (!file) return;
+  const img = new Image();
+  img.onload = async () => {
+    canvasEl.width = img.naturalWidth; canvasEl.height = img.naturalHeight;
+    const ctx = canvasEl.getContext('2d'); ctx.drawImage(img, 0, 0);
+    try { const res = await predictArtwork(canvasEl); displayModelResult(res); } catch (e) { console.error('Vorhersage-Fehler:', e); resultEl.innerHTML = '<div class="result-empty">Vorhersage-Fehler</div>'; }
+  };
+  img.src = URL.createObjectURL(file);
+}
+
+function displayModelResult(r) {
+  const threshold = 0.5;
+  if (!r) { resultEl.innerHTML = '<div class="result-empty">Keine Erkennung</div>'; return; }
+  const pct = (r.confidence * 100).toFixed(1);
+  if (r.confidence >= threshold) {
+    resultEl.innerHTML = `
+      <div class="result-class">🎨 ${r.className}</div>
+      <div class="result-confidence">Sicherheit: ${pct}%</div>
+      <div class="result-status">✓ Erkannt</div>
+    `;
+  } else {
+    resultEl.innerHTML = `<div class="result-empty">Unsicher: ${pct}%</div>`;
+  }
+}
+
+function stopCamera() {
+  isRunning = false; if (frameIntervalId) clearTimeout(frameIntervalId); if (stream) stream.getTracks().forEach(t => t.stop()); resultEl.innerHTML = '<div class="result-empty">Gestoppt</div>'; startBtn.disabled = false; startBtn.textContent = 'Kamera starten';
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  loadArtModel();
+  startBtn.addEventListener('click', () => { if (isRunning) stopCamera(); else startCamera(); });
+  if (fileInput) fileInput.addEventListener('change', (ev) => { const f = ev.target.files && ev.target.files[0]; handleFileInput(f); });
+});
 const ROBOFLOW_VERSION = '1';
 const ROBOFLOW_URL = `https://serverless.roboflow.com/${ROBOFLOW_MODEL_ID}/${ROBOFLOW_VERSION}?api_key=${ROBOFLOW_API_KEY}`;
 
