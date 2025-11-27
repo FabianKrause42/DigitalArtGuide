@@ -23,9 +23,9 @@ let artModel = null;
 let classNames = null;
 
 // === Custom Layer Registration ===
-// RandomBrightness ist eine Keras Data-Augmentation Layer.
-// Sie wird während Training genutzt, ist aber für Inferenz nicht nötig.
-// Wir registrieren sie als Dummy-Layer (Identity), damit das Modell lädt.
+// RandomBrightness und RandomContrast sind Keras Data-Augmentation Layers.
+// Sie werden während Training genutzt, sind aber für Inferenz nicht nötig.
+// Wir registrieren sie als Dummy-Layers (Identity), damit das Modell lädt.
 class RandomBrightness extends tf.layers.Layer {
   static get className() {
     return 'RandomBrightness';
@@ -39,6 +39,20 @@ class RandomBrightness extends tf.layers.Layer {
   }
 }
 tf.serialization.registerClass(RandomBrightness);
+
+class RandomContrast extends tf.layers.Layer {
+  static get className() {
+    return 'RandomContrast';
+  }
+  call(inputs) {
+    // Während Inferenz: Pass-through (Identity)
+    return inputs;
+  }
+  computeOutputShape(inputShape) {
+    return inputShape;
+  }
+}
+tf.serialization.registerClass(RandomContrast);
 
 async function loadArtModel() {
   try {
