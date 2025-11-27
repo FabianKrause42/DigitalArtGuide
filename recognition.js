@@ -156,8 +156,6 @@ function displayModelResult(r) {
         <div class="meta-block">
           <div><b>Titel:</b> ${meta.title || '-'}</div>
           <div><b>Künstler:</b> ${meta.artist || '-'}</div>
-          <div><b>Jahr:</b> ${meta.year || '-'}</div>
-          <div><b>Beschreibung:</b> ${meta.description || '-'}</div>
         </div>
       ` : ''}
     `;
