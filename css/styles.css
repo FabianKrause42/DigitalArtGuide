@@ -24,41 +24,69 @@ body {
   font-family: 'TWKLausanne', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #F2F2F2;
   color: #222222;
-  overflow-y: auto;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
 }
 
 /* Screen Container */
 .screen {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 65px); /* Minus Tab-Bar Höhe */
   display: flex;
   flex-direction: column;
   background: #F2F2F2;
   opacity: 0;
-  transform: translateX(100%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(100%); /* Start: von rechts */
+  transition: transform 0.3s ease-out;
   pointer-events: none;
   overflow-y: auto;
-  padding-bottom: 96px; /* Platz für Tab-Bar */
-  padding-top: 20px; /* gesamter Inhalt 20px nach unten verschoben */
+  padding-top: 20px;
 }
 
 .screen.active {
   opacity: 1;
   transform: translateX(0);
   pointer-events: all;
+  z-index: 10;
 }
 
 .screen.exit-left {
-  transform: translateX(-100%);
+  transform: translateX(-100%); /* Exit: nach links */
+  opacity: 0;
 }
 
+.screen.exit-right {
+  transform: translateX(100%); /* Exit zur Home: nach rechts */
+  opacity: 0;
+}
+
+/* Eintritts-Animationen */
 .screen.enter-right {
-  transform: translateX(100%);
+  transform: translateX(100%); /* Start von rechts */
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.screen.enter-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.screen.enter-left {
+  transform: translateX(-100%); /* Start von links */
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.screen.enter-left.active {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* Header */

@@ -1,4 +1,4 @@
-// Screen Navigation System
+// Screen Navigation System mit korrekten Wipe-Animationen
 class NavigationController {
   constructor() {
     this.currentScreen = 'home';
@@ -6,8 +6,9 @@ class NavigationController {
       home: document.getElementById('homeScreen'),
       scan: document.getElementById('scanScreen'),
       map: null, // Placeholder für zukünftige Screens
-      menu: null
+      nummer: null,
     };
+    this.animating = false;
     this.init();
   }
 
@@ -17,6 +18,7 @@ class NavigationController {
     
     tabButtons.forEach(button => {
       button.addEventListener('click', (e) => {
+        if (this.animating) return; // Keine Animation während Animation läuft
         const targetScreen = button.getAttribute('data-screen');
         this.navigateTo(targetScreen);
       });
@@ -28,8 +30,7 @@ class NavigationController {
 
   navigateTo(screenName) {
     // Noch nicht implementierte Screens ignorieren
-    if (!this.screens[screenName]) {
-      console.log(`Screen "${screenName}" noch nicht implementiert`);
+    if (!this.screens[screenName] || this.animating) {
       return;
     }
 
@@ -38,34 +39,46 @@ class NavigationController {
       return;
     }
 
+    this.animating = true;
     const currentScreenElement = this.screens[this.currentScreen];
     const targetScreenElement = this.screens[screenName];
+    const isBackToHome = screenName === 'home';
 
-    // Transition: Current Screen ausblenden
+    // Aktuelle Screen vorbereiten für Exit
     if (currentScreenElement) {
       currentScreenElement.classList.remove('active');
-      currentScreenElement.classList.add('exit-left');
+      // Exit-Animation: Nach links wenn zu neuer Seite, nach rechts wenn zurück zur Home
+      if (isBackToHome) {
+        currentScreenElement.classList.add('exit-right');
+      } else {
+        currentScreenElement.classList.add('exit-left');
+      }
     }
 
-    // Transition: Target Screen einblenden
+    // Neue Screen vorbereiten und einblenden
     if (targetScreenElement) {
-      // Kurzer Delay für smooth transition
+      // Neu reinkommende Screen startet immer von rechts (wenn nicht Home)
+      // oder von links (wenn zurück zur Home)
+      if (!isBackToHome) {
+        targetScreenElement.classList.add('enter-right');
+      } else {
+        targetScreenElement.classList.add('enter-left');
+      }
+      
+      targetScreenElement.classList.remove('exit-left', 'exit-right');
+      targetScreenElement.classList.add('active');
+      
+      // Tab-Button Status sofort aktualisieren
+      this.updateTabButtons(screenName);
+      this.currentScreen = screenName;
+      
+      // Cleanup nach Animation
       setTimeout(() => {
-        targetScreenElement.classList.remove('enter-right');
-        targetScreenElement.classList.add('active');
-        this.currentScreen = screenName;
-        
-        // Tab-Button Status aktualisieren
-        this.updateTabButtons(screenName);
-        
-        // Cleanup: Exit-Klasse nach Transition entfernen
-        setTimeout(() => {
-          if (currentScreenElement) {
-            currentScreenElement.classList.remove('exit-left');
-            currentScreenElement.classList.add('enter-right');
-          }
-        }, 300);
-      }, 50);
+        if (currentScreenElement) {
+          currentScreenElement.classList.remove('exit-left', 'exit-right');
+        }
+        this.animating = false;
+      }, 300);
     }
   }
 
