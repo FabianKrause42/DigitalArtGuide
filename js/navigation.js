@@ -104,69 +104,139 @@ class NavigationController {
   }
 }
 
-// Image Slider System
+// Image Slider System mit Infinite Carousel (nahtlose Endlos-Schleife)
+// Funktionsweise: Wir klonen das erste und letzte Bild, damit die Animation
+// immer in die richtige Richtung läuft ohne "Zurückspringen".
+// Struktur: [Bild3-Klon] [Bild1] [Bild2] [Bild3] [Bild1-Klon]
+// Nach Animation zu einem Klon springen wir unsichtbar (ohne Transition) zur echten Position.
 class ImageSliderController {
   constructor() {
-    this.currentIndex = 0;
     this.sliderTrack = document.querySelector('.slider-track');
-    this.sliderItems = document.querySelectorAll('.slider-item');
+    this.sliderItems = Array.from(document.querySelectorAll('.slider-item'));
     this.dots = document.querySelectorAll('.dot');
     this.leftArrow = document.querySelector('.slider-arrow-left');
     this.rightArrow = document.querySelector('.slider-arrow-right');
-    this.totalItems = this.sliderItems.length;
+    this.totalItems = this.sliderItems.length; // Originale Anzahl (3 Bilder)
+    this.currentIndex = 0; // Logischer Index (0, 1, 2)
+    this.autoPlayInterval = null;
+    this.isTransitioning = false;
     this.init();
   }
 
   init() {
-    // Arrow-Button Events
-    this.leftArrow.addEventListener('click', () => this.prev());
-    this.rightArrow.addEventListener('click', () => this.next());
+    // Klone erstellen für nahtlosen Loop
+    this.createClones();
+    
+    // Start-Position: Auf dem ersten echten Bild (nach dem letzten Klon)
+    this.setPosition(1, false); // Index 1 = erstes echtes Bild
 
-    // Touch-Swipe Support (optional)
+    // Arrow-Button Events
+    this.leftArrow.addEventListener('click', () => {
+      this.prev();
+      this.resetAutoPlay();
+    });
+    this.rightArrow.addEventListener('click', () => {
+      this.next();
+      this.resetAutoPlay();
+    });
+
+    // Touch-Swipe Support
     this.setupTouchEvents();
 
     // Initial: Ersten Dot aktivieren
-    this.updateView();
+    this.updateDots();
+
+    // Auto-Play starten (alle 5 Sekunden)
+    this.startAutoPlay();
+  }
+
+  createClones() {
+    // Letztes Bild klonen und VOR das erste setzen
+    const firstClone = this.sliderItems[this.totalItems - 1].cloneNode(true);
+    this.sliderTrack.insertBefore(firstClone, this.sliderItems[0]);
+    
+    // Erstes Bild klonen und NACH das letzte setzen
+    const lastClone = this.sliderItems[0].cloneNode(true);
+    this.sliderTrack.appendChild(lastClone);
   }
 
   next() {
-    if (this.currentIndex < this.totalItems - 1) {
-      this.currentIndex++;
-      this.updateView();
-    }
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+
+    this.currentIndex++;
+    this.setPosition(this.currentIndex + 1, true); // +1 wegen des ersten Klons
+
+    // Wenn wir beim letzten Klon sind, springe unsichtbar zum ersten echten Bild
+    setTimeout(() => {
+      if (this.currentIndex >= this.totalItems) {
+        this.currentIndex = 0;
+        this.setPosition(1, false); // Ohne Transition zurück zum Start
+      }
+      this.isTransitioning = false;
+    }, 300); // Nach der Transition-Dauer
   }
 
   prev() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-      this.updateView();
-    }
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+
+    this.currentIndex--;
+    this.setPosition(this.currentIndex + 1, true); // +1 wegen des ersten Klons
+
+    // Wenn wir beim ersten Klon sind, springe unsichtbar zum letzten echten Bild
+    setTimeout(() => {
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.totalItems - 1;
+        this.setPosition(this.totalItems, false); // Ohne Transition zum Ende
+      }
+      this.isTransitioning = false;
+    }, 300); // Nach der Transition-Dauer
   }
 
-  goToSlide(index) {
-    if (index >= 0 && index < this.totalItems) {
-      this.currentIndex = index;
-      this.updateView();
+  setPosition(index, animate = true) {
+    // Position berechnen: -index * 100%
+    const offset = -index * 100;
+    
+    if (animate) {
+      this.sliderTrack.style.transition = 'transform 0.3s ease';
+    } else {
+      this.sliderTrack.style.transition = 'none';
     }
-  }
-
-  updateView() {
-    // Slider verschieben (translateX)
-    const offset = -this.currentIndex * 100;
+    
     this.sliderTrack.style.transform = `translateX(${offset}%)`;
+    this.updateDots();
+  }
 
-    // Dot-Indikatoren aktualisieren
+  updateDots() {
+    // Dot-Indikatoren basierend auf logischem Index (0, 1, 2)
+    const dotIndex = ((this.currentIndex % this.totalItems) + this.totalItems) % this.totalItems;
     this.dots.forEach((dot, index) => {
-      if (index === this.currentIndex) {
+      if (index === dotIndex) {
         dot.classList.add('active');
       } else {
         dot.classList.remove('active');
       }
     });
+  }
 
-    // Arrow-Buttons enable/disable (optional)
-    this.leftArrow.style.opacity = this.currentIndex === 0 ? '0.3' : '0.7';
-    this.rightArrow.style.opacity = this.currentIndex === this.totalItems - 1 ? '0.3' : '0.7';
+  startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => {
+      this.next();
+    }, 5000); // Alle 5 Sekunden
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+
+  resetAutoPlay() {
+    // Auto-Play zurücksetzen bei manueller Interaktion
+    this.stopAutoPlay();
+    this.startAutoPlay();
   }
 
   setupTouchEvents() {
@@ -195,6 +265,8 @@ class ImageSliderController {
         // Swipe right -> prev
         this.prev();
       }
+      // Auto-Play nach Swipe zurücksetzen
+      this.resetAutoPlay();
     }
   }
 }
