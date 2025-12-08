@@ -1,4 +1,4 @@
-/**
+﻿/**
  * TensorFlow.js Image Recognition für Kunstwerk-Erkennung
  * Lokale Inferenz ohne Netzwerk-Abhängigkeiten
  */
@@ -10,11 +10,11 @@ const FRAME_INTERVAL = 1500; // ms zwischen Vorhersagen
 const CONFIDENCE_THRESHOLD = 0.5;
 const ARTWORKS_META_PATH = './tfjs_model/artworks_meta.json';
 
-// DOM elements
-const videoEl = document.getElementById('camera');
-const canvasEl = document.getElementById('canvas');
-const resultEl = document.getElementById('result');
-const startBtn = document.getElementById('startBtn');
+// DOM elements (angepasst an neues Layout)
+const videoEl = document.getElementById('videoElement');
+const canvasEl = document.getElementById('canvasElement');
+const artworkInfo = document.getElementById('artworkInfo');
+const artworkText = document.getElementById('artworkText');
 
 // State
 let stream = null;
@@ -27,7 +27,7 @@ let artworksMeta = null;
 
 async function loadArtModel() {
   try {
-    resultEl.innerHTML = '<div class="result-status">Modell wird geladen…</div>';
+    console.log('📦 Modell wird geladen...');
     artModel = await tf.loadLayersModel(MODEL_PATH);
     try {
       const resp = await fetch(CLASS_NAMES_PATH);
@@ -43,10 +43,9 @@ async function loadArtModel() {
       console.warn('artworks_meta.json nicht gefunden, Metadaten werden nicht angezeigt', e);
       artworksMeta = null;
     }
-    resultEl.innerHTML = '<div class="result-status">Modell geladen</div>';
+    console.log('✅ Modell geladen');
   } catch (err) {
     console.error('Fehler beim Laden des Modells:', err);
-    resultEl.innerHTML = '<div class="result-empty">Fehler beim Laden des Modells. Konsole prüfen.</div>';
   }
 }
 
@@ -88,8 +87,7 @@ async function predictArtwork(imageOrCanvas) {
 
 async function startCamera() {
   try {
-    startBtn.disabled = true;
-    startBtn.textContent = 'Kamera wird geöffnet...';
+    console.log('📷 Kamera wird gestartet...');
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       throw new Error('getUserMedia nicht unterstützt. HTTPS/Browser prüfen.');
     }
@@ -107,14 +105,11 @@ async function startCamera() {
     canvasEl.width = videoEl.videoWidth;
     canvasEl.height = videoEl.videoHeight;
     isRunning = true;
-    startBtn.textContent = 'Kamera läuft...';
-    startBtn.disabled = true;
+    console.log('✅ Kamera läuft');
     captureAndPredictLoop();
   } catch (err) {
     console.error('Fehler beim Starten der Kamera:', err);
-    resultEl.innerHTML = `<div class="result-empty">Kamera-Fehler: ${err.message}</div>`;
-    startBtn.disabled = false;
-    startBtn.textContent = 'Kamera starten';
+    hideArtworkInfo();
   }
 }
 
@@ -128,7 +123,7 @@ async function captureAndPredictLoop() {
       displayModelResult(res);
     } catch (e) {
       console.error('Vorhersage-Fehler:', e);
-      resultEl.innerHTML = '<div class="result-empty">Vorhersage-Fehler</div>';
+      hideArtworkInfo();
     }
   } catch (e) {
     console.error('Capture-Fehler:', e);
@@ -138,29 +133,35 @@ async function captureAndPredictLoop() {
 
 function displayModelResult(r) {
   if (!r) {
-    resultEl.innerHTML = '<div class="result-empty">Keine Erkennung</div>';
+    hideArtworkInfo();
     return;
   }
-  const pct = (r.confidence * 100).toFixed(1);
+  
   let meta = null;
   if (artworksMeta && artworksMeta.length > 0) {
     // Suche nach passendem Metadaten-Eintrag (per Index oder className)
     meta = artworksMeta.find(m => m.class_name == r.className || m.class_name == String(r.classIndex));
   }
-  if (r.confidence >= CONFIDENCE_THRESHOLD) {
-    resultEl.innerHTML = `
-      <div class="result-class">🎨 ${r.className}</div>
-      <div class="result-confidence">Sicherheit: ${pct}%</div>
-      <div class="result-status">✓ Erkannt</div>
-      ${meta ? `
-        <div class="meta-block">
-          <div><b>Titel:</b> ${meta.title || '-'}</div>
-          <div><b>Künstler:</b> ${meta.artist || '-'}</div>
-        </div>
-      ` : ''}
-    `;
+  
+  if (r.confidence >= CONFIDENCE_THRESHOLD && meta) {
+    // Artwork erkannt: Info anzeigen
+    showArtworkInfo(meta.title || r.className, meta.artist || 'Unbekannt');
+    console.log(`🎨 Erkannt: ${meta.title} (${(r.confidence * 100).toFixed(1)}%)`);
   } else {
-    resultEl.innerHTML = `<div class="result-empty">Unsicher: ${pct}%</div>`;
+    // Zu unsicher oder keine Metadaten
+    hideArtworkInfo();
+  }
+}
+
+function showArtworkInfo(title, artist) {
+  if (artworkText) {
+    artworkText.textContent = `${title}\n${artist}`;
+  }
+}
+
+function hideArtworkInfo() {
+  if (artworkText) {
+    artworkText.textContent = 'Titel und Künstler';
   }
 }
 
@@ -168,16 +169,28 @@ function stopCamera() {
   isRunning = false;
   if (frameIntervalId) clearTimeout(frameIntervalId);
   if (stream) stream.getTracks().forEach(t => t.stop());
-  resultEl.innerHTML = '<div class="result-empty">Gestoppt</div>';
-  startBtn.disabled = false;
-  startBtn.textContent = 'Kamera starten';
+  hideArtworkInfo();
+  console.log('🛑 Kamera gestoppt');
 }
 
+// Auto-Start: Kamera startet automatisch wenn ScanScreen aktiv wird
 document.addEventListener('DOMContentLoaded', async () => {
+  // Modell laden
   loadArtModel();
-  startBtn.addEventListener('click', () => { 
-    if (isRunning) stopCamera(); 
-    else startCamera(); 
+  
+  // Kamera automatisch starten wenn auf ScanScreen navigiert wird
+  const observer = new MutationObserver((mutations) => {
+    const scanScreen = document.getElementById('scanScreen');
+    if (scanScreen && scanScreen.classList.contains('active') && !isRunning) {
+      startCamera();
+    } else if (scanScreen && !scanScreen.classList.contains('active') && isRunning) {
+      stopCamera();
+    }
   });
+  
+  const scanScreen = document.getElementById('scanScreen');
+  if (scanScreen) {
+    observer.observe(scanScreen, { attributes: true, attributeFilter: ['class'] });
+  }
 });
 
