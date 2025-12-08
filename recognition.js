@@ -13,8 +13,8 @@ const ARTWORKS_META_PATH = './tfjs_model/artworks_meta.json';
 // DOM elements (angepasst an neues Layout)
 const videoEl = document.getElementById('videoElement');
 const canvasEl = document.getElementById('canvasElement');
-const artworkInfo = document.getElementById('artworkInfo');
 const artworkText = document.getElementById('artworkText');
+const scanScreen = document.getElementById('scanScreen');
 
 // State
 let stream = null;
@@ -155,7 +155,8 @@ function displayModelResult(r) {
 
 function showArtworkInfo(title, artist) {
   if (artworkText) {
-    artworkText.textContent = `${title}\n${artist}`;
+    // Zweizeilig formatieren: Titel\nKünstler
+    artworkText.textContent = title + '\n' + artist;
   }
 }
 
@@ -178,18 +179,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Modell laden
   loadArtModel();
   
-  // Kamera automatisch starten wenn auf ScanScreen navigiert wird
-  const observer = new MutationObserver((mutations) => {
-    const scanScreen = document.getElementById('scanScreen');
-    if (scanScreen && scanScreen.classList.contains('active') && !isRunning) {
-      startCamera();
-    } else if (scanScreen && !scanScreen.classList.contains('active') && isRunning) {
-      stopCamera();
-    }
-  });
-  
-  const scanScreen = document.getElementById('scanScreen');
+  // Beobachte scanScreen für aktive Klasse
   if (scanScreen) {
+    // Initial check
+    if (scanScreen.classList.contains('active') && !isRunning) {
+      startCamera();
+    }
+    
+    // Watch for changes
+    const observer = new MutationObserver((mutations) => {
+      if (scanScreen.classList.contains('active') && !isRunning) {
+        startCamera();
+      } else if (!scanScreen.classList.contains('active') && isRunning) {
+        stopCamera();
+      }
+    });
+    
     observer.observe(scanScreen, { attributes: true, attributeFilter: ['class'] });
   }
 });
