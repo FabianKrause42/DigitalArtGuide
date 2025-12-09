@@ -10,11 +10,10 @@ const FRAME_INTERVAL = 1500; // ms zwischen Vorhersagen
 const CONFIDENCE_THRESHOLD = 0.5;
 const ARTWORKS_META_PATH = './tfjs_model/artworks_meta.json';
 
-// DOM elements (angepasst an neues Layout)
-const videoEl = document.getElementById('videoElement');
-const canvasEl = document.getElementById('canvasElement');
-const artworkText = document.getElementById('artworkText');
-const scanScreen = document.getElementById('scanScreen');
+// DOM elements - werden dynamisch gesetzt
+let videoEl = null;
+let canvasEl = null;
+let artworkText = null;
 
 // State
 let stream = null;
@@ -87,10 +86,20 @@ async function predictArtwork(imageOrCanvas) {
 
 async function startCamera() {
   try {
-    console.log('📷 Kamera wird gestartet...');
+    // Hole Elemente dynamisch (falls sie neu geladen wurden)
+    if (!videoEl) videoEl = document.getElementById('videoElement');
+    if (!canvasEl) canvasEl = document.getElementById('canvasElement');
+    if (!artworkText) artworkText = document.getElementById('artworkText');
+    
+    if (!videoEl || !canvasEl) {
+      console.error('❌ Video/Canvas Elemente nicht gefunden');
+      return;
+    }
+    
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       throw new Error('getUserMedia nicht unterstützt. HTTPS/Browser prüfen.');
     }
+    
     stream = await navigator.mediaDevices.getUserMedia({ 
       video: { facingMode: 'environment' }, 
       audio: false 
@@ -105,10 +114,9 @@ async function startCamera() {
     canvasEl.width = videoEl.videoWidth;
     canvasEl.height = videoEl.videoHeight;
     isRunning = true;
-    console.log('✅ Kamera läuft');
     captureAndPredictLoop();
   } catch (err) {
-    console.error('Fehler beim Starten der Kamera:', err);
+    console.error('❌ Kamera-Fehler:', err);
     hideArtworkInfo();
   }
 }
@@ -171,31 +179,16 @@ function stopCamera() {
   if (frameIntervalId) clearTimeout(frameIntervalId);
   if (stream) stream.getTracks().forEach(t => t.stop());
   hideArtworkInfo();
-  console.log('🛑 Kamera gestoppt');
 }
 
-// Auto-Start: Kamera startet automatisch wenn ScanScreen aktiv wird
-document.addEventListener('DOMContentLoaded', async () => {
-  // Modell laden
+// Init beim Page-Load
+document.addEventListener('DOMContentLoaded', () => {
   loadArtModel();
-  
-  // Beobachte scanScreen für aktive Klasse
-  if (scanScreen) {
-    // Initial check
-    if (scanScreen.classList.contains('active') && !isRunning) {
-      startCamera();
-    }
-    
-    // Watch for changes
-    const observer = new MutationObserver((mutations) => {
-      if (scanScreen.classList.contains('active') && !isRunning) {
-        startCamera();
-      } else if (!scanScreen.classList.contains('active') && isRunning) {
-        stopCamera();
-      }
-    });
-    
-    observer.observe(scanScreen, { attributes: true, attributeFilter: ['class'] });
-  }
 });
+
+// Exportiere Funktionen für content-loader
+window.CameraController = {
+  start: startCamera,
+  stop: stopCamera
+};
 

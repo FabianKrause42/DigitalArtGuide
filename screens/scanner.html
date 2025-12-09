@@ -1,0 +1,16 @@
+<!-- SCANNER SCREEN CONTENT (reine Content, kein HTML/Body/Nav) -->
+<div class="app-shell">
+  <!-- Überschrift -->
+  <h2 class="scan-title">Kunstwerk oder QR-Code<br>per Kamera erfassen</h2>
+
+  <!-- Kamera-Bereich (feste Größe wie in Figma) -->
+  <div class="camera-box">
+    <video id="videoElement" autoplay playsinline></video>
+    <canvas id="canvasElement"></canvas>
+  </div>
+
+  <!-- Text-Overlay für erkanntes Kunstwerk (unter dem Kasten) -->
+  <div class="artwork-info" id="artworkInfo">
+    <p class="artwork-text" id="artworkText">Titel und Künstler</p>
+  </div>
+</div>

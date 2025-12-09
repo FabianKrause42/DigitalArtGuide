@@ -1,106 +1,28 @@
 // Screen Navigation System mit korrekten Wipe-Animationen
+// HINWEIS: Diese Klasse wird nicht mehr verwendet (content-loader.js übernimmt)
+// Bleibt im Code für Rückwärtskompatibilität
 class NavigationController {
   constructor() {
     this.currentScreen = 'home';
-    this.screens = {
-      home: document.getElementById('homeScreen'),
-      scan: document.getElementById('scanScreen'),
-      map: null, // Placeholder für zukünftige Screens
-      nummer: null,
-    };
+    this.screens = {}; // Leer, da Screens jetzt dynamisch geladen werden
     this.animating = false;
-    this.init();
+    console.log('⚠️ NavigationController ist deprecated, content-loader.js übernimmt');
   }
 
   init() {
-    // Alle Tab-Buttons finden
-    const tabButtons = document.querySelectorAll('.tab-button');
-    
-    tabButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        if (this.animating) return; // Keine Animation während Animation läuft
-        const targetScreen = button.getAttribute('data-screen');
-        this.navigateTo(targetScreen);
-      });
-    });
-
-    // Initial: Home-Screen aktivieren
-    this.activateScreen('home');
+    // Leer - content-loader übernimmt Navigation
   }
 
   navigateTo(screenName) {
-    // Noch nicht implementierte Screens ignorieren
-    if (!this.screens[screenName] || this.animating) {
-      return;
-    }
-
-    // Wenn schon auf diesem Screen, nichts tun
-    if (this.currentScreen === screenName) {
-      return;
-    }
-
-    this.animating = true;
-    const currentScreenElement = this.screens[this.currentScreen];
-    const targetScreenElement = this.screens[screenName];
-    const isBackToHome = screenName === 'home';
-
-    // Aktuelle Screen vorbereiten für Exit
-    if (currentScreenElement) {
-      currentScreenElement.classList.remove('active');
-      // Exit-Animation: Nach links wenn zu neuer Seite, nach rechts wenn zurück zur Home
-      if (isBackToHome) {
-        currentScreenElement.classList.add('exit-right');
-      } else {
-        currentScreenElement.classList.add('exit-left');
-      }
-    }
-
-    // Neue Screen vorbereiten und einblenden
-    if (targetScreenElement) {
-      // Neu reinkommende Screen startet immer von rechts (wenn nicht Home)
-      // oder von links (wenn zurück zur Home)
-      if (!isBackToHome) {
-        targetScreenElement.classList.add('enter-right');
-      } else {
-        targetScreenElement.classList.add('enter-left');
-      }
-      
-      targetScreenElement.classList.remove('exit-left', 'exit-right');
-      targetScreenElement.classList.add('active');
-      
-      // Tab-Button Status sofort aktualisieren
-      this.updateTabButtons(screenName);
-      this.currentScreen = screenName;
-      
-      // Cleanup nach Animation
-      setTimeout(() => {
-        if (currentScreenElement) {
-          currentScreenElement.classList.remove('exit-left', 'exit-right');
-        }
-        this.animating = false;
-      }, 300);
-    }
+    // Leer - content-loader übernimmt Navigation
   }
 
   activateScreen(screenName) {
-    const screenElement = this.screens[screenName];
-    if (screenElement) {
-      screenElement.classList.add('active');
-      this.currentScreen = screenName;
-      this.updateTabButtons(screenName);
-    }
+    // Leer - content-loader übernimmt Navigation
   }
 
   updateTabButtons(activeScreen) {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    tabButtons.forEach(button => {
-      const buttonScreen = button.getAttribute('data-screen');
-      if (buttonScreen === activeScreen) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
-    });
+    // Leer - content-loader übernimmt Navigation
   }
 }
 
@@ -110,28 +32,30 @@ class NavigationController {
 // Struktur: [Bild3-Klon] [Bild1] [Bild2] [Bild3] [Bild1-Klon]
 // Nach Animation zu einem Klon springen wir unsichtbar (ohne Transition) zur echten Position.
 class ImageSliderController {
-  constructor() {
-    this.sliderContainer = document.querySelector('.slider-container');
-    this.sliderTrack = document.querySelector('.slider-track');
-    this.sliderItems = Array.from(document.querySelectorAll('.slider-item'));
-    this.dots = document.querySelectorAll('.dot');
-    this.leftArrow = document.querySelector('.slider-arrow-left');
-    this.rightArrow = document.querySelector('.slider-arrow-right');
-    this.totalItems = this.sliderItems.length; // Originale Anzahl (3 Bilder)
-    this.currentIndex = 0; // Logischer Index (0, 1, 2)
-    this.autoPlayInterval = null;
-    this.isTransitioning = false;
-    this.init();
+  constructor(onInitCallback = null) {
+    try {
+      this.sliderContainer = document.querySelector('.slider-container');
+      this.sliderTrack = document.querySelector('.slider-track');
+      this.sliderItems = Array.from(document.querySelectorAll('.slider-item'));
+      this.dots = document.querySelectorAll('.dot');
+      this.leftArrow = document.querySelector('.slider-arrow-left');
+      this.rightArrow = document.querySelector('.slider-arrow-right');
+      this.totalItems = this.sliderItems.length;
+      this.currentIndex = 0;
+      this.autoPlayInterval = null;
+      this.isTransitioning = false;
+      this.onInitCallback = onInitCallback;
+      this.init();
+    } catch (error) {
+      console.error('❌ ImageSlider Error:', error);
+      throw error;
+    }
   }
 
   init() {
-    // Klone erstellen für nahtlosen Loop
     this.createClones();
-    
-    // Start-Position: Auf dem ersten echten Bild (nach dem letzten Klon)
-    this.setPosition(1, false); // Index 1 = erstes echtes Bild
+    this.setPosition(1, false);
 
-    // Arrow-Button Events
     this.leftArrow.addEventListener('click', () => {
       this.prev();
       this.resetAutoPlay();
@@ -141,17 +65,14 @@ class ImageSliderController {
       this.resetAutoPlay();
     });
 
-    // Touch-Swipe Support
     this.setupTouchEvents();
-
-    // Initial: Ersten Dot aktivieren
     this.updateDots();
-
-    // Auto-Play starten (alle 5 Sekunden)
     this.startAutoPlay();
 
-    // Klick auf Slider-Item -> Ausstellungsseite öffnen (Test)
-    this.bindItemClicks();
+    // Callback aufrufen wenn Init fertig
+    if (this.onInitCallback && typeof this.onInitCallback === 'function') {
+      this.onInitCallback();
+    }
   }
 
   createClones() {
@@ -296,14 +217,22 @@ class ImageSliderController {
   }
 
   bindItemClicks() {
-    // Map Slider-Items zu den Ausstellungsseiten (basierend auf currentIndex)
-    const exhibitionPages = ['exhibition1.html', 'exhibition2.html', 'exhibition3.html'];
-    
+    /**
+     * Slider-Items zu Ausstellungen verbinden
+     * Klick triggert URL-Parameter, content-loader kümmert sich um den Rest
+     */
     this.sliderItems.forEach((item, index) => {
       item.style.cursor = 'pointer';
-      item.addEventListener('click', () => {
-        const exhibitionPage = exhibitionPages[index] || 'exhibition1.html';
-        window.location.href = exhibitionPage;
+      
+      // Entferne alte Listener durch Node-Klonen
+      const newItem = item.cloneNode(true);
+      item.parentNode.replaceChild(newItem, item);
+      
+      // Neuer Listener mit URL-Navigation
+      newItem.addEventListener('click', () => {
+        const exhibitionId = index + 1;
+        // content-loader liest diese URL-Parameter und lädt den entsprechenden Screen
+        window.location.href = `?view=exhibition&id=${exhibitionId}`;
       });
     });
   }
@@ -311,8 +240,6 @@ class ImageSliderController {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  window.navigationController = new NavigationController();
-  window.imageSliderController = new ImageSliderController();
-  
-  console.log('✅ Navigation & Slider initialized');
+  // NavigationController deprecated - content-loader übernimmt
+  // ImageSliderController wird vom content-loader initialisiert
 });
