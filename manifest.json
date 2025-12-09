@@ -4,9 +4,10 @@
   "description": "Digitaler Ausstellungsguide für die Galerie Stadt Sindelfingen",
   "start_url": "/index.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
+  "scope": "/",
   "background_color": "#F2F2F2",
-  "theme_color": "#DFDFDF",
+  "theme_color": "#F2F2F2",
   "icons": [
     {
       "src": "images/icons/home.png",

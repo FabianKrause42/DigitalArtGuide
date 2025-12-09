@@ -149,16 +149,14 @@ body.exhibition-page {
 /* Header */
 .app-shell {
   width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
-  padding: 0 1.5px; /* Seitenrand weiter reduziert (~-20%) */
+  padding: 0 clamp(8px, 3vw, 24px); /* Responsive Padding: 8px min, 3vw fluid, 24px max */
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start; /* Logo-Oberkante bündig mit Menü-Button */
-  padding: 24px 8px 12px;
+  padding: 24px clamp(8px, 2vw, 16px) 12px;
   position: relative;
   z-index: 10;
   margin-bottom: 20px; /* mehr Abstand vor der Sektion */
@@ -194,7 +192,7 @@ body.exhibition-page {
   font-size: 18px;
   font-weight: 350;
   color: #222222;
-  padding: 0 12px;
+  padding: 0 clamp(8px, 2vw, 16px);
   margin: 8px 0 12px; /* zusätzlicher Abstand zum Logo-Bereich */
 }
 
@@ -202,7 +200,7 @@ body.exhibition-page {
 .image-slider {
   position: relative;
   width: 100%;
-  padding: 0 6px;
+  padding: 0 clamp(6px, 1.5vw, 12px);
   margin-bottom: 28px;
 }
 
@@ -295,7 +293,7 @@ body.exhibition-page {
   font-size: 18px;
   line-height: 1.35;
   color: #222222;
-  padding: 0 8px 24px;
+  padding: 0 clamp(8px, 2vw, 16px) 24px;
 }
 
 /* Tab Navigation */
@@ -350,7 +348,7 @@ body.exhibition-page {
   text-align: center;
   line-height: 1.2;
   margin: 32px auto 24px;
-  padding: 0 12px;
+  padding: 0 clamp(12px, 2vw, 16px);
 }
 
 .camera-box {
@@ -394,12 +392,12 @@ body.exhibition-page {
 
 /* Responsive Adjustments */
 @media (min-width: 480px) {
-  .app-shell {
-    max-width: 380px;
-  }
   .slider-container {
     width: 308px;
     height: 196px;
+  }
+  .tab-button span {
+    font-size: 12px;
   }
 }
 
@@ -414,11 +412,15 @@ body.exhibition-page {
   .screen.active {
     transform: translateX(-50%);
   }
-  .app-shell {
-    max-width: 420px;
-  }
   .slider-container {
     width: 320px;
     height: 204px;
+  }
+  .tab-button span {
+    font-size: 14px;
+  }
+  .tab-button img {
+    width: 32px;
+    height: 32px;
   }
 }
