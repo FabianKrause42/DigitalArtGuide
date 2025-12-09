@@ -111,6 +111,7 @@ class NavigationController {
 // Nach Animation zu einem Klon springen wir unsichtbar (ohne Transition) zur echten Position.
 class ImageSliderController {
   constructor() {
+    this.sliderContainer = document.querySelector('.slider-container');
     this.sliderTrack = document.querySelector('.slider-track');
     this.sliderItems = Array.from(document.querySelectorAll('.slider-item'));
     this.dots = document.querySelectorAll('.dot');
@@ -148,6 +149,9 @@ class ImageSliderController {
 
     // Auto-Play starten (alle 5 Sekunden)
     this.startAutoPlay();
+
+    // Klick auf Slider-Item -> Ausstellungsseite öffnen (Test)
+    this.bindItemClicks();
   }
 
   createClones() {
@@ -241,33 +245,67 @@ class ImageSliderController {
 
   setupTouchEvents() {
     let touchStartX = 0;
-    let touchEndX = 0;
+    let touchStartY = 0;
+    let isSwiping = false;
 
-    this.sliderTrack.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
+    const target = this.sliderContainer || this.sliderTrack;
+
+    target.addEventListener('touchstart', (e) => {
+      const touch = e.changedTouches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      isSwiping = false;
     }, { passive: true });
 
-    this.sliderTrack.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      this.handleSwipe(touchStartX, touchEndX);
+    target.addEventListener('touchmove', (e) => {
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      // Horizontaler Swipe dominiert -> Scroll verhindern (wichtig für iOS Safari)
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        isSwiping = true;
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    const onEnd = (touch) => {
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      // Nur auslösen, wenn horizontaler Swipe dominiert
+      if (isSwiping && Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) {
+          this.next();
+        } else {
+          this.prev();
+        }
+        this.resetAutoPlay();
+      }
+    };
+
+    target.addEventListener('touchend', (e) => {
+      const touch = e.changedTouches[0];
+      onEnd(touch);
+    }, { passive: true });
+
+    target.addEventListener('touchcancel', (e) => {
+      const touch = e.changedTouches[0];
+      onEnd(touch);
     }, { passive: true });
   }
 
-  handleSwipe(startX, endX) {
-    const swipeThreshold = 50; // Minimale Swipe-Distanz
-    const diff = startX - endX;
-
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        // Swipe left -> next
-        this.next();
-      } else {
-        // Swipe right -> prev
-        this.prev();
-      }
-      // Auto-Play nach Swipe zurücksetzen
-      this.resetAutoPlay();
-    }
+  bindItemClicks() {
+    // Map Slider-Items zu den Ausstellungsseiten (basierend auf currentIndex)
+    const exhibitionPages = ['exhibition1.html', 'exhibition2.html', 'exhibition3.html'];
+    
+    this.sliderItems.forEach((item, index) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => {
+        const exhibitionPage = exhibitionPages[index] || 'exhibition1.html';
+        window.location.href = exhibitionPage;
+      });
+    });
   }
 }
 
