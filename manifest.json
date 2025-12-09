@@ -1,0 +1,17 @@
+{
+  "name": "Galerie Stadt Sindelfingen",
+  "short_name": "Galerie SiFi",
+  "description": "Digitaler Ausstellungsguide für die Galerie Stadt Sindelfingen",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F2F2",
+  "theme_color": "#DFDFDF",
+  "icons": [
+    {
+      "src": "images/icons/home.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
