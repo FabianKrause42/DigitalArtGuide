@@ -49,5 +49,18 @@
   
   <!-- ML Kunstwerk-Erkennung -->
   <script src="recognition.js?v=7"></script>
+
+  <!-- Service Worker Registrierung für PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((registration) => {
+          console.log('Service Worker registriert:', registration);
+        }).catch((error) => {
+          console.error('Service Worker Registrierung fehlgeschlagen:', error);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
