@@ -1,7 +1,17 @@
 [
   {
-    "id": "ausstellung-1-beispiel",
-    "title": "Licht und Schatten",
-    "cover": "Content/ausstellung-1-beispiel/cover.jpg"
+    "id": "ausstellung-1-OfOtherPlaces",
+    "title": "Of Other Places",
+    "cover": "Content/ausstellung-1-OfOtherPlaces/cover.jpg"
+  },
+  {
+    "id": "ausstellung-1-Double",
+    "title": "Double",
+    "cover": "Content/ausstellung-2-Double/cover.jpg"
+  },
+  {
+    "id": "ausstellung-1-DenkeFreiSchaffeNeu",
+    "title": "Denke frei, schaffe neu! Die Sammlung im Blick",
+    "cover": "Content/ausstellung-3-DenkeFreiSchaffeNeu/cover.jpg"
   }
 ]

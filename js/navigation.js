@@ -294,11 +294,18 @@ class ExhibitionSliderController {
     this.sliderTrack.innerHTML = '';
 
     // Erstelle Slider-Items für jede Ausstellung
-    this.exhibitions.forEach(exhibition => {
+    this.exhibitions.forEach((exhibition, index) => {
       const item = document.createElement('div');
       item.className = 'slider-item';
       item.dataset.id = exhibition.id;
+      item.dataset.index = index;
       item.innerHTML = `<img src="${exhibition.cover}" alt="${exhibition.title}">`;
+      
+      // Click-Handler: Navigiere zur Ausstellungsseite
+      item.addEventListener('click', () => {
+        this.navigateToExhibition(exhibition);
+      });
+      
       this.sliderTrack.appendChild(item);
     });
 
@@ -316,6 +323,25 @@ class ExhibitionSliderController {
     }
 
     console.log('✅ Slider-Items und Dots erstellt');
+  }
+
+  // Navigiere zur Ausstellungsseite
+  navigateToExhibition(exhibition) {
+    console.log('🎨 Navigiere zu:', exhibition.title);
+    
+    // Lade die Ausstellungsseite in den Screen-Container
+    const screenContainer = document.querySelector('#currentScreen');
+    if (screenContainer && exhibition.page) {
+      fetch(exhibition.page)
+        .then(response => response.text())
+        .then(html => {
+          screenContainer.innerHTML = html;
+          console.log('✅ Ausstellungsseite geladen:', exhibition.title);
+        })
+        .catch(error => {
+          console.error('❌ Fehler beim Laden der Ausstellungsseite:', error);
+        });
+    }
   }
 
   // Hilfsmethode: Hole Ausstellung per ID
