@@ -238,8 +238,102 @@ class ImageSliderController {
   }
 }
 
+// Exhibition Slider Controller - lädt Ausstellungen dynamisch aus exhibitions.json
+class ExhibitionSliderController {
+  constructor() {
+    this.sliderTrack = null;
+    this.sliderContainer = null;
+    this.slider = null;
+    this.exhibitions = [];
+    this.currentIndex = 0;
+    this.isTransitioning = false;
+  }
+
+  // Lade exhibitions.json und baue Slider dynamisch auf
+  async init() {
+    try {
+      // Warte bis DOM ready ist
+      if (!document.querySelector('.slider-track')) {
+        console.log('⏳ Warte auf .slider-track...');
+        await new Promise(resolve => {
+          const checkDom = () => {
+            if (document.querySelector('.slider-track')) {
+              resolve();
+            } else {
+              setTimeout(checkDom, 50);
+            }
+          };
+          checkDom();
+        });
+      }
+
+      this.sliderTrack = document.querySelector('.slider-track');
+      this.sliderContainer = document.querySelector('.slider-container');
+
+      // Lade exhibitions.json
+      const response = await fetch('Content/exhibitions.json');
+      this.exhibitions = await response.json();
+      console.log('✅ Ausstellungen geladen:', this.exhibitions.length);
+
+      // Baue Slider dynamisch auf
+      this.buildSlider();
+
+      // Initialisiere ImageSliderController (von navigation.js)
+      this.slider = new ImageSliderController(() => {
+        console.log('✅ ImageSlider initialisiert');
+      });
+
+    } catch (error) {
+      console.error('❌ ExhibitionSlider Error:', error);
+    }
+  }
+
+  // Baue Slider-Items aus exhibitions.json
+  buildSlider() {
+    // Leere slider-track
+    this.sliderTrack.innerHTML = '';
+
+    // Erstelle Slider-Items für jede Ausstellung
+    this.exhibitions.forEach(exhibition => {
+      const item = document.createElement('div');
+      item.className = 'slider-item';
+      item.dataset.id = exhibition.id;
+      item.innerHTML = `<img src="${exhibition.cover}" alt="${exhibition.title}">`;
+      this.sliderTrack.appendChild(item);
+    });
+
+    // Erstelle Dots dynamisch
+    const dotsContainer = document.querySelector('.slider-dots');
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      this.exhibitions.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        if (index === 0) dot.classList.add('active');
+        dot.dataset.index = index;
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    console.log('✅ Slider-Items und Dots erstellt');
+  }
+
+  // Hilfsmethode: Hole Ausstellung per ID
+  getExhibitionById(id) {
+    return this.exhibitions.find(ex => ex.id === id);
+  }
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   // NavigationController deprecated - content-loader übernimmt
   // ImageSliderController wird vom content-loader initialisiert
+
+  // Starte ExhibitionSlider
+  const exhibitionSlider = new ExhibitionSliderController();
+  exhibitionSlider.init().then(() => {
+    console.log('✅ ExhibitionSlider initialisiert');
+  }).catch(error => {
+    console.error('❌ ExhibitionSlider init failed:', error);
+  });
 });

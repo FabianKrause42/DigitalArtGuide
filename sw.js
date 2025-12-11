@@ -9,6 +9,7 @@ const STATIC_ASSETS = [
   '/js/content-loader.js',
   '/js/exhibition-swipe.js',
   '/recognition.js',
+  '/Content/exhibitions.json',
   '/images/logo.png',
   '/images/icons/home.png',
   '/images/icons/camera.png',
