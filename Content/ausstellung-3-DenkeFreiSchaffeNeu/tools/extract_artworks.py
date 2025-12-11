@@ -12,7 +12,7 @@ INFO_JSON = BASE / "info.json"
 OUT_IMG_DIR.mkdir(parents=True, exist_ok=True)
 
 TITLE_YEAR_RE = re.compile(r"^\s*(?P<title>.*?)[,\s]+(?P<year>\d{3,4})\s*$")
-BORN_DIED_RE = re.compile(r"\((?:\*?\s*(?P<born>\d{3,4}))?\s*[—\-–]\s*(?P<died>\d{3,4})?\)")
+BORN_DIED_RE = re.compile(r"\((?:[*+]?\s*(?P<born>\d{3,4}))?\s*[—\-–]\s*(?:[*+]?\s*(?P<died>\d{3,4}))?\)")
 TRAILING_DIGITS_RE = re.compile(r"(\d+)(?:_Text)?$")
 
 
@@ -78,7 +78,7 @@ def _parse_meta(text_lines):
             except Exception:
                 died = None
 
-    # Find a line containing title and year
+    # Find a line containing title and year (strict comma separator)
     for l in lines:
         m = TITLE_YEAR_RE.match(l)
         if m and not title:
@@ -88,7 +88,7 @@ def _parse_meta(text_lines):
             except Exception:
                 year = None
             continue
-        # First materials line after title
+        # First materials line immediately after title line
         if title and materials is None and l and not TITLE_YEAR_RE.match(l):
             materials = l.strip()
             break
