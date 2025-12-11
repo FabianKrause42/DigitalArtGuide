@@ -52,7 +52,7 @@ def _extract_number(stem: str) -> int:
 
 
 def _parse_meta(text_lines):
-    # Best-effort parse: artist, born/died, title/year, materials
+    # Best-effort parse: artist, born/died, title/year, materials, and start index for description
     artist = None
     born = None
     died = None
@@ -78,8 +78,11 @@ def _parse_meta(text_lines):
             except Exception:
                 died = None
 
+    title_idx = None
+    materials_idx = None
+
     # Find a line containing title and year (strict comma separator)
-    for l in lines:
+    for idx, l in enumerate(lines):
         m = TITLE_YEAR_RE.match(l)
         if m and not title:
             title = m.group("title").strip()
@@ -87,13 +90,23 @@ def _parse_meta(text_lines):
                 year = int(m.group("year"))
             except Exception:
                 year = None
+            title_idx = idx
             continue
         # First materials line immediately after title line
-        if title and materials is None and l and not TITLE_YEAR_RE.match(l):
+        if title_idx is not None and materials is None and l and idx > title_idx and not TITLE_YEAR_RE.match(l):
             materials = l.strip()
+            materials_idx = idx
             break
 
-    return artist, born, died, title, year, materials
+    # Description starts after the materials line (skip blank lines)
+    desc_start = None
+    if materials_idx is not None:
+        i = materials_idx + 1
+        while i < len(lines) and lines[i].strip() == "":
+            i += 1
+        desc_start = i if i < len(lines) else None
+
+    return artist, born, died, title, year, materials, desc_start
 
 
 def _save_resized(img_path: Path, out_full: Path, out_thumb: Path, max_full_w=1200, thumb_w=300):
@@ -151,8 +164,11 @@ def main():
         if txt_path and txt_path.exists():
             raw = txt_path.read_text(encoding="utf-8", errors="ignore")
             lines = raw.splitlines()
-            artist, born, died, title, year, materials = _parse_meta(lines)
-            description = _normalize_text(lines)
+            artist, born, died, title, year, materials, desc_start = _parse_meta(lines)
+            if desc_start is not None:
+                description = _normalize_text(lines[desc_start:])
+            else:
+                description = ""
         else:
             description = ""
 
