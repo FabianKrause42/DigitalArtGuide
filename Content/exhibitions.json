@@ -2,16 +2,19 @@
   {
     "id": "ausstellung-1-OfOtherPlaces",
     "title": "Of Other Places",
-    "cover": "Content/ausstellung-1-OfOtherPlaces/cover.jpg"
+    "cover": "Content/ausstellung-1-OfOtherPlaces/cover.jpg",
+    "page": "Content/ausstellung-1-OfOtherPlaces/exhibition1.html"
   },
   {
-    "id": "ausstellung-1-Double",
+    "id": "ausstellung-2-Double",
     "title": "Double",
-    "cover": "Content/ausstellung-2-Double/cover.jpg"
+    "cover": "Content/ausstellung-2-Double/cover.jpg",
+    "page": "Content/ausstellung-2-Double/exhibition2.html"
   },
   {
-    "id": "ausstellung-1-DenkeFreiSchaffeNeu",
-    "title": "Denke frei, schaffe neu! Die Sammlung im Blick",
-    "cover": "Content/ausstellung-3-DenkeFreiSchaffeNeu/cover.jpg"
+    "id": "ausstellung-3-DenkeFreiSchaffeNeu",
+    "title": "Denke frei - Schaffe neu",
+    "cover": "Content/ausstellung-3-DenkeFreiSchaffeNeu/cover.jpg",
+    "page": "Content/ausstellung-3-DenkeFreiSchaffeNeu/exhibition3.html"
   }
 ]

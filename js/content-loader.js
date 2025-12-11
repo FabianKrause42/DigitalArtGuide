@@ -265,18 +265,11 @@ class ContentLoader {
         window.CameraController.start();
       }
     } else if (screenName === 'home') {
-      const sliderTrack = document.querySelector('.slider-track');
-      
-      if (!sliderTrack) {
-        console.error('❌ Slider-Track not found');
-        return;
-      }
-      
-      if (typeof ImageSliderController !== 'undefined') {
+      // Dynamischer Ausstellungs-Slider
+      if (typeof ExhibitionSliderController !== 'undefined') {
         try {
-          window.imageSliderController = new ImageSliderController(() => {
-            this.setupSliderClicks();
-          });
+          window.exhibitionSliderController = new ExhibitionSliderController();
+          window.exhibitionSliderController.init();
         } catch (error) {
           console.error('❌ Slider Init Error:', error);
         }

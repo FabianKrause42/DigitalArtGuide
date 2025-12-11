@@ -53,8 +53,21 @@ class ImageSliderController {
   }
 
   init() {
-    this.createClones();
-    this.setPosition(1, false);
+    // Kein Item? dann abbrechen
+    if (this.totalItems === 0) {
+      console.warn('⚠️ Kein Slider-Item gefunden, Slider wird übersprungen');
+      return;
+    }
+
+    const hasMultiple = this.totalItems > 1;
+
+    // Nur klonen wenn es mehr als ein Item gibt
+    if (hasMultiple) {
+      this.createClones();
+      this.setPosition(1, false);
+    } else {
+      this.setPosition(0, false);
+    }
 
     this.leftArrow.addEventListener('click', () => {
       this.prev();
@@ -67,7 +80,11 @@ class ImageSliderController {
 
     this.setupTouchEvents();
     this.updateDots();
-    this.startAutoPlay();
+
+    // Autoplay nur wenn mehr als ein Item existiert
+    if (hasMultiple) {
+      this.startAutoPlay();
+    }
 
     // Callback aufrufen wenn Init fertig
     if (this.onInitCallback && typeof this.onInitCallback === 'function') {
@@ -76,6 +93,11 @@ class ImageSliderController {
   }
 
   createClones() {
+    // Sicherstellen, dass es mindestens 2 Items gibt
+    if (!this.sliderItems || this.totalItems <= 1) {
+      return; // Kein Klonen nötig/ möglich
+    }
+
     // Letztes Bild klonen und VOR das erste setzen
     const firstClone = this.sliderItems[this.totalItems - 1].cloneNode(true);
     this.sliderTrack.insertBefore(firstClone, this.sliderItems[0]);
@@ -328,15 +350,24 @@ class ExhibitionSliderController {
   // Navigiere zur Ausstellungsseite
   navigateToExhibition(exhibition) {
     console.log('🎨 Navigiere zu:', exhibition.title);
-    
-    // Lade die Ausstellungsseite in den Screen-Container
+    if (!exhibition.page) return;
+
+    // Wenn ContentLoader existiert, nutze dessen Animation/History-Logik
+    if (window.contentLoader && typeof window.contentLoader.loadContent === 'function') {
+      const screenName = `exhibition-${exhibition.id}`;
+      window.contentLoader.loadContent(exhibition.page, screenName, false);
+      history.pushState({ screen: screenName }, '', `?view=exhibition&id=${exhibition.id}`);
+      return;
+    }
+
+    // Fallback: Direktes Laden in currentScreen
     const screenContainer = document.querySelector('#currentScreen');
-    if (screenContainer && exhibition.page) {
+    if (screenContainer) {
       fetch(exhibition.page)
         .then(response => response.text())
         .then(html => {
           screenContainer.innerHTML = html;
-          console.log('✅ Ausstellungsseite geladen:', exhibition.title);
+          console.log('✅ Ausstellungsseite geladen (Fallback):', exhibition.title);
         })
         .catch(error => {
           console.error('❌ Fehler beim Laden der Ausstellungsseite:', error);
