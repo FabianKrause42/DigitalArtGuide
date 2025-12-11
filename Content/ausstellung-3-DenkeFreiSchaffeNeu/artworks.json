@@ -5,9 +5,9 @@
       "number": "1",
       "title": "Waldnymphe (Rückenakt)",
       "artist": "Wilhelm Trübner",
-      "artistBorn": 1851,
-      "artistDied": 1917,
-      "year": 1898,
+      "artistBorn": "1851",
+      "artistDied": "1917",
+      "year": "1898",
       "materials": "Öl auf Pappe",
       "description": "Wilhelm Trübner zählt zu den wichtigsten Vertretern des deutschen Realismus und war Mitbegründer des Deutschen Werk-\nbundes. Nach seinem Studium in Karlsruhe und München fand\ner im Umfeld des Leibl-Kreises seine künstlerische Heimat,\nderen Bestrebungen sich zwischen Realismus, Naturalismus\nund frühen impressionistischen Tendenzen verorten lassen.\nSie verfolgten konsequent eine autonome Malerei jenseits\nnarrativer oder allegorischer Aufladung. Trübners Malerei ist\ngeprägt von einer tektonisch aufgebauten Bildarchitektur, der\nReduktion illusionistischer Tiefe sowie einer Verdichtung der\nForm zu alleinstehenden Bildkörpern.\n\nTrotz des mythologisierenden Titels Waldnymphe (Rückenakt)\nist der Bildraum vollkommen von narrativer Tiefe entleert. Die\nnackte weibliche Figur tritt aus dem Halbschatten eines sonnendurchfluteten Gartens hervor, doch nicht als sinnliches oder\nhandelndes Subjekt, sondern als statisches, beinahe monolithisches Bildelement - ein Versuch die Bilder von ihrem Inhalt\nzu befreien und das Motiv allein als Träger formalistischer und\nkoloristischer Erscheinungen zu nutzen. Dabei zeigt sich auch\nder Einfluss der Freilichtmalerei: Das Licht fällt direkt auf die\nFigur - nicht mehr im trüben Schein des Atelierlichts, sondern\nin klarer, natürlicher Helligkeit.",
       "images": [
@@ -15,8 +15,8 @@
       ],
       "thumbnail": "media/images/thumb-1.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -24,9 +24,9 @@
       "number": "2",
       "title": "Vor dem Einlaß",
       "artist": "Heinrich von Zügel",
-      "artistBorn": 1850,
-      "artistDied": 1941,
-      "year": 1903,
+      "artistBorn": "1850",
+      "artistDied": "1941",
+      "year": "1903",
       "materials": "Öl auf Leinwand",
       "description": "",
       "images": [
@@ -34,8 +34,8 @@
       ],
       "thumbnail": "media/images/thumb-2.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -43,9 +43,9 @@
       "number": "3",
       "title": "Frau Helen Lewin",
       "artist": "Max Slevogt",
-      "artistBorn": null,
-      "artistDied": null,
-      "year": 1917,
+      "artistBorn": "",
+      "artistDied": "",
+      "year": "1917",
       "materials": "Öl auf Leinwand",
       "description": "Max Slevogt zählt zu den bedeutendsten deutschen Vertretern\ndes Impressionismus. Nach dem Studium an der Akademie\nder Bildenden Künste in München, orientierte er sich zunächst\nan den deutschen Realisten wie Wilhelm Leibl. Doch mit dem\nWechsel nach Berlin und unter dem Einfluss der französischen\nImpressionisten wandelte sich sein Stil grundlegend: die dunkle\nTonalität seiner frühen Werke wich einer helleren, pastelligen\nFarbpalette, sein Pinselstrich wurde freier, schwungvoller und\nlockerer. Slevogts Stil ist geprägt von der Suche nach dem unmittelbaren Eindruck. Licht und Farbe werden zum eigentlichen\nAusdrucksträger, die feste Form wird zugunsten des Eindrucks\neines Augenblicks aufgelöst. Er malt nicht das Bleibende, sondern das Vorübergehende, so sind seine Porträts keine Insze-\nnierungen gesellschaftlicher Rollen.\n\nDas Bild Frau Helen Lewin zeigt eine Frau aufrechtstehend in\nruhiger Pose. Die Dargestellte ist im Viertelprofil als Kniestück\nzu sehen, ihr Blick geht leicht an dem Betrachter vorbei, was\ndem Bild eine gewisse Zurückhaltung und Intimität verleiht.\nSlevogt setzt auf helle, pastellige Farbtöne, die die Figur fast\nschwerelos im Raum erscheinen lassen. Kleidung und Raum\ngehen ineinander über, ohne scharfe Abgrenzungen. Der breite, lebendige Pinselstrich bringt Bewegung ins Bild und lässt\ndie Oberfläche lebendig vibrieren. Das Porträt Frau Helen Lewin\nsteht exemplarisch für Slevogts Verständnis von Kunst als freiem Ausdruck subjektiven Erlebens - jenseits von Konvention,\nIdeal oder Repräsentation, im Sinne einer Kunst, die der Freiheit des Blicks und der Offenheit des Moments verpflichtet ist.",
       "images": [
@@ -53,8 +53,8 @@
       ],
       "thumbnail": "media/images/thumb-3.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -62,9 +62,9 @@
       "number": "4",
       "title": "Zypressen in den Albaner Bergen",
       "artist": "Bernhard Pankok",
-      "artistBorn": 1872,
-      "artistDied": 1943,
-      "year": 1898,
+      "artistBorn": "1872",
+      "artistDied": "1943",
+      "year": "1898",
       "materials": "Öl auf Leinwand",
       "description": "",
       "images": [
@@ -72,8 +72,8 @@
       ],
       "thumbnail": "media/images/thumb-4.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -81,9 +81,9 @@
       "number": "5",
       "title": "Gang nach Emmaus",
       "artist": "Fritz von Uhde",
-      "artistBorn": 1848,
-      "artistDied": 1911,
-      "year": 1897,
+      "artistBorn": "1848",
+      "artistDied": "1911",
+      "year": "1897",
       "materials": "Öl auf Holz",
       "description": "",
       "images": [
@@ -91,8 +91,8 @@
       ],
       "thumbnail": "media/images/thumb-5.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -100,9 +100,9 @@
       "number": "6",
       "title": "Schäfer mit weidenden Schafen",
       "artist": "Franz von Stuck",
-      "artistBorn": 1863,
-      "artistDied": 1928,
-      "year": 1890,
+      "artistBorn": "1863",
+      "artistDied": "1928",
+      "year": "1890",
       "materials": "Öl auf Leinwand",
       "description": "",
       "images": [
@@ -110,8 +110,8 @@
       ],
       "thumbnail": "media/images/thumb-6.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -119,9 +119,9 @@
       "number": "7",
       "title": "Prof. Dr. Theodor Gomperz",
       "artist": "Franz von Lenbach",
-      "artistBorn": 1836,
-      "artistDied": 1904,
-      "year": 1900,
+      "artistBorn": "1836",
+      "artistDied": "1904",
+      "year": "1900",
       "materials": "Öl auf Leinwand",
       "description": "Franz von Lenbach war einer der bedeutendsten Porträtmaler\nseiner Zeit und galt als Inbegriff des „Malerfürsten“. Aus einfachen Verhältnissen stammend, erlangte er durch Talent, stra-\ntegische Ehen und Selbstinszenierung gesellschaftliches\nAnsehen und Wohlstand. Nach dem Studium bei Carl’ von Piloty\nan der Münchner Kunstakademie reiste er nach Italien und\nSpanien, wo er alte Meister wie Rubens, Tizian und Veläzquez\nkopierte. Diese prägten sein Verständnis von Komposition,\nLicht und Farbe nachhaltig. Statt idealisierter Glätte wählte\nLenbach jedoch eine betont physiognomische Darstellung\nseiner Porträtierten. Oft inszenierte er deren gesellschaftlichen Status mit historisierenden Kostümen und verlieh ihnen\nso repräsentative Würde und eine symbolische Adelung. In\nseinem öffentlich zugänglichen Münchener Schauatelier, dem\nheutigen Lenbachhaus, inszenierte er sich gezielt als Gesellschaftsmaler.\n\nDas Porträt von Prof. Dr. Theodor Gomperz gehört zu Lenbachs\nSpätwerk. Die Figur hebt sich aus einem dunklen Hintergrund\nhervor, angelehnt an die Hell-Dunkel-Malerei im Stil der Alten\nMeister. Während das Gesicht fein ausgearbeitet ist, bleiben\nRandbereiche skizzenhaft. Der transparente Farbauftrag verleiht dem Bild eine bewusste Unfertigkeit. Zwar nutzte Lenbach\nfotografische Vorstudien, doch hielt er konsequent an der\ntraditionellen Malerei fest. In einer Zeit des künstlerischen\nUmbruchs, in der viele Künstler zu einem freieren Verständnis\nvon Kunst und Bild gelangten, hielt Lenbach an der Malerei als\nbeständiger Form der Repräsentation fest, als ein bewusster\nRückgriff auf die Tradition großer Meister und Ausdruck seines\nAnspruchs, künstlerische Autorität des Bildes zu bewahren.",
       "images": [
@@ -129,8 +129,8 @@
       ],
       "thumbnail": "media/images/thumb-7.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -138,9 +138,9 @@
       "number": "8",
       "title": "Mädchenbildnis, um",
       "artist": "Hugo Freiherr von Habermann der Ältere",
-      "artistBorn": 1849,
-      "artistDied": 1929,
-      "year": 1890,
+      "artistBorn": "1849",
+      "artistDied": "1929",
+      "year": "1890",
       "materials": "Öl auf Leinwand und Pappe",
       "description": "",
       "images": [
@@ -148,8 +148,8 @@
       ],
       "thumbnail": "media/images/thumb-8.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -157,9 +157,9 @@
       "number": "9",
       "title": "Zwischen den Gartenmauern von Sorrent",
       "artist": "Hans Thoma",
-      "artistBorn": 1839,
-      "artistDied": 1924,
-      "year": 1882,
+      "artistBorn": "1839",
+      "artistDied": "1924",
+      "year": "1882",
       "materials": "Öl auf Leinwand",
       "description": "Hans Thoma, im Schwarzwald geboren und zeitlebens seiner\nsüddeutschen Heimat verbunden, zählt zu den Vertretern des\ndeutschen Realismus. In der Zeit des industriellen Aufbruchs\nund der akademisch geprägten Historienmalerei wandte er\nsich bewusst der heimischen Natur zu. Seine Werke verzichten\nauf heroische Gesten und dramatische Inszenierungen. Sie\nsind keine Bühne für Heldentum, sondern Räume stiller Empfindsamkeit und persönlicher Betrachtung. Thoma malte in\ndirekter Anschauung und mit einem unverstellten Blick das,\nwas er sah und fühlte, stets im Einklang mit der Natur. Er setzte\nneue Sehgewohnheiten um, die das Alltägliche und Nahbare\nins Zentrum seiner Kunst rückten, rein und unbelastet von abgelebten motivischen Szenen. Mit diesem Ansatz stellte er sich\ngegen ein Bildungsbürgertum, das sich lieber an antikisierenden Posen und abgelebten Idealen festhielt. Freiheit zeigt sich\nbei Thoma nicht als revolutionäre Geste, sondern bedeutete\nfür ihn das Eigene zu sehen, das Unscheinbare zu würdigen,\njenseits von Mode, Norm und historischer Aufladung.\n\nSein Gemälde Zwischen den Gartenmauern von Sorrent,\nentstanden während einer Italienreise 1882, bringt diesen Anspruch exemplarisch zum Ausdruck: keine dramatische Szene,\nkeine symbolische Überhöhung - vielmehr eine stille, intime\nSzene. Der Blick führt entlang heller Gartenmauern, flankiert\nvon sanftem Grün. Warmes Licht liegt auf einer engen Gasse,\ndurch die eine Frau mit einem Esel dahinschreitet. Das Hochformat betont die Enge des Weges und lenkt den Blick in die\nTiefe. Die Szene wirkt nicht fremd oder exotisch, sondern vertraut - fast heimatlich. Es ist ein deutscher Blick auf den Süden.\n\n—",
       "images": [
@@ -167,8 +167,8 @@
       ],
       "thumbnail": "media/images/thumb-9.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -176,9 +176,9 @@
       "number": "10",
       "title": "Garmisch-Partenkirchen mit Kramer im Frühjahr",
       "artist": "Maria Caspar-Filser",
-      "artistBorn": 1878,
-      "artistDied": 1968,
-      "year": 1913,
+      "artistBorn": "1878",
+      "artistDied": "1968",
+      "year": "1913",
       "materials": "Öl auf Leinwand",
       "description": "Maria Caspar-Filser war eine zentrale Figur der süddeutschen\nModerne. Sie erhielt als erste Frau eine Kunstprofessur in\nDeutschland und wurde 1927 in den Vorstand des Deutschen\nKünstlerbundes gewählt. Ihre Kunst bewegt sich zwischen\nImpressionismus und Expressionismus, bleibt jedoch stets den\nDingen verbunden. Caspar-Filser verstand Farbe und Form\nnicht als Mittel bloßer Naturwiedergabe, sondern als Ausdruck\ninneren Erlebens und kompositorischer Auseinandersetzung.\nSie gewichtete die autonome Farbkomposition des Bildes über\neiner Erscheinung der Dinge. Caspar-Filsers Werk bleibt ein\nkraftvolles Bekenntnis zur Freiheit künstlerischer Gestaltung —\nzwischen Ordnung und Auflösung, zwischen Naturbild und\nBildnatur.\n\nIn ihrem Werk Garmisch-Partenkirchen mit Kramer im Frühjahr\ndient die oberbayerische Landschaft als Ausgangspunkt einer\nbildimmanenten Ordnung aus Rhythmus, Farbe und Fläche.\nDer Gegenstand bleibt erkennbar, doch tritt seine farbliche\nund formale Gestaltung in den Vordergrund. Gerade an dieser\nSchwelle wird die malerische Struktur besonders sichtbar:\nLandschaftliche Details lösen sich in Farbschraffuren auf, Fläche\ndominiert über Form. Der Bildraum entsteht durch eine Staffelung der Fläche. Wie bei Cezanne wird die Natur nicht in die\nTiefe gefluchtet, sondern in die Höhe geschichtet. So entsteht\nein additiver, fast abstrakter Bildaufbau, dem sich äußere Natur\nund innere Empfindung durchdringen.",
       "images": [
@@ -186,8 +186,8 @@
       ],
       "thumbnail": "media/images/thumb-10.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -195,9 +195,9 @@
       "number": "11",
       "title": "Brücke über die Amper bei Dachau",
       "artist": "Adolf Hölzel",
-      "artistBorn": 1853,
-      "artistDied": 1934,
-      "year": 1905,
+      "artistBorn": "1853",
+      "artistDied": "1934",
+      "year": "1905",
       "materials": "Öl auf Leinwand",
       "description": "Adolf Hölzel war ein bedeutender deutscher Maler, Theoretiker\nund Pädagoge. Nach seinem Studium in Wien und München\ngründete er die „Neu-Dachauer Malschule”. 1905 wurde er\nProfessor an der Kunstakademie Stuttgart, wo er als Lehrer\neine ganze Generation von Künstlern prägte: darunter Oskar\nSchlemmer, Willi Baumeister, Johannes Itten und Ida Kerkovius.\nIm Zentrum seiner Lehre stand eine umfassende Harmonielehre, die sich mit den grundlegenden Gestaltungsprinzipien\nder Malerei befasste: Farbe, Form, Komposition und Rhythmus.\nBesonders mit seiner Farbtheorie schuf er neue Konzepte, wie\netwa den Simultankontrast, den Komplementärkontrast und\neinen eigenen Farbkreis. Anders als in früheren Kunsttheorien\nbetonte Hölzel die Autonomie der künstlerischen Mittel vom\ndargestellten Inhalt. Farbe, Linie und Fläche besitzen einen\nEigenwert, sie müssen sich nicht mehr unterordnen, sondern\ndürfen für sich selbst wirken. Ein zentrales Anliegen war ihm\ndie Flächigkeit des Bildes: die Zweidimensionalität der Leinwand sollte betont und nicht durch illusionistische Tiefe ver-\nschleiert werden. Dennoch war Hölzel das intuitive Empfinden\ndes Künstlers ebenso wichtig wie das theoretische Wissen.\n\nDas Gemälde Brücke über die Amper bei Dachau ist ein frühes\nWerk im Neuen Dachauer Stil. Die Komposition ist klar durch\nwaagrechte, senkrechte und diagonale Linien gegliedert. Hölzel\narbeitet mit einer nuancenreichen Grau-Palette und einer\nlockeren, impressionistischen Malweise. Nicht die Detailtreue\nsteht im Vordergrund, sondern die rhythmische Ordnung der\nFlächen und das harmonische Gesamterlebnis - ein früher\nAusdruck seines formalen Denkens.",
       "images": [
@@ -205,8 +205,8 @@
       ],
       "thumbnail": "media/images/thumb-11.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     },
     {
@@ -214,9 +214,9 @@
       "number": "12",
       "title": "Selbstbildnis, um",
       "artist": "Ida Kerkovius",
-      "artistBorn": 1879,
-      "artistDied": 1970,
-      "year": 1908,
+      "artistBorn": "1879",
+      "artistDied": "1970",
+      "year": "1908",
       "materials": "Öl auf Pappe",
       "description": "Ida Kerkovius war eine einflussreiche Malerin und Weberin der\nabstrakten Kunst. Sie erhielt ihre erste Ausbildung in Riga und\nstudierte später in Dachau bei Adolf Hölzel, der sie in Stuttgart\nzu seiner Meisterschülerin machte. Bildungsreisen führten sie\nunter anderem zum Bauhaus in Weimar. In einer Zeit begrenzter\nMöglichkeiten für Künstlerinnen behauptete Kerkovius selbstbewusst ihre gestalterische Freiheit, insbesondere durch ihren\neigenständigen Stil. Ida Kerkovius’ Handschrift verbindet geometrische Strukturen mit organischer Linienführung. Trotz der\nAbstraktion bleiben gegenständliche Bezüge erkennbar, eingebettet in leuchtende Farbkontraste und klare Konturen die\n\neine spannungsreiche Balance zwischen Fläche und Raum\nbilden.\n\nIn ihrem Selbstbildnis, aus der frühen Schaffensphase, ist das\nAbbild noch deutlich erkennbar. Doch bei genauerer Betrachtung offenbart sich bereits eine strukturelle Gliederung der\nFarbflächen. Die präzisen gesetzten Pinselstriche formen ein\nfeines geometrisches Muster, das Struktur und Bewegung\nzugleich erzeugt. Ihr Blick wendet sich nicht dem Betrachter\nzu, sondern richtet sich aus dem Bildraum hinaus in die Umgebung - ein Hinweis auf ihr tiefgehendes Interesse an der\n\nRaumaufteilung und dessen Zerlegung in rhythmische Farbund Formstrukturen.",
       "images": [
@@ -224,8 +224,8 @@
       ],
       "thumbnail": "media/images/thumb-12.jpg",
       "audio": {
-        "de": null,
-        "en": null
+        "de": "",
+        "en": ""
       }
     }
   ],

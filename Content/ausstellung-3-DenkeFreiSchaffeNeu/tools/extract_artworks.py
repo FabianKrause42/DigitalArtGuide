@@ -179,19 +179,23 @@ def main():
         # Save resized images
         _save_resized(img_path, out_full, out_thumb)
 
+        # Ensure all fields are strings (empty string for missing)
+        def s(v):
+            return "" if v is None else str(v)
+
         item = {
-            "id": f"artwork-{n}",
-            "number": str(n),
-            "title": title,
-            "artist": artist,
-            "artistBorn": born,
-            "artistDied": died,
-            "year": year,
-            "materials": materials,
-            "description": description,
-            "images": [str(out_full.relative_to(BASE)).replace('\\', '/')],
-            "thumbnail": str(out_thumb.relative_to(BASE)).replace('\\', '/'),
-            "audio": {"de": None, "en": None}
+            "id": s(f"artwork-{n}"),
+            "number": s(n),
+            "title": s(title),
+            "artist": s(artist),
+            "artistBorn": s(born),
+            "artistDied": s(died),
+            "year": s(year),
+            "materials": s(materials),
+            "description": s(description),
+            "images": [s(str(out_full.relative_to(BASE)).replace('\\', '/'))],
+            "thumbnail": s(str(out_thumb.relative_to(BASE)).replace('\\', '/')),
+            "audio": {"de": "", "en": ""}
         }
         items.append((n, item))
 
@@ -204,10 +208,10 @@ def main():
     # Add exhibition meta if present
     if exhibition_meta:
         payload["exhibition"] = {
-            "id": BASE.name,
-            "title": exhibition_meta.get("title"),
-            "date": exhibition_meta.get("date"),
-            "description": exhibition_meta.get("description"),
+            "id": str(BASE.name),
+            "title": str(exhibition_meta.get("title") or ""),
+            "date": str(exhibition_meta.get("date") or ""),
+            "description": str(exhibition_meta.get("description") or ""),
         }
 
     ARTWORKS_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
