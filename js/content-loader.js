@@ -159,25 +159,6 @@ class ContentLoader {
           void newScreen.offsetHeight; // forced reflow
           newScreen.classList.add('active');
 
-          // Debug: Log Klassen und Transitionstart
-          try {
-            console.log('Transition start:', {
-              id: newScreen.id,
-              classes: newScreen.className,
-              styleTransform: getComputedStyle(newScreen).transform,
-              styleOpacity: getComputedStyle(newScreen).opacity
-            });
-            newScreen.addEventListener('transitionend', (e) => {
-              if (e.propertyName === 'transform' || e.propertyName === 'opacity') {
-                console.log('Transition end:', {
-                  id: newScreen.id,
-                  property: e.propertyName,
-                  classes: newScreen.className
-                });
-              }
-            }, { once: true });
-          } catch (err) {}
-
           // Tab-Button Status aktualisieren
           this.updateTabButtons(screenName);
           
@@ -290,6 +271,8 @@ class ContentLoader {
           });
         });
       }
+      // Right-Swipe zurück zu Home auf Scanner-Seite
+      this.setupScanBackSwipe();
     } else if (screenName === 'home') {
       // Dynamischer Ausstellungs-Slider
       if (typeof ExhibitionSliderController !== 'undefined') {
@@ -304,6 +287,53 @@ class ContentLoader {
       // Exhibition Back-Swipe aktivieren
       this.setupExhibitionBackSwipe();
     }
+  }
+
+  /**
+   * Aktiviert Right-Swipe auf der aktiven Scanner-Seite, um zur Home-Seite zu wechseln
+   */
+  setupScanBackSwipe() {
+    const screenElement = document.querySelector('.screen.active');
+    if (!screenElement) return;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const onTouchStart = (e) => {
+      const t = e.touches[0];
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+    };
+    const onTouchMove = (e) => {
+      const t = e.touches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        e.preventDefault();
+      }
+    };
+    const onTouchEnd = (e) => {
+      const t = e.changedTouches[0];
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      if (dx > 80 && Math.abs(dx) > Math.abs(dy)) {
+        this.loadScreen('home');
+      }
+    };
+
+    // Entferne evtl. alte Listener (falls mehrfach init)
+    screenElement.removeEventListener('touchstart', screenElement._scanTouchStart || (()=>{}));
+    screenElement.removeEventListener('touchmove', screenElement._scanTouchMove || (()=>{}));
+    screenElement.removeEventListener('touchend', screenElement._scanTouchEnd || (()=>{}));
+
+    // Speichere Referenzen auf Element, um später entfernen zu können
+    screenElement._scanTouchStart = onTouchStart;
+    screenElement._scanTouchMove = onTouchMove;
+    screenElement._scanTouchEnd = onTouchEnd;
+
+    screenElement.addEventListener('touchstart', onTouchStart, { passive: true });
+    screenElement.addEventListener('touchmove', onTouchMove, { passive: false });
+    screenElement.addEventListener('touchend', onTouchEnd, { passive: true });
   }
 
   /**
