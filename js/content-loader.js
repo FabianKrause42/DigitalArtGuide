@@ -154,10 +154,30 @@ class ContentLoader {
         this.currentScreen = screenName;
 
         // Neue Screen aktivieren (triggert CSS-Animation)
-        // requestAnimationFrame stellt sicher dass DOM-Insert fertig ist
+        // Erzwinge Reflow (Android/WebView) bevor 'active' gesetzt wird
         requestAnimationFrame(() => {
+          void newScreen.offsetHeight; // forced reflow
           newScreen.classList.add('active');
-          
+
+          // Debug: Log Klassen und Transitionstart
+          try {
+            console.log('Transition start:', {
+              id: newScreen.id,
+              classes: newScreen.className,
+              styleTransform: getComputedStyle(newScreen).transform,
+              styleOpacity: getComputedStyle(newScreen).opacity
+            });
+            newScreen.addEventListener('transitionend', (e) => {
+              if (e.propertyName === 'transform' || e.propertyName === 'opacity') {
+                console.log('Transition end:', {
+                  id: newScreen.id,
+                  property: e.propertyName,
+                  classes: newScreen.className
+                });
+              }
+            }, { once: true });
+          } catch (err) {}
+
           // Tab-Button Status aktualisieren
           this.updateTabButtons(screenName);
           
