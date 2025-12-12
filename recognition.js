@@ -86,10 +86,10 @@ async function predictArtwork(imageOrCanvas) {
 
 async function startCamera() {
   try {
-    // Hole Elemente dynamisch (falls sie neu geladen wurden)
-    if (!videoEl) videoEl = document.getElementById('videoElement');
-    if (!canvasEl) canvasEl = document.getElementById('canvasElement');
-    if (!artworkText) artworkText = document.getElementById('artworkText');
+    // Hole Elemente IMMER neu (sie könnten aus dem DOM entfernt und neu eingefügt worden sein)
+    videoEl = document.getElementById('videoElement');
+    canvasEl = document.getElementById('canvasElement');
+    artworkText = document.getElementById('artworkText');
     
     if (!videoEl || !canvasEl) {
       console.error('❌ Video/Canvas Elemente nicht gefunden');
