@@ -104,6 +104,10 @@ async function startCamera() {
       video: { facingMode: 'environment' }, 
       audio: false 
     });
+    // Android/WebView Kompatibilität: Autoplay/Inline sicherstellen
+    videoEl.setAttribute('playsinline', 'true');
+    videoEl.setAttribute('autoplay', 'true');
+    videoEl.muted = true;
     videoEl.srcObject = stream;
     await new Promise(resolve => { 
       videoEl.onloadedmetadata = () => { 

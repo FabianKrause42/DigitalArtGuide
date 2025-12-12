@@ -166,6 +166,7 @@ class ContentLoader {
         });
 
         // Cleanup nach Animation (entferne alte Screen aus DOM)
+        // Dauer leicht über der CSS-Transition (350ms), um Android Timing-Issues zu vermeiden
         setTimeout(() => {
           if (currentScreenElement) {
             // Stoppe Kamera wenn Scan-Screen verlassen wird
@@ -176,7 +177,7 @@ class ContentLoader {
           }
           newScreen.classList.remove('enter-right', 'enter-left');
           this.isAnimating = false;
-        }, 300);
+        }, 400);
       })
       .catch(error => {
         console.error('ContentLoader Error:', error);
