@@ -115,32 +115,41 @@ body.exhibition-page {
   z-index: 10;
 }
 
+/* iOS-Style Slide Transitions: Alte und neue Seite gleiten gleichzeitig */
+
+/* Exit-Animationen: Alte Seite gleitet mit (keine opacity-Änderung) */
 .screen.exit-left {
-  transform: translateX(-100%); /* Exit: nach links */
-  opacity: 0;
+  transform: translateX(-30%); /* Alte Seite: leicht nach links (nicht komplett raus) */
+  opacity: 1; /* Bleibt sichtbar */
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 9; /* Unter der neuen Seite */
 }
 
 .screen.exit-right {
-  transform: translateX(100%); /* Exit zur Home: nach rechts */
-  opacity: 0;
+  transform: translateX(0); /* Alte Seite: bleibt an Ort (wird überdeckt) */
+  opacity: 1;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 9;
 }
 
-/* Eintritts-Animationen */
+/* Eintritts-Animationen: Neue Seite schiebt sich drüber */
 .screen.enter-right {
-  transform: translateX(100%); /* Start von rechts */
-  opacity: 0;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transform: translateX(100%); /* Start komplett rechts außerhalb */
+  opacity: 1; /* Volle Sichtbarkeit (kein Fade) */
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10; /* Über der alten Seite */
 }
 
 .screen.enter-right.active {
-  transform: translateX(0);
+  transform: translateX(0); /* Gleitet zu finaler Position */
   opacity: 1;
 }
 
 .screen.enter-left {
-  transform: translateX(-100%); /* Start von links */
-  opacity: 0;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transform: translateX(-100%); /* Start komplett links außerhalb (zurück-Navigation) */
+  opacity: 1;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
 }
 
 .screen.enter-left.active {
