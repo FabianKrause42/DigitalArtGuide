@@ -260,9 +260,14 @@ class ContentLoader {
    */
   reinitializeScreenFeatures(screenName) {
     if (screenName === 'scan') {
-      // Kamera starten
+      // Kamera starten - warte bis DOM bereit ist
       if (window.CameraController) {
-        window.CameraController.start();
+        // requestAnimationFrame stellt sicher, dass Video-Element im DOM ist
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            window.CameraController.start();
+          });
+        });
       }
     } else if (screenName === 'home') {
       // Dynamischer Ausstellungs-Slider

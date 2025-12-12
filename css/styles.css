@@ -99,18 +99,22 @@ body.exhibition-page {
   flex-direction: column;
   background: #F2F2F2;
   opacity: 0;
-  transform: translateX(100%); /* Start: von rechts */
+  transform: translateX(100%) translateZ(0); /* Hardware-Acceleration für Android */
   transition: transform 0.3s ease-out;
   pointer-events: none;
   overflow-y: auto;
   overscroll-behavior: contain;
   padding-top: 20px;
   box-sizing: border-box;
+  will-change: transform; /* Android-Hint */
+  -webkit-transform: translateX(100%) translateZ(0);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 
 .screen.active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) translateZ(0);
+  -webkit-transform: translateX(0) translateZ(0);
   pointer-events: all;
   z-index: 10;
 }
@@ -119,41 +123,51 @@ body.exhibition-page {
 
 /* Exit-Animationen: Alte Seite gleitet mit (keine opacity-Änderung) */
 .screen.exit-left {
-  transform: translateX(-30%); /* Alte Seite: leicht nach links (nicht komplett raus) */
-  opacity: 1; /* Bleibt sichtbar */
+  transform: translateX(-30%) translateZ(0);
+  -webkit-transform: translateX(-30%) translateZ(0);
+  opacity: 1;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 9; /* Unter der neuen Seite */
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 9;
 }
 
 .screen.exit-right {
-  transform: translateX(0); /* Alte Seite: bleibt an Ort (wird überdeckt) */
+  transform: translateX(0) translateZ(0);
+  -webkit-transform: translateX(0) translateZ(0);
   opacity: 1;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 9;
 }
 
 /* Eintritts-Animationen: Neue Seite schiebt sich drüber */
 .screen.enter-right {
-  transform: translateX(100%); /* Start komplett rechts außerhalb */
-  opacity: 1; /* Volle Sichtbarkeit (kein Fade) */
+  transform: translateX(100%) translateZ(0);
+  -webkit-transform: translateX(100%) translateZ(0);
+  opacity: 1;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 10; /* Über der alten Seite */
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
 }
 
 .screen.enter-right.active {
-  transform: translateX(0); /* Gleitet zu finaler Position */
+  transform: translateX(0) translateZ(0);
+  -webkit-transform: translateX(0) translateZ(0);
   opacity: 1;
 }
 
 .screen.enter-left {
-  transform: translateX(-100%); /* Start komplett links außerhalb (zurück-Navigation) */
+  transform: translateX(-100%) translateZ(0);
+  -webkit-transform: translateX(-100%) translateZ(0);
   opacity: 1;
   transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 10;
 }
 
 .screen.enter-left.active {
-  transform: translateX(0);
+  transform: translateX(0) translateZ(0);
+  -webkit-transform: translateX(0) translateZ(0);
   opacity: 1;
 }
 
