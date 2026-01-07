@@ -22,11 +22,13 @@ class ContentLoader {
     
     // Flag um mehrfache Animationen zu verhindern
     this.isAnimating = false;
+    this.numberInputController = null;
     
     // Mapping: Screen-Namen zu ihren Content-Dateien
     this.screenPaths = {
       home: 'screens/home.html',
       scan: 'screens/scanner.html',
+      number: 'screens/number.html',
       exhibition: 'screens/exhibitions/exhibition-.html', // ID wird hinzugefügt
       // Später erweiterbar: map, about, etc.
     };
@@ -281,6 +283,17 @@ class ContentLoader {
           window.exhibitionSliderController.init();
         } catch (error) {
           console.error('❌ Slider Init Error:', error);
+        }
+      }
+    } else if (screenName === 'number') {
+      if (typeof NumberInputController !== 'undefined') {
+        try {
+          if (!this.numberInputController) {
+            this.numberInputController = new NumberInputController();
+          }
+          this.numberInputController.init();
+        } catch (error) {
+          console.error('❌ Number Input Init Error:', error);
         }
       }
     } else if (screenName.startsWith('exhibition')) {

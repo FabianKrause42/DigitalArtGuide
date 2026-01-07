@@ -1,6 +1,6 @@
 {
   "name": "Galerie Stadt Sindelfingen",
-  "short_name": "Galerie Sifi",
+  "short_name": "GalerieSindelfingen",
   "description": "Digitaler Ausstellungsguide für die Galerie Stadt Sindelfingen",
   "start_url": "/index.html",
   "display": "standalone",
