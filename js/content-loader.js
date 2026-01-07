@@ -29,6 +29,7 @@ class ContentLoader {
       home: 'screens/home.html',
       scan: 'screens/scanner.html',
       number: 'screens/number.html',
+      map: 'screens/lageplan.html',
       exhibition: 'screens/exhibitions/exhibition-.html', // ID wird hinzugefügt
       // Später erweiterbar: map, about, etc.
     };

@@ -1,8 +1,22 @@
 <!-- NUMBER SCREEN CONTENT -->
 <div class="app-shell number-screen">
   <div class="number-shell">
-    <div class="number-results">
-      <h2 class="number-heading">Exponat-Nummer eingeben</h2>
+    <div class="number-results" id="number-results" data-has-result="false">
+      <div class="number-state number-state-empty" data-number-state="empty">
+        <h2 class="number-heading" id="number-heading" data-number-placeholder>Exponat-Nummer eingeben</h2>
+      </div>
+
+      <div class="number-state number-state-found" data-number-state="found" hidden>
+        <div class="number-result-item" id="number-result-item" hidden>
+          <div class="number-result-thumb">
+            <img src="" alt="" data-number-thumb>
+          </div>
+          <div class="number-result-copy">
+            <p class="number-result-artist" data-number-artist></p>
+            <p class="number-result-title" data-number-title></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="number-display number-display-empty" data-number-display aria-live="polite" aria-label="Eingegebene Exponatnummer">_ _ _</div>

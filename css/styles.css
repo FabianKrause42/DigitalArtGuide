@@ -603,6 +603,21 @@ body.exhibition-page {
   height: 22px;
 }
 
+/* ====== LAGEPLAN SCREEN ====== */
+.lageplan-screen {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 83px 5px 120px 6px;
+}
+
+.lageplan-screen img {
+  width: 329px;
+  height: 508px;
+  display: block;
+  object-fit: contain;
+}
+
 /* Responsive Adjustments */
 @media (min-width: 480px) {
   .slider-container {
@@ -693,5 +708,15 @@ body.exhibition-page {
   .burger-menu {
     width: 40px;
     height: 40px;
+  }
+
+  .lageplan-screen {
+    max-width: 400px;
+    padding: 96px 12px 140px;
+  }
+
+  .lageplan-screen img {
+    width: 360px;
+    height: 556px;
   }
 }
