@@ -384,6 +384,7 @@ body.exhibition-page {
   line-height: 1.2;
   margin: 32px auto 24px;
   padding: 0 clamp(12px, 2vw, 16px);
+  transform: translateY(5vh);
 }
 
 .camera-box {
@@ -397,6 +398,7 @@ body.exhibition-page {
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateY(5vh);
 }
 
 #videoElement {
@@ -415,6 +417,7 @@ body.exhibition-page {
   margin: 0 auto;
   text-align: center;
   min-height: 40px;
+  transform: translateY(5vh);
 }
 
 .artwork-text {
@@ -439,7 +442,7 @@ body.exhibition-page {
 
 .number-results-heading {
   position: absolute;
-  top: -22px;
+  top: 20px;
   left: 0px;
   font-size: 16px;
   font-weight: 350;
@@ -481,6 +484,7 @@ body.exhibition-page {
   height: 113px;
   padding: 0;
   position: relative;
+  transform: translateY(5vh);
 }
 
 .number-state {
