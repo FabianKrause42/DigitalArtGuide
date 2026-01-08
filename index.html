@@ -8,9 +8,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" sizes="192x192" href="/images/icons/logo-192.png">
   <meta name="theme-color" content="#F2F2F2">
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json?v=20260108.1203">
   <title>Galerie Stadt Sindelfingen</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20260108.1203">
 </head>
 <body>
   <!-- Zentrale Tab-Navigation (nicht animiert) -->
@@ -43,16 +43,16 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0"></script>
   
   <!-- Navigation: ImageSliderController Klasse (muss VOR content-loader geladen werden) -->
-  <script src="js/navigation.js?v=7"></script>
+  <script src="js/navigation.js?v=20260108.1203"></script>
   
   <!-- Number Input Controller -->
-  <script src="js/number-input.js?v=1"></script>
+  <script src="js/number-input.js?v=20260108.1203"></script>
   
   <!-- Content Loader: Lädt Screens dynamisch und handhabt Animationen -->
-  <script src="js/content-loader.js?v=7"></script>
+  <script src="js/content-loader.js?v=20260108.1203"></script>
   
   <!-- ML Kunstwerk-Erkennung -->
-  <script src="recognition.js?v=7"></script>
+  <script src="recognition.js?v=20260108.1203"></script>
 
   <!-- Service Worker Registrierung für PWA -->
   <script>
@@ -60,8 +60,30 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js').then((registration) => {
           console.log('Service Worker registriert:', registration);
+          
+          // Prüfe auf Updates alle 60 Sekunden
+          setInterval(() => {
+            registration.update();
+          }, 60000);
+          
+          // Wenn neuer Service Worker wartet, aktiviere ihn sofort
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'activated' && navigator.serviceWorker.controller) {
+                console.log('Neue Version verfügbar - Seite wird neu geladen...');
+                window.location.reload();
+              }
+            });
+          });
         }).catch((error) => {
           console.error('Service Worker Registrierung fehlgeschlagen:', error);
+        });
+        
+        // Listener für Controller-Wechsel (neuer SW übernimmt)
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          console.log('Service Worker aktualisiert - Seite wird neu geladen');
+          window.location.reload();
         });
       });
     }

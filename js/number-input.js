@@ -141,10 +141,7 @@ class NumberInputController {
     if (this.emptyState) this.emptyState.hidden = false;
     if (this.foundState) this.foundState.hidden = true;
     if (this.placeholder) this.placeholder.hidden = false;
-    if (this.resultsHeading) {
-      console.log('🔴 Hiding heading');
-      this.resultsHeading.classList.remove('visible');
-    }
+    if (this.resultsHeading) this.resultsHeading.classList.remove('visible');
     this.resultItem.hidden = true;
   }
 
@@ -159,10 +156,7 @@ class NumberInputController {
     this.resultTitle.textContent = artwork.title || '';
     if (this.emptyState) this.emptyState.hidden = true;
     if (this.foundState) this.foundState.hidden = false;
-    if (this.resultsHeading) {
-      console.log('🟢 Showing heading');
-      this.resultsHeading.classList.add('visible');
-    }
+    if (this.resultsHeading) this.resultsHeading.classList.add('visible');
     this.resultItem.hidden = false;
     this.resultsContainer.dataset.hasResult = 'true';
   }

@@ -1,5 +1,6 @@
 // Service Worker für Offline-Unterstützung und Caching
-const CACHE_NAME = 'galerie-sifi-v1';
+const CACHE_VERSION = '20260108.1203';
+const CACHE_NAME = `galerie-sifi-v${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -30,7 +31,7 @@ const STATIC_ASSETS = [
 
 // Installation: Caching von statischen Assets
 self.addEventListener('install', (event) => {
-  console.log('Service Worker installing...');
+  console.log('Service Worker installing... Version:', CACHE_VERSION);
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('Caching static assets');
@@ -39,6 +40,7 @@ self.addEventListener('install', (event) => {
       console.warn('Cache installation error:', err);
     })
   );
+  // Sofort aktivieren ohne auf alte Tabs zu warten
   self.skipWaiting();
 });
 
