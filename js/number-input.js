@@ -11,6 +11,7 @@ class NumberInputController {
     this.artworksAssetsBase = 'Content/ausstellung-3-DenkeFreiSchaffeNeu/';
     this.artworksPromise = null;
     this.resultsContainer = null;
+    this.resultsHeading = null;
     this.placeholder = null;
     this.emptyState = null;
     this.foundState = null;
@@ -31,6 +32,7 @@ class NumberInputController {
     this.deleteButton = this.container.querySelector('[data-action="delete"]');
     this.enterButton = this.container.querySelector('[data-action="enter"]');
     this.resultsContainer = this.container.querySelector('#number-results');
+    this.resultsHeading = this.container.querySelector('#number-results-heading');
     this.placeholder = this.container.querySelector('[data-number-placeholder]');
     this.emptyState = this.container.querySelector('[data-number-state="empty"]');
     this.foundState = this.container.querySelector('[data-number-state="found"]');
@@ -139,6 +141,10 @@ class NumberInputController {
     if (this.emptyState) this.emptyState.hidden = false;
     if (this.foundState) this.foundState.hidden = true;
     if (this.placeholder) this.placeholder.hidden = false;
+    if (this.resultsHeading) {
+      console.log('🔴 Hiding heading');
+      this.resultsHeading.classList.remove('visible');
+    }
     this.resultItem.hidden = true;
   }
 
@@ -153,6 +159,10 @@ class NumberInputController {
     this.resultTitle.textContent = artwork.title || '';
     if (this.emptyState) this.emptyState.hidden = true;
     if (this.foundState) this.foundState.hidden = false;
+    if (this.resultsHeading) {
+      console.log('🟢 Showing heading');
+      this.resultsHeading.classList.add('visible');
+    }
     this.resultItem.hidden = false;
     this.resultsContainer.dataset.hasResult = 'true';
   }
