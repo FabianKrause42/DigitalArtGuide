@@ -432,12 +432,15 @@ body.exhibition-page {
 
 .number-screen {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 114px clamp(16px, 5vw, 32px) 100px;
   transform: translateY(-5vh);
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: pan-x pan-y;
 }
 
 .number-results-heading {

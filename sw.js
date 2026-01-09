@@ -1,5 +1,5 @@
 // Service Worker für Offline-Unterstützung und Caching
-const CACHE_VERSION = '20260108.1249';
+const CACHE_VERSION = '20260109.0841';
 const CACHE_NAME = `galerie-sifi-v${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   '/',
