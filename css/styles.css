@@ -41,11 +41,40 @@ body {
 body.exhibition-page {
   overflow-y: auto;
   height: auto;
+  background: #FAFAFA;
 }
 
-.exhibition-shell {
+/* New Exhibition Container Design */
+.exhibition-container {
   width: 100%;
-  padding: 0 clamp(8px, 3vw, 24px) 110px; /* Responsive Padding wie app-shell */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FAFAFA;
+}
+
+.exhibition-cover {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.exhibition-cover img {
+  width: 100%;
+  height: auto;
+  min-height: 214px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.exhibition-content {
+  flex: 1;
+  padding: 0 clamp(8px, 1.5vw, 12px);
+  padding-bottom: 110px;
 }
 
 .exh-title {
@@ -54,16 +83,14 @@ body.exhibition-page {
   color: #151515;
   line-height: 1.15;
   margin: 28px 0 12px;
-  padding: 0 clamp(8px, 1.5vw, 12px);
 }
 
 .exh-artists {
   font-size: 18px;
   font-weight: 350;
-  color: #151515;
+  color: #656565;
   line-height: 1.2;
   margin: 0 0 12px;
-  padding: 0 clamp(8px, 1.5vw, 12px);
 }
 
 .exh-date {
@@ -72,7 +99,56 @@ body.exhibition-page {
   color: #151515;
   line-height: 1.2;
   margin: 0 0 24px;
-  padding: 0 clamp(8px, 1.5vw, 12px);
+}
+
+.exh-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 52px;
+  border: 1px solid #151515;
+  border-radius: 3px;
+  background: transparent;
+  text-decoration: none;
+  margin-bottom: 24px;
+  padding: 0;
+  gap: 0;
+}
+
+.exh-button-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.exh-button-text {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 350;
+  color: #151515;
+  line-height: 1.2;
+  margin-right: 50px;
+}
+
+.exh-description {
+  width: 100%;
+}
+
+.exh-description p {
+  font-size: 16px;
+  font-weight: 350;
+  color: #222222;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+/* Old Exhibition Shell Design (fallback) */
+.exhibition-shell {
+  width: 100%;
+  padding: 0 clamp(8px, 3vw, 24px) 110px;
 }
 
 .exh-body p {
