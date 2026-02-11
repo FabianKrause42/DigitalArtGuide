@@ -533,6 +533,10 @@ body.exhibition-page .screen {
   touch-action: pan-x pan-y;
 }
 
+body.display-browser .number-screen {
+  transform: translateY(-15vh);
+}
+
 .number-results-heading {
   position: absolute;
   top: 20px;

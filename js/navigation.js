@@ -383,6 +383,16 @@ class ExhibitionSliderController {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+  const setDisplayModeClass = () => {
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    document.body.classList.toggle('display-standalone', isStandalone);
+    document.body.classList.toggle('display-browser', !isStandalone);
+  };
+
+  setDisplayModeClass();
+  const displayModeQuery = window.matchMedia('(display-mode: standalone)');
+  displayModeQuery.addEventListener('change', setDisplayModeClass);
+
   // NavigationController deprecated - content-loader übernimmt
   // ImageSliderController wird vom content-loader initialisiert
 
