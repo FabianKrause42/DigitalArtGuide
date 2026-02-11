@@ -98,7 +98,7 @@ class ContentLoader {
     }
 
     this.isAnimating = true;
-    const filePath = `screens/exhibitions/exhibition-${exhibitionId}.html`;
+    const filePath = `Content/ausstellung-${exhibitionId}-${this.getExhibitionSlug(exhibitionId)}/exhibition${exhibitionId}.html`;
     const screenName = `exhibition${exhibitionId}`;
 
     // Exhibitions-Seiten kommen von rechts (neue Page)
@@ -108,6 +108,18 @@ class ContentLoader {
     
     // Update URL
     history.pushState({ screen: screenName }, '', `?view=exhibition&id=${exhibitionId}`);
+  }
+
+  /**
+   * Hole den Slug für eine Exhibition ID
+   */
+  getExhibitionSlug(exhibitionId) {
+    const slugs = {
+      1: 'OfOtherPlaces',
+      2: 'VesselsOfUnbecoming',
+      3: 'DenkeFreiSchaffeNeu'
+    };
+    return slugs[exhibitionId] || '';
   }
 
   /**
@@ -132,6 +144,10 @@ class ContentLoader {
         newScreen.className = 'screen';
         newScreen.id = screenName;
         newScreen.innerHTML = html;
+
+        if (screenName.startsWith('exhibition')) {
+          newScreen.classList.add('exhibition-screen');
+        }
 
         // Bestimme Eintritts-Animation basierend auf Richtung
         if (!isBackToHome) {
