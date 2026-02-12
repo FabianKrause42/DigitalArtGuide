@@ -1,5 +1,5 @@
 // Service Worker für Offline-Unterstützung und Caching
-const CACHE_VERSION = '20260211.1712';
+const CACHE_VERSION = '20260212.0900';
 const CACHE_NAME = `galerie-sifi-v${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   '/',
@@ -24,9 +24,9 @@ const STATIC_ASSETS = [
   '/fonts/TWKLausanne-350.ttf',
   '/screens/home.html',
   '/screens/scanner.html',
-  '/screens/exhibitions/exhibition-1.html',
-  '/screens/exhibitions/exhibition-2.html',
-  '/screens/exhibitions/exhibition-3.html'
+  '/Content/ausstellung-1-OfOtherPlaces/exhibition1.html',
+  '/Content/ausstellung-2-VesselsOfUnbecoming/exhibition2.html',
+  '/Content/ausstellung-3-DenkeFreiSchaffeNeu/exhibition3.html'
 ];
 
 // Installation: Caching von statischen Assets

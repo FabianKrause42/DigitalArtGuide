@@ -384,14 +384,17 @@ class ExhibitionSliderController {
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   const setDisplayModeClass = () => {
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-    document.body.classList.toggle('display-standalone', isStandalone);
-    document.body.classList.toggle('display-browser', !isStandalone);
+    // Höhenbasierte Detection: Browser zeigt Adressleiste, reduziert verfügbare Höhe
+    // Bei < 700px gehen wir von Browser-Modus aus
+    const availableHeight = window.innerHeight;
+    const isBrowserMode = availableHeight < 700;
+    document.body.classList.toggle('display-browser', isBrowserMode);
+    document.body.classList.toggle('display-standalone', !isBrowserMode);
   };
 
   setDisplayModeClass();
-  const displayModeQuery = window.matchMedia('(display-mode: standalone)');
-  displayModeQuery.addEventListener('change', setDisplayModeClass);
+  // Bei Größenänderung (z.B. Rotation) neu prüfen
+  window.addEventListener('resize', setDisplayModeClass);
 
   // NavigationController deprecated - content-loader übernimmt
   // ImageSliderController wird vom content-loader initialisiert

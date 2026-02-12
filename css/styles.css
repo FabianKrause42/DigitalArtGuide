@@ -537,6 +537,10 @@ body.display-browser .number-screen {
   transform: translateY(-15vh);
 }
 
+body.display-browser .lageplan-screen {
+  transform: translateY(-20vh);
+}
+
 .number-results-heading {
   position: absolute;
   top: 20px;
