@@ -281,7 +281,7 @@ body.exhibition-page .screen {
   display: flex;
   justify-content: space-between;
   align-items: flex-start; /* Logo-Oberkante bündig mit Menü-Button */
-  padding: 24px clamp(8px, 2vw, 16px) 12px;
+  padding: 8px clamp(8px, 2vw, 16px) 12px;
   position: relative;
   z-index: 10;
   margin-bottom: 20px; /* mehr Abstand vor der Sektion */
@@ -533,12 +533,16 @@ body.exhibition-page .screen {
   touch-action: pan-x pan-y;
 }
 
-body.display-browser .number-screen {
+body.display-browser .app-shell:has(.scan-title) {
   transform: translateY(-15vh);
 }
 
+body.display-browser .number-screen {
+  transform: translateY(-25vh);
+}
+
 body.display-browser .lageplan-screen {
-  transform: translateY(-20vh);
+  transform: translateY(-10vh);
 }
 
 .number-results-heading {
