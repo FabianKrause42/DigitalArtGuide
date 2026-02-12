@@ -385,9 +385,9 @@ class ExhibitionSliderController {
 document.addEventListener('DOMContentLoaded', () => {
   const setDisplayModeClass = () => {
     // Höhenbasierte Detection: Browser zeigt Adressleiste, reduziert verfügbare Höhe
-    // Bei < 700px gehen wir von Browser-Modus aus
+    // Bei < 750px gehen wir von Browser-Modus aus
     const availableHeight = window.innerHeight;
-    const isBrowserMode = availableHeight < 700;
+    const isBrowserMode = availableHeight < 750;
     document.body.classList.toggle('display-browser', isBrowserMode);
     document.body.classList.toggle('display-standalone', !isBrowserMode);
   };
