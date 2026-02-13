@@ -6,8 +6,8 @@
   },
   "artworks": [
     {
-      "id": "001",
-      "number": "01",
+      "id": "101",
+      "number": "11",
       "title": "Refraction I",
       "artist": "Max Beispiel",
       "artistBorn": 1985,
@@ -16,18 +16,17 @@
       "materials": "Glas, LED-Licht, Stahl",
       "description": "Ein abstraktes Werk, das sich mit der Brechung von Licht auseinandersetzt. Die Installation reagiert auf Bewegungen von Besuchern.",
       "images": [
-        "media/images/artwork-001-01.jpg",
-        "media/images/artwork-001-02.jpg"
+        "media/images/artwork-101-01.jpg"
       ],
-      "thumbnail": "media/images/thumb-001.jpg",
+      "thumbnail": "media/images/artwork-101-01.jpg",
       "audio": {
         "de": "media/audio/artwork-001-de.mp3",
         "en": null
       }
     },
     {
-      "id": "002",
-      "number": "02",
+      "id": "102",
+      "number": "12",
       "title": "Shadow Dance",
       "artist": "Elena Schatten",
       "artistBorn": 1978,
@@ -36,7 +35,7 @@
       "materials": "Acryl auf Leinwand, 120 x 80 cm",
       "description": "Eine farbenfrohe Erkundung von Licht und Schatten in der urbanen Umgebung.",
       "images": [
-        "media/images/artwork-002-01.jpg"
+        "media/images/artwork-202-01.jpg"
       ],
       "thumbnail": "media/images/thumb-002.jpg",
       "audio": {
@@ -45,8 +44,8 @@
       }
     },
     {
-      "id": "003",
-      "number": "03",
+      "id": "103",
+      "number": "13",
       "title": "Monochrome Serenity",
       "artist": "Hans Monochrom",
       "artistBorn": 1945,
@@ -55,9 +54,7 @@
       "materials": "Schwarzweiß-Fotografie",
       "description": "Ein klassisches Werk aus den 1990er Jahren, das die Schönheit von Kontrasten erforscht.",
       "images": [
-        "media/images/artwork-003-01.jpg",
-        "media/images/artwork-003-02.jpg",
-        "media/images/artwork-003-03.jpg"
+        "media/images/artwork-003-01.jpg"
       ],
       "thumbnail": "media/images/thumb-003.jpg",
       "audio": {

@@ -7,8 +7,6 @@ class NumberInputController {
     this.deleteButton = null;
     this.enterButton = null;
     this.currentDigits = [];
-    this.artworksPath = 'Content/ausstellung-3-DenkeFreiSchaffeNeu/artworks.json';
-    this.artworksAssetsBase = 'Content/ausstellung-3-DenkeFreiSchaffeNeu/';
     this.artworksPromise = null;
     this.resultsContainer = null;
     this.resultsHeading = null;
@@ -148,9 +146,13 @@ class NumberInputController {
   renderResult(artwork) {
     if (!this.resultThumb || !this.resultArtist || !this.resultTitle) return;
 
+    // Bilde vollständigen Pfad mit Exhibition-Slug
+    const exhibitionSlug = this.getExhibitionSlug(artwork.exhibitionId);
+    const artworksAssetsBase = `Content/ausstellung-${artwork.exhibitionId}-${exhibitionSlug}/`;
+    
     const thumbnailPath = artwork.thumbnail || '';
     const isAbsolute = /^https?:\/\//.test(thumbnailPath) || thumbnailPath.startsWith('/');
-    this.resultThumb.src = isAbsolute ? thumbnailPath : `${this.artworksAssetsBase}${thumbnailPath}`;
+    this.resultThumb.src = isAbsolute ? thumbnailPath : `${artworksAssetsBase}${thumbnailPath}`;
     this.resultThumb.alt = artwork.title || '';
     this.resultArtist.textContent = artwork.artist || '';
     this.resultTitle.textContent = artwork.title || '';
@@ -166,16 +168,7 @@ class NumberInputController {
 
     if (!this.artworksPromise) {
       this.isLoadingArtworks = true;
-      this.artworksPromise = fetch(this.artworksPath)
-        .then((response) => {
-          if (!response.ok) throw new Error('Artworks JSON konnte nicht geladen werden');
-          return response.json();
-        })
-        .then((data) => data.artworks || [])
-        .catch((error) => {
-          console.error('Fehler beim Laden der Artworks:', error);
-          return [];
-        })
+      this.artworksPromise = this.loadAllArtworksFromExhibitions()
         .finally(() => {
           this.isLoadingArtworks = false;
         });
@@ -183,6 +176,59 @@ class NumberInputController {
 
     this.artworksCache = await this.artworksPromise;
     return this.artworksCache;
+  }
+
+  /**
+   * Lade alle Artworks aus allen drei Ausstellungen und führe sie zusammen
+   */
+  async loadAllArtworksFromExhibitions() {
+    const exhibitions = [
+      { id: 1, slug: 'OfOtherPlaces' },
+      { id: 2, slug: 'VesselsOfUnbecoming' },
+      { id: 3, slug: 'DenkeFreiSchaffeNeu' }
+    ];
+
+    try {
+      // Lade alle drei JSONs parallel
+      const promises = exhibitions.map(({ id, slug }) =>
+        fetch(`Content/ausstellung-${id}-${slug}/artworks.json`)
+          .then(response => {
+            if (!response.ok) throw new Error(`Artworks JSON für Exhibition ${id} konnte nicht geladen werden`);
+            return response.json();
+          })
+          .then(data => {
+            // Füge exhibitionId zu jedem Artwork hinzu
+            const artworks = data.artworks || [];
+            return artworks.map(artwork => ({
+              ...artwork,
+              exhibitionId: id
+            }));
+          })
+          .catch(error => {
+            console.warn(`Fehler beim Laden von Exhibition ${id}:`, error);
+            return [];
+          })
+      );
+
+      const results = await Promise.all(promises);
+      // Alle Arrays zusammenführen
+      return results.flat();
+    } catch (error) {
+      console.error('Fehler beim Laden der Artworks:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Hole den Slug für eine Exhibition ID
+   */
+  getExhibitionSlug(exhibitionId) {
+    const slugs = {
+      1: 'OfOtherPlaces',
+      2: 'VesselsOfUnbecoming',
+      3: 'DenkeFreiSchaffeNeu'
+    };
+    return slugs[exhibitionId] || '';
   }
 
   toggleActionState(button, isActive, activeIcon, inactiveIcon) {

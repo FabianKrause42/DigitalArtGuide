@@ -84,7 +84,7 @@ body.exhibition-page .screen {
 .exhibition-content {
   flex: 1;
   padding: 0 clamp(8px, 1.5vw, 12px);
-  padding-bottom: 110px;
+  padding-bottom: 120px;
 }
 
 .exh-title {
@@ -539,7 +539,7 @@ body.display-browser .app-shell:has(.scan-title) {
 }
 
 body.display-browser .number-screen {
-  transform: translateY(-22vh);
+  transform: translateY(-18vh);
 }
 
 body.display-browser .lageplan-screen {
@@ -671,10 +671,16 @@ body.display-browser .exh-date {
   font-size: 18px;
   line-height: 25px;
   font-weight: 350;
-  color: #222222;
   margin: 0;
 }
 
+.number-result-artist {
+  color: #222222;
+}
+
+.number-result-title {
+  color: #787878;
+}
 .number-display {
   width: 287px;
   font-size: 40px;
@@ -812,6 +818,12 @@ body.display-browser .exh-date {
   border-bottom: 1px solid #C8C8C8;
   cursor: pointer;
   transition: opacity 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .artwork-item:hover {
@@ -867,7 +879,7 @@ body.display-browser .exh-date {
   display: flex;
   flex-direction: column;
   background: #F2F2F2;
-  padding: 0 0 90px;
+  padding: 0 0 120px;
   overflow-y: auto;
 }
 
@@ -943,7 +955,7 @@ body.display-browser .exh-date {
   font-weight: 350;
   color: #000000;
   line-height: 20px;
-  padding: 0 16px;
+  padding: 0 16px 20px;
   margin: 0;
   text-align: justify;
 }
