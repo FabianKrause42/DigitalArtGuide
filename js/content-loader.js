@@ -30,6 +30,7 @@ class ContentLoader {
       scan: 'screens/scanner.html',
       number: 'screens/number.html',
       map: 'screens/lageplan.html',
+      artworks: 'screens/artworks-list.html',
       exhibition: 'screens/exhibitions/exhibition-.html', // ID wird hinzugefügt
       // Später erweiterbar: map, about, etc.
     };
@@ -53,10 +54,13 @@ class ContentLoader {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
     const id = params.get('id') || null;
+    const exhibition = params.get('exhibition') || null;
 
     // Lade Exhibition mit ID, oder normalen Screen
     if (view === 'exhibition' && id) {
       this.loadExhibition(parseInt(id));
+    } else if (view === 'artworks' && exhibition) {
+      this.loadArtworksList(parseInt(exhibition));
     } else {
       this.loadScreen(view);
     }
@@ -90,8 +94,9 @@ class ContentLoader {
   /**
    * Lade eine Ausstellung mit ID
    * @param {number} exhibitionId - 1, 2, oder 3
+   * @param {boolean} isBackNavigation - true wenn zurück-Navigation von Artworks-Liste
    */
-  loadExhibition(exhibitionId) {
+  loadExhibition(exhibitionId, isBackNavigation = false) {
     if (exhibitionId < 1 || exhibitionId > 3) {
       console.error(`Exhibition ID ${exhibitionId} ungültig`);
       return;
@@ -101,8 +106,8 @@ class ContentLoader {
     const filePath = `Content/ausstellung-${exhibitionId}-${this.getExhibitionSlug(exhibitionId)}/exhibition${exhibitionId}.html`;
     const screenName = `exhibition${exhibitionId}`;
 
-    // Exhibitions-Seiten kommen von rechts (neue Page)
-    const isBackToHome = false;
+    // Bei Zurück-Navigation von links, sonst von rechts
+    const isBackToHome = isBackNavigation;
 
     this.loadContent(filePath, screenName, isBackToHome);
     
@@ -123,12 +128,36 @@ class ContentLoader {
   }
 
   /**
+   * Lade Artworks-Liste für eine Ausstellung
+   * @param {number} exhibitionId - 1, 2, oder 3
+   */
+  loadArtworksList(exhibitionId) {
+    if (exhibitionId < 1 || exhibitionId > 3) {
+      console.error(`Exhibition ID ${exhibitionId} ungültig`);
+      return;
+    }
+
+    this.isAnimating = true;
+    const filePath = 'screens/artworks-list.html';
+    const screenName = `artworks${exhibitionId}`;
+
+    // Artworks-Liste kommt von rechts (neue Page)
+    const isBackToHome = false;
+
+    this.loadContent(filePath, screenName, isBackToHome, { exhibitionId });
+    
+    // Update URL
+    history.pushState({ screen: screenName, exhibitionId }, '', `?view=artworks&exhibition=${exhibitionId}`);
+  }
+
+  /**
    * Lade Content per AJAX und triggere Animation
    * @param {string} filePath - Pfad zur HTML-Datei
    * @param {string} screenName - Name des Screens (für Referenz)
    * @param {boolean} isBackToHome - Animation nach links oder rechts?
+   * @param {Object} options - Zusätzliche Optionen (z.B. exhibitionId)
    */
-  loadContent(filePath, screenName, isBackToHome) {
+  loadContent(filePath, screenName, isBackToHome, options = {}) {
     this.isAnimating = true;
 
     const screenContainer = document.querySelector('.screens-container');
@@ -144,6 +173,11 @@ class ContentLoader {
         newScreen.className = 'screen';
         newScreen.id = screenName;
         newScreen.innerHTML = html;
+
+        // Speichere exhibitionId als data-attribute wenn vorhanden
+        if (options.exhibitionId) {
+          newScreen.dataset.exhibitionId = options.exhibitionId;
+        }
 
         if (screenName.startsWith('exhibition')) {
           newScreen.classList.add('exhibition-screen');
@@ -313,6 +347,22 @@ class ContentLoader {
           console.error('❌ Number Input Init Error:', error);
         }
       }
+    } else if (screenName.startsWith('artworks')) {
+      // Artworks List Controller initialisieren
+      if (typeof ArtworksListController !== 'undefined') {
+        try {
+          const screenElement = document.querySelector('.screen.active');
+          const exhibitionId = parseInt(screenElement.dataset.exhibitionId);
+          if (exhibitionId) {
+            const controller = new ArtworksListController();
+            controller.init(exhibitionId);
+          }
+        } catch (error) {
+          console.error('❌ Artworks List Init Error:', error);
+        }
+      }
+      // Back-Swipe zur Exhibition
+      this.setupArtworksBackSwipe();
     } else if (screenName.startsWith('exhibition')) {
       // Exhibition Back-Swipe aktivieren
       this.setupExhibitionBackSwipe();
@@ -401,6 +451,49 @@ class ContentLoader {
       // Right-Swipe: Zurück zur Startseite
       if (dx > 80 && Math.abs(dx) > Math.abs(dy)) {
         this.loadScreen('home');
+      }
+    }, { passive: true });
+  }
+
+  /**
+   * Setup Right-Swipe zum Zurückgehen von Artworks-Liste zur Exhibition
+   */
+  setupArtworksBackSwipe() {
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const screenElement = document.querySelector('.screen.active');
+    if (!screenElement) return;
+
+    const exhibitionId = parseInt(screenElement.dataset.exhibitionId);
+
+    screenElement.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+
+    screenElement.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      // Horizontale Bewegung dominiert -> Scroll verhindern
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    screenElement.addEventListener('touchend', (e) => {
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      // Right-Swipe: Zurück zur Exhibition
+      if (dx > 80 && Math.abs(dx) > Math.abs(dy)) {
+        if (exhibitionId) {
+          this.loadExhibition(exhibitionId, true); // isBackNavigation = true
+        }
       }
     }, { passive: true });
   }
