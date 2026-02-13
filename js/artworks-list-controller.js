@@ -118,7 +118,7 @@ class ArtworksListController {
     // Click-Handler (später für Detail-Ansicht)
     item.addEventListener('click', () => {
       console.log('🎨 Clicked artwork:', artwork.id, artwork.title);
-      // TODO: Navigiere zur Artwork-Detail-Seite
+      window.parent.contentLoader.loadArtworkDetail(this.currentExhibitionId, artwork.id);
     });
 
     return item;

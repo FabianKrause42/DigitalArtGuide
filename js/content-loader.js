@@ -31,6 +31,7 @@ class ContentLoader {
       number: 'screens/number.html',
       map: 'screens/lageplan.html',
       artworks: 'screens/artworks-list.html',
+      'artwork-detail': 'screens/artwork-detail.html',
       exhibition: 'screens/exhibitions/exhibition-.html', // ID wird hinzugefügt
       // Später erweiterbar: map, about, etc.
     };
@@ -55,12 +56,34 @@ class ContentLoader {
     const view = params.get('view') || 'home';
     const id = params.get('id') || null;
     const exhibition = params.get('exhibition') || null;
+    const artwork = params.get('artwork') || null;
 
     // Lade Exhibition mit ID, oder normalen Screen
     if (view === 'exhibition' && id) {
-      this.loadExhibition(parseInt(id));
+      // Unterstütze beide Formate: "2" oder "ausstellung-2-slug"
+      const numericId = this.extractNumericId(id);
+      if (!isNaN(numericId) && numericId >= 1 && numericId <= 3) {
+        this.loadExhibition(numericId);
+      } else {
+        console.error('Ungültige Exhibition ID in URL:', id);
+        this.loadScreen('home');
+      }
     } else if (view === 'artworks' && exhibition) {
-      this.loadArtworksList(parseInt(exhibition));
+      const exhibitionId = parseInt(exhibition);
+      if (!isNaN(exhibitionId) && exhibitionId >= 1 && exhibitionId <= 3) {
+        this.loadArtworksList(exhibitionId);
+      } else {
+        console.error('Ungültige Exhibition ID für Artworks:', exhibition);
+        this.loadScreen('home');
+      }
+    } else if (view === 'artwork-detail' && exhibition && artwork) {
+      const exhibitionId = parseInt(exhibition);
+      if (!isNaN(exhibitionId) && exhibitionId >= 1 && exhibitionId <= 3) {
+        this.loadArtworkDetail(exhibitionId, artwork);
+      } else {
+        console.error('Ungültige Exhibition ID für Artwork Detail:', exhibition);
+        this.loadScreen('home');
+      }
     } else {
       this.loadScreen(view);
     }
@@ -97,7 +120,7 @@ class ContentLoader {
    * @param {boolean} isBackNavigation - true wenn zurück-Navigation von Artworks-Liste
    */
   loadExhibition(exhibitionId, isBackNavigation = false) {
-    if (exhibitionId < 1 || exhibitionId > 3) {
+    if (isNaN(exhibitionId) || exhibitionId < 1 || exhibitionId > 3) {
       console.error(`Exhibition ID ${exhibitionId} ungültig`);
       return;
     }
@@ -128,11 +151,27 @@ class ContentLoader {
   }
 
   /**
+   * Extrahiere numerische ID aus String-Format
+   * @param {string|number} id - "2" oder "ausstellung-2-slug"
+   * @returns {number} - 2
+   */
+  extractNumericId(id) {
+    if (typeof id === 'number') return id;
+    // Versuche direkt zu parsen
+    const direct = parseInt(id);
+    if (!isNaN(direct)) return direct;
+    // Extrahiere aus "ausstellung-2-slug" Format
+    const match = id.match(/ausstellung-(\d+)-/);
+    if (match) return parseInt(match[1]);
+    return NaN;
+  }
+
+  /**
    * Lade Artworks-Liste für eine Ausstellung
    * @param {number} exhibitionId - 1, 2, oder 3
    */
-  loadArtworksList(exhibitionId) {
-    if (exhibitionId < 1 || exhibitionId > 3) {
+  loadArtworksList(exhibitionId, isBackNavigation = false) {
+    if (isNaN(exhibitionId) || exhibitionId < 1 || exhibitionId > 3) {
       console.error(`Exhibition ID ${exhibitionId} ungültig`);
       return;
     }
@@ -141,8 +180,8 @@ class ContentLoader {
     const filePath = 'screens/artworks-list.html';
     const screenName = `artworks${exhibitionId}`;
 
-    // Artworks-Liste kommt von rechts (neue Page)
-    const isBackToHome = false;
+    // Bei Zurück-Navigation von links, sonst von rechts
+    const isBackToHome = isBackNavigation;
 
     this.loadContent(filePath, screenName, isBackToHome, { exhibitionId });
     
@@ -177,6 +216,9 @@ class ContentLoader {
         // Speichere exhibitionId als data-attribute wenn vorhanden
         if (options.exhibitionId) {
           newScreen.dataset.exhibitionId = options.exhibitionId;
+        }
+        if (options.artworkId) {
+          newScreen.dataset.artworkId = options.artworkId;
         }
 
         if (screenName.startsWith('exhibition')) {
@@ -363,6 +405,23 @@ class ContentLoader {
       }
       // Back-Swipe zur Exhibition
       this.setupArtworksBackSwipe();
+    } else if (screenName.startsWith('artwork-detail')) {
+      // Artwork Detail Controller initialisieren
+      if (typeof ArtworkDetailController !== 'undefined') {
+        try {
+          const screenElement = document.querySelector('.screen.active');
+          const exhibitionId = parseInt(screenElement.dataset.exhibitionId);
+          const artworkId = screenElement.dataset.artworkId;
+          if (exhibitionId && artworkId) {
+            const controller = new ArtworkDetailController();
+            controller.init(exhibitionId, artworkId);
+          }
+        } catch (error) {
+          console.error('❌ Artwork Detail Init Error:', error);
+        }
+      }
+      // Back-Swipe zur Artworks Liste
+      this.setupArtworkDetailBackSwipe();
     } else if (screenName.startsWith('exhibition')) {
       // Exhibition Back-Swipe aktivieren
       this.setupExhibitionBackSwipe();
@@ -496,6 +555,70 @@ class ContentLoader {
         }
       }
     }, { passive: true });
+  }
+
+  /**
+   * Setup Right-Swipe zum Zurückgehen von Artwork-Detail zur Artworks-Liste
+   */
+  setupArtworkDetailBackSwipe() {
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const screenElement = document.querySelector('.screen.active');
+    if (!screenElement) return;
+
+    const exhibitionId = parseInt(screenElement.dataset.exhibitionId);
+
+    screenElement.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+
+    screenElement.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      // Horizontale Bewegung dominiert -> Scroll verhindern
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    screenElement.addEventListener('touchend', (e) => {
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartX;
+      const dy = touch.clientY - touchStartY;
+
+      // Right-Swipe: Zurück zur Artworks-Liste
+      if (dx > 80 && Math.abs(dx) > Math.abs(dy)) {
+        if (exhibitionId) {
+          this.loadArtworksList(exhibitionId, true); // isBackNavigation = true
+        }
+      }
+    }, { passive: true });
+  }
+
+  /**
+   * Lade Artwork Detail Seite
+   * @param {number} exhibitionId - ID der Ausstellung
+   * @param {string} artworkId - ID des Artworks
+   * @param {boolean} isBackNavigation - Ob es eine Zurück-Navigation ist
+   */
+  loadArtworkDetail(exhibitionId, artworkId, isBackNavigation = false) {
+    if (this.isAnimating) return;
+
+    const screenName = `artwork-detail-${exhibitionId}-${artworkId}`;
+    const filePath = this.screenPaths['artwork-detail'];
+
+    // Artwork-Detail kommt von rechts (neue Page), außer bei Zurück-Navigation
+    const isBackToHome = isBackNavigation;
+
+    this.loadContent(filePath, screenName, isBackToHome, { exhibitionId, artworkId });
+    
+    // Update URL
+    history.pushState({ screen: screenName, exhibitionId, artworkId }, '', `?view=artwork-detail&exhibition=${exhibitionId}&artwork=${artworkId}`);
   }
 }
 

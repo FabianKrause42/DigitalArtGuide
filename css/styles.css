@@ -108,7 +108,7 @@ body.exhibition-page .screen {
   font-weight: 350;
   color: #151515;
   line-height: 0.4;
-  margin: 0 0 24px;
+  margin: 0 0 4px;
 }
 
 .exh-button {
@@ -121,6 +121,7 @@ body.exhibition-page .screen {
   border-radius: 3px;
   background: transparent;
   text-decoration: none;
+  margin-top: 20px;
   margin-bottom: 24px;
   padding: 0;
   gap: 0;
@@ -748,7 +749,7 @@ body.display-browser .exh-date {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 24px 0 90px;
+  padding: 6px 0 80px;
 }
 
 .artworks-search {
@@ -857,6 +858,102 @@ body.display-browser .exh-date {
   line-height: 1.3;
   margin: 0;
   text-align: left;
+}
+
+/* ====== ARTWORK DETAIL SCREEN ====== */
+.artwork-detail-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #F2F2F2;
+  padding: 0 0 90px;
+  overflow-y: auto;
+}
+
+.artwork-detail-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.artwork-detail-image {
+  width: 100%;
+  max-height: 260px;
+  margin: 0 auto 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artwork-detail-image img {
+  max-width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+.artwork-detail-artist {
+  font-size: 18px;
+  font-weight: 350;
+  color: #222222;
+  line-height: 25px;
+  padding: 0 14px;
+  margin: 0 0 4px;
+}
+
+.artwork-detail-title {
+  font-size: 18px;
+  font-weight: 350;
+  color: #787878;
+  line-height: 25px;
+  padding: 0 14px;
+  margin: 0 0 10px;
+}
+
+.artwork-detail-materials {
+  font-size: 12px;
+  font-weight: 350;
+  color: #787878;
+  line-height: 1.048;
+  padding: 0 14px;
+  margin: 0 0 24px;
+  white-space: pre-wrap;
+}
+
+.artwork-detail-audio {
+  width: calc(100% - 36px);
+  height: auto;
+  margin: 0 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artwork-audio-player-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.artwork-detail-description {
+  font-size: 16px;
+  font-weight: 350;
+  color: #000000;
+  line-height: 20px;
+  padding: 0 16px;
+  margin: 0;
+  text-align: justify;
+}
+
+.artwork-detail-description p {
+  margin: 0 0 16px 0;
+}
+
+.artwork-detail-description p:last-child {
+  margin-bottom: 0;
 }
 
 /* ====== LAGEPLAN SCREEN ====== */

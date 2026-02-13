@@ -354,9 +354,10 @@ class ExhibitionSliderController {
 
     // Wenn ContentLoader existiert, nutze dessen Animation/History-Logik
     if (window.contentLoader && typeof window.contentLoader.loadContent === 'function') {
-      const screenName = `exhibition-${exhibition.id}`;
-      window.contentLoader.loadContent(exhibition.page, screenName, false);
-      history.pushState({ screen: screenName }, '', `?view=exhibition&id=${exhibition.id}`);
+      // Extrahiere numerische ID (1, 2, 3) aus dem String-Format
+      const numericId = window.contentLoader.extractNumericId(exhibition.id);
+      const screenName = `exhibition${numericId}`;
+      window.contentLoader.loadExhibition(numericId);
       return;
     }
 
