@@ -14,6 +14,7 @@ class ArtworkDetailController {
     this.currentExhibitionId = null;
     this.currentArtworkId = null;
     this.artworkData = null;
+    this.audioPlayer = null; // Audio-Player Instanz
   }
 
   /**
@@ -68,7 +69,7 @@ class ArtworkDetailController {
 
     // Hauptbild (erstes Image aus images-Array)
     const imageContainer = document.getElementById('artworkDetailImage');
-    if (artwork.images && artwork.images.length > 0) {
+    if (imageContainer && artwork.images && artwork.images.length > 0) {
       const img = document.createElement('img');
       img.src = basePath + artwork.images[0];
       img.alt = artwork.title;
@@ -77,31 +78,35 @@ class ArtworkDetailController {
 
     // Künstler mit Geburtsjahr/Todesjahr
     const artistContainer = document.getElementById('artworkDetailArtist');
-    let artistText = artwork.artist;
-    if (artwork.artistBorn || artwork.artistDied) {
-      const born = artwork.artistBorn || '?';
-      const died = artwork.artistDied || '';
-      artistText += ` (*${born}${died ? ' & ' + died : ''})`;
+    if (artistContainer) {
+      let artistText = artwork.artist;
+      if (artwork.artistBorn || artwork.artistDied) {
+        const born = artwork.artistBorn || '?';
+        const died = artwork.artistDied || '';
+        artistText += ` (*${born}${died ? ' & ' + died : ''})`;
+      }
+      artistContainer.textContent = artistText;
     }
-    artistContainer.textContent = artistText;
 
     // Titel mit Jahr
     const titleContainer = document.getElementById('artworkDetailTitle');
-    let titleText = artwork.title;
-    if (artwork.year) {
-      titleText += `, ${artwork.year}`;
+    if (titleContainer) {
+      let titleText = artwork.title;
+      if (artwork.year) {
+        titleText += `, ${artwork.year}`;
+      }
+      titleContainer.textContent = titleText;
     }
-    titleContainer.textContent = titleText;
 
     // Materialien
     const materialsContainer = document.getElementById('artworkDetailMaterials');
-    if (artwork.materials) {
+    if (materialsContainer && artwork.materials) {
       materialsContainer.textContent = artwork.materials;
     }
 
     // Beschreibung (mit Paragraphen)
     const descriptionContainer = document.getElementById('artworkDetailDescription');
-    if (artwork.description) {
+    if (descriptionContainer && artwork.description) {
       // Ersetze \n\n mit Paragraph-Breaks
       const paragraphs = artwork.description.split('\\n\\n');
       paragraphs.forEach(para => {
@@ -109,6 +114,23 @@ class ArtworkDetailController {
         p.textContent = para.trim();
         descriptionContainer.appendChild(p);
       });
+    }
+
+    // Audio-Player (falls audioFile vorhanden)
+    if (artwork.audio && artwork.audio.de) {
+      const audioContainer = document.getElementById('artworkDetailAudio');
+      if (audioContainer) {
+        const audioPath = basePath + artwork.audio.de;
+        
+        // Cleanup alter Instanz falls vorhanden
+        if (this.audioPlayer) {
+          this.audioPlayer.destroy();
+        }
+        
+        // Neue AudioPlayer-Instanz erstellen
+        this.audioPlayer = new AudioPlayer(audioContainer, audioPath);
+        console.log(`🎵 Audio player initialized: ${audioPath}`);
+      }
     }
   }
 
@@ -130,6 +152,16 @@ class ArtworkDetailController {
   showError() {
     const descriptionContainer = document.getElementById('artworkDetailDescription');
     descriptionContainer.innerHTML = '<p>Fehler beim Laden der Exponat-Details</p>';
+  }
+
+  /**
+   * Cleanup beim Verlassen der Seite
+   */
+  cleanup() {
+    if (this.audioPlayer) {
+      this.audioPlayer.destroy();
+      this.audioPlayer = null;
+    }
   }
 }
 

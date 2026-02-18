@@ -39,7 +39,7 @@
       ],
       "thumbnail": "media/images/artworks/artwork-002-01.jpg",
       "audio": {
-        "de": null,
+        "de": "media/audio/artwork-002-de.mp3",
         "en": null
       }
     },
@@ -103,7 +103,7 @@
     {
       "id": "006",
       "number": "6",
-      "title": "Grave Matters,",
+      "title": "Grave Matters",
       "artist": "Stine Deja",
       "artistBorn": 1982,
       "artistDied": null,

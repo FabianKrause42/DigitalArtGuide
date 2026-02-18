@@ -23,6 +23,8 @@ class ContentLoader {
     // Flag um mehrfache Animationen zu verhindern
     this.isAnimating = false;
     this.numberInputController = null;
+    this.artworksListController = null;
+    this.artworkDetailController = null;
     
     // Mapping: Screen-Namen zu ihren Content-Dateien
     this.screenPaths = {
@@ -248,6 +250,12 @@ class ContentLoader {
         // Update aktuelle Screen Referenz SOFORT
         this.currentScreen = screenName;
 
+        // Cleanup alter Controller SOFORT (vor Animation, um Audio zu stoppen)
+        if (this.artworkDetailController) {
+          this.artworkDetailController.cleanup();
+          this.artworkDetailController = null;
+        }
+
         // Neue Screen aktivieren (triggert CSS-Animation)
         // Erzwinge Reflow (Android/WebView) bevor 'active' gesetzt wird
         requestAnimationFrame(() => {
@@ -269,6 +277,7 @@ class ContentLoader {
             if (currentScreenElement.id === 'scan' && window.CameraController) {
               window.CameraController.stop();
             }
+            
             currentScreenElement.remove();
           }
           newScreen.classList.remove('enter-right', 'enter-left');
@@ -413,8 +422,8 @@ class ContentLoader {
           const exhibitionId = parseInt(screenElement.dataset.exhibitionId);
           const artworkId = screenElement.dataset.artworkId;
           if (exhibitionId && artworkId) {
-            const controller = new ArtworkDetailController();
-            controller.init(exhibitionId, artworkId);
+            this.artworkDetailController = new ArtworkDetailController();
+            this.artworkDetailController.init(exhibitionId, artworkId);
           }
         } catch (error) {
           console.error('❌ Artwork Detail Init Error:', error);

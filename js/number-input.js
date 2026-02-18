@@ -19,6 +19,7 @@ class NumberInputController {
     this.resultTitle = null;
     this.artworksCache = null;
     this.isLoadingArtworks = false;
+    this.currentArtwork = null; // Speichert das aktuell gefundene Artwork
   }
 
   init() {
@@ -59,6 +60,12 @@ class NumberInputController {
     if (this.enterButton) {
       this.enterButton.addEventListener('click', () => this.handleEnter());
     }
+
+    // Click-Handler für das Result-Item
+    if (this.resultItem) {
+      this.resultItem.addEventListener('click', () => this.navigateToArtworkDetail());
+      this.resultItem.style.cursor = 'pointer';
+    }
   }
 
   handleDigit(digit) {
@@ -81,8 +88,10 @@ class NumberInputController {
   }
 
   handleEnter() {
-    if (!this.currentDigits.length) return;
-    // Noch keine Aktion vorgesehen
+    // Navigiere zum Artwork-Detail, wenn ein Ergebnis vorhanden ist
+    if (this.currentArtwork) {
+      this.navigateToArtworkDetail();
+    }
   }
 
   updateDisplay() {
@@ -136,6 +145,7 @@ class NumberInputController {
   resetResults() {
     if (!this.resultsContainer || !this.resultItem) return;
     this.resultsContainer.dataset.hasResult = 'false';
+    this.currentArtwork = null; // Reset current artwork
     if (this.emptyState) this.emptyState.hidden = false;
     if (this.foundState) this.foundState.hidden = true;
     if (this.placeholder) this.placeholder.hidden = false;
@@ -145,6 +155,9 @@ class NumberInputController {
 
   renderResult(artwork) {
     if (!this.resultThumb || !this.resultArtist || !this.resultTitle) return;
+
+    // Speichere das gefundene Artwork für Navigation
+    this.currentArtwork = artwork;
 
     // Bilde vollständigen Pfad mit Exhibition-Slug
     const exhibitionSlug = this.getExhibitionSlug(artwork.exhibitionId);
@@ -240,6 +253,21 @@ class NumberInputController {
     const icon = button.querySelector('img');
     if (icon) {
       icon.src = isActive ? activeIcon : inactiveIcon;
+    }
+  }
+
+  /**
+   * Navigiere zur Artwork-Detail-Seite
+   */
+  navigateToArtworkDetail() {
+    if (!this.currentArtwork) return;
+
+    const exhibitionId = this.currentArtwork.exhibitionId;
+    const artworkId = this.currentArtwork.id;
+
+    // Verwende die gleiche Navigation wie die Listen-Ansicht
+    if (window.parent && window.parent.contentLoader) {
+      window.parent.contentLoader.loadArtworkDetail(exhibitionId, artworkId);
     }
   }
 }
