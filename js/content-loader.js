@@ -31,9 +31,14 @@ class ContentLoader {
       home: 'screens/home.html',
       scan: 'screens/scanner.html',
       number: 'screens/number.html',
-      map: 'screens/lageplan.html',
       artworks: 'screens/artworks-list.html',
       'artwork-detail': 'screens/artwork-detail.html',
+      'map-overview': 'screens/map-overview.html',
+      'map-main-eg': 'screens/map-main-eg.html',
+      'map-main-1og': 'screens/map-main-1og.html',
+      'map-main-2og': 'screens/map-main-2og.html',
+      'map-oktogon-1og': 'screens/map-oktogon-1og.html',
+      'map-oktogon-2og': 'screens/map-oktogon-2og.html',
       exhibition: 'screens/exhibitions/exhibition-.html', // ID wird hinzugefügt
       // Später erweiterbar: map, about, etc.
     };
@@ -42,6 +47,13 @@ class ContentLoader {
   }
 
   init() {
+    // Safari iOS Viewport Height Fix
+    this.setViewportHeight();
+    window.addEventListener('resize', () => this.setViewportHeight());
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => this.setViewportHeight(), 100);
+    });
+    
     this.loadScreenFromURL();
     this.setupTabListeners();
     
@@ -227,11 +239,16 @@ class ContentLoader {
           newScreen.classList.add('exhibition-screen');
         }
 
-        // Bestimme Eintritts-Animation basierend auf Richtung
-        if (!isBackToHome) {
-          newScreen.classList.add('enter-right'); // Kommt von rechts (neue Page)
-        } else {
-          newScreen.classList.add('enter-left'); // Kommt von links (zurück)
+        // Map-Screens: Kein Animation, direkt wechseln
+        const isMapScreen = screenName.startsWith('map-');
+        
+        if (!isMapScreen) {
+          // Bestimme Eintritts-Animation basierend auf Richtung (nur für Nicht-Map-Screens)
+          if (!isBackToHome) {
+            newScreen.classList.add('enter-right'); // Kommt von rechts (neue Page)
+          } else {
+            newScreen.classList.add('enter-left'); // Kommt von links (zurück)
+          }
         }
 
         // Füge neuen Screen zum DOM hinzu
@@ -239,11 +256,13 @@ class ContentLoader {
 
         // Alte Screen ausblenden
         if (currentScreenElement) {
-          currentScreenElement.classList.remove('active');
-          if (isBackToHome) {
-            currentScreenElement.classList.add('exit-right'); // Nach rechts raus (zurück)
-          } else {
-            currentScreenElement.classList.add('exit-left'); // Nach links raus (neue Page)
+          if (!isMapScreen) {
+            currentScreenElement.classList.remove('active');
+            if (isBackToHome) {
+              currentScreenElement.classList.add('exit-right'); // Nach rechts raus (zurück)
+            } else {
+              currentScreenElement.classList.add('exit-left'); // Nach links raus (neue Page)
+            }
           }
         }
 
@@ -257,32 +276,51 @@ class ContentLoader {
         }
 
         // Neue Screen aktivieren (triggert CSS-Animation)
-        // Erzwinge Reflow (Android/WebView) bevor 'active' gesetzt wird
-        requestAnimationFrame(() => {
-          void newScreen.offsetHeight; // forced reflow
+        // Map-Screens: Sofort aktivieren, andere: nach Reflow
+        if (isMapScreen) {
+          // Map-Screen: Sofort aktiv, kein Reflow nötig
           newScreen.classList.add('active');
-
+          
+          // Alten Screen sofort entfernen
+          if (currentScreenElement) {
+            currentScreenElement.remove();
+          }
+          
           // Tab-Button Status aktualisieren
           this.updateTabButtons(screenName);
           
-          // Features SOFORT nach active-class initialisieren (DOM ist jetzt bereit)
+          // Features SOFORT initialisieren
           this.reinitializeScreenFeatures(screenName);
-        });
-
-        // Cleanup nach Animation (entferne alte Screen aus DOM)
-        // Dauer leicht über der CSS-Transition (350ms), um Android Timing-Issues zu vermeiden
-        setTimeout(() => {
-          if (currentScreenElement) {
-            // Stoppe Kamera wenn Scan-Screen verlassen wird
-            if (currentScreenElement.id === 'scan' && window.CameraController) {
-              window.CameraController.stop();
-            }
-            
-            currentScreenElement.remove();
-          }
-          newScreen.classList.remove('enter-right', 'enter-left');
+          
+          // Animation-Flag sofort zurücksetzen
           this.isAnimating = false;
-        }, 400);
+        } else {
+          // Normale Screens: Mit Animation
+          requestAnimationFrame(() => {
+            void newScreen.offsetHeight; // forced reflow
+            newScreen.classList.add('active');
+
+            // Tab-Button Status aktualisieren
+            this.updateTabButtons(screenName);
+            
+            // Features SOFORT nach active-class initialisieren (DOM ist jetzt bereit)
+            this.reinitializeScreenFeatures(screenName);
+          });
+
+          // Cleanup nach Animation (entferne alte Screen aus DOM)
+          setTimeout(() => {
+            if (currentScreenElement) {
+              // Stoppe Kamera wenn Scan-Screen verlassen wird
+              if (currentScreenElement.id === 'scan' && window.CameraController) {
+                window.CameraController.stop();
+              }
+              
+              currentScreenElement.remove();
+            }
+            newScreen.classList.remove('enter-right', 'enter-left');
+            this.isAnimating = false;
+          }, 400);
+        }
       })
       .catch(error => {
         console.error('ContentLoader Error:', error);
@@ -352,7 +390,15 @@ class ContentLoader {
 
     tabButtons.forEach(button => {
       const buttonScreen = button.getAttribute('data-screen');
-      if (buttonScreen === screenName.split(/\d/)[0]) { // Extrahiere Screen-Type
+      
+      // Für Map-Screens: Highlight 'map-overview' Button wenn irgendein map-* Screen aktiv ist
+      if (screenName.startsWith('map-')) {
+        if (buttonScreen === 'map-overview') {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      } else if (buttonScreen === screenName.split(/\d/)[0]) { // Extrahiere Screen-Type für andere Screens
         button.classList.add('active');
       } else {
         button.classList.remove('active');
@@ -434,6 +480,15 @@ class ContentLoader {
     } else if (screenName.startsWith('exhibition')) {
       // Exhibition Back-Swipe aktivieren
       this.setupExhibitionBackSwipe();
+    } else if (screenName.startsWith('map-')) {
+      // Map Navigation Controller initialisieren
+      if (typeof MapNavigationController !== 'undefined') {
+        try {
+          const controller = new MapNavigationController(screenName);
+        } catch (error) {
+          console.error('❌ Map Navigation Init Error:', error);
+        }
+      }
     }
   }
 
@@ -610,6 +665,15 @@ class ContentLoader {
   }
 
   /**
+   * Safari iOS Viewport Height Fix
+   * Setzt CSS Variable --vh auf tatsächliche Viewport-Höhe
+   */
+  setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  /**
    * Lade Artwork Detail Seite
    * @param {number} exhibitionId - ID der Ausstellung
    * @param {string} artworkId - ID des Artworks
@@ -634,4 +698,11 @@ class ContentLoader {
 // Initialisiere ContentLoader beim Page-Load
 document.addEventListener('DOMContentLoaded', () => {
   window.contentLoader = new ContentLoader();
+  
+  // Mache loadScreen global verfügbar für andere Controller
+  window.loadScreen = (screenName) => {
+    if (window.contentLoader) {
+      window.contentLoader.loadScreen(screenName);
+    }
+  };
 });

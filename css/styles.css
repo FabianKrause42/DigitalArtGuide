@@ -24,6 +24,10 @@
   display: none !important;
 }
 
+:root {
+  --vh: 1vh;
+}
+
 body {
   font-family: 'TWKLausanne', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #F2F2F2;
@@ -197,7 +201,6 @@ body.exhibition-page .screen {
   pointer-events: none;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-top: 20px;
   box-sizing: border-box;
   will-change: transform, opacity;
   -webkit-transform: translateX(100%) translateZ(0);
@@ -811,7 +814,7 @@ body.display-browser .exh-date {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 0 8px;
+  padding: 0 8px 180px 8px;
   position: relative;
 }
 
@@ -830,17 +833,12 @@ body.display-browser .exh-date {
   padding: 12px 0;
   border-bottom: 1px solid #C8C8C8;
   cursor: pointer;
-  transition: opacity 0.2s;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.artwork-item:hover {
-  opacity: 0.7;
 }
 
 .artwork-item:last-child {
@@ -1258,4 +1256,252 @@ body.display-browser .exh-date {
     width: 360px;
     height: 556px;
   }
+}
+
+/* ============================= */
+/* LAGEPLAN/MAP SCREENS STYLES   */
+/* ============================= */
+
+/* Map Screen Wrapper - Flex Layout */
+.map-screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: calc(100vh - 65px);
+  height: -webkit-fill-available;
+  height: calc(var(--vh, 1vh) * 100 - 65px);
+  width: 100%;
+  overflow: hidden;
+}
+
+.map-content-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 16px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Map Overview Container */
+.map-overview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.map-building-title {
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 22px;
+  font-weight: 350;
+  text-align: center;
+  margin: 0;
+  padding: 8px 0;
+  color: #222222;
+}
+
+.map-oktogon-title {
+  font-size: 20px;
+}
+
+.map-thumbnail {
+  width: 100%;
+  max-width: 170px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.map-thumbnail:active {
+  transform: scale(0.98);
+}
+
+.map-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Map Detail Screens (Floor Plans) */
+.map-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.map-detail-title {
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 20px;
+  font-weight: 350;
+  text-align: center;
+  margin: 0;
+  color: #222222;
+}
+
+.map-plan-image {
+  width: 100%;
+  max-width: 400px;
+  max-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.map-plan-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tab Bar Container */
+.map-tabs-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  background: #F2F2F2;
+}
+
+.map-tabs-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Active Tab Indicator (Beweglicher Hintergrund) */
+.map-tab-active {
+  position: absolute;
+  height: 50px;
+  background: #D9D9D9;
+  border-radius: 3px;
+  z-index: 2;
+  transition: left 0.3s ease, width 0.3s ease;
+  pointer-events: none;
+}
+
+/* Active Indicator Positions - Hauptgebäude (4 Tabs) */
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab-active[data-floor="eg"] {
+  left: 0;
+  width: 72px;
+}
+
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab-active[data-floor="1og"] {
+  left: 73px;
+  width: 82px;
+}
+
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab-active[data-floor="2og"] {
+  left: 156px;
+  width: 75px;
+}
+
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab-active[data-floor="oktogon"] {
+  left: 228px;
+  width: 92px;
+}
+
+/* Active Indicator Positions - Oktogon (3 Tabs) */
+.map-oktogon-tabs .map-tab-active[data-floor="1og"] {
+  left: 0;
+  width: 96px;
+}
+
+.map-oktogon-tabs .map-tab-active[data-floor="2og"] {
+  left: 96px;
+  width: 93px;
+}
+
+.map-oktogon-tabs .map-tab-active[data-floor="hauptgebaeude"] {
+  left: 189px;
+  width: 131px;
+}
+
+/* Tab Buttons */
+.map-tab {
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 18px;
+  font-weight: 350;
+  color: #222222;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Tab Widths - Hauptgebäude (4 Tabs) */
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab[data-floor="eg"] {
+  width: 72px;
+}
+
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab[data-floor="1og"] {
+  width: 80px;
+}
+
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab[data-floor="2og"] {
+  width: 73px;
+}
+
+.map-tabs-container:not(.map-oktogon-tabs) .map-tab[data-floor="oktogon"] {
+  width: 86px;
+}
+
+/* Tab Widths - Oktogon (3 Tabs) */
+.map-oktogon-tabs .map-tab[data-floor="1og"] {
+  width: 96px;
+}
+
+.map-oktogon-tabs .map-tab[data-floor="2og"] {
+  width: 91px;
+}
+
+.map-oktogon-tabs .map-tab[data-floor="hauptgebaeude"] {
+  width: 137px;
+}
+
+/* Tab Dividers */
+.map-tab-divider {
+  width: 1px;
+  height: 50px;
+  background: #000000;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+/* Overview Screen - All tabs clickable */
+.map-overview-container .map-tab {
+  opacity: 1;
+}
+
+.map-overview-container .map-tab:active {
+  opacity: 0.7;
 }
