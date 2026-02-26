@@ -1331,8 +1331,9 @@ body.display-browser .exh-date {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   width: 100%;
+  margin-top: -12px;
 }
 
 .map-detail-title {
@@ -1341,25 +1342,34 @@ body.display-browser .exh-date {
   font-weight: 350;
   text-align: center;
   margin: 0;
+  padding: 12px 0;
   color: #222222;
 }
 
 .map-plan-image {
   width: 100%;
   max-width: 400px;
-  max-height: 60vh;
+  height: 45vh;
+  max-height: 68vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  margin-top: 0;
 }
 
 .map-plan-image img {
-  width: 100%;
-  height: 100%;
-  max-height: 60vh;
+  width: 90%;
+  height: 90%;
+  max-height: 68vh;
   object-fit: contain;
   display: block;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.map-plan-image img.panzoom-ready {
+  opacity: 1;
 }
 
 /* Tab Bar Container */
@@ -1504,4 +1514,92 @@ body.display-browser .exh-date {
 
 .map-overview-container .map-tab:active {
   opacity: 0.7;
+}
+
+/* ========== MAP ZOOM & ARTWORK MARKERS ========== */
+
+/* Map Plan Container with Panzoom */
+.map-plan-image {
+  position: relative;
+  touch-action: none;
+  cursor: grab;
+}
+
+.map-plan-image:active {
+  cursor: grabbing;
+}
+
+/* SVG Overlay for Artwork Markers */
+.artwork-markers-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Individual Artwork Marker (Full Display) */
+.artwork-marker {
+  cursor: pointer;
+  pointer-events: all;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.artwork-marker circle {
+  fill: #D9D9D9;
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+.artwork-marker text {
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 20px;
+  font-weight: 350;
+  fill: #222222;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+.artwork-marker:hover circle {
+  fill: #C0C0C0;
+}
+
+.artwork-marker:active {
+  transform: scale(0.95);
+}
+
+/* Cluster Marker (Small Display) */
+.artwork-marker-small {
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.artwork-marker-small circle {
+  fill: #D9D9D9;
+  stroke: #000000;
+  stroke-width: 1px;
+}
+
+/* Level of Detail Control */
+.lod-full {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lod-small {
+  opacity: 1;
+}
+
+/* When zoomed in (scale >= 1.5) */
+.map-zoomed .lod-full {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.map-zoomed .lod-small {
+  opacity: 0;
 }

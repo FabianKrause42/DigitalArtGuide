@@ -1,0 +1,42 @@
+{
+  "hauptgebaeude-1og": {
+    "imageWidth": 338,
+    "imageHeight": 288,
+    "rotated": true,
+    "markers": [
+      {
+        "id": "1",
+        "x": 155,
+        "y": 245,
+        "type": "single"
+      },
+      {
+        "id": "2",
+        "x": 265,
+        "y": 263,
+        "type": "single"
+      },
+      {
+        "id": "3",
+        "x": 266,
+        "y": 399,
+        "type": "single"
+      },
+      {
+        "id": "4",
+        "x": 45,
+        "y": 261,
+        "type": "single"
+      },
+      {
+        "id": "cluster-1",
+        "x": 25,
+        "y": 381,
+        "width": 78,
+        "height": 59,
+        "type": "cluster",
+        "artworks": ["5", "6", "7"]
+      }
+    ]
+  }
+}
