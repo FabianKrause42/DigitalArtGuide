@@ -20,7 +20,10 @@
 
   // Map from container-id suffix → JSON key
   const FLOOR_ID_MAP = {
-    'map-plan-1og': 'hauptgebaeude-1og'
+    'map-plan-1og':         'hauptgebaeude-1og',
+    'map-plan-2og':         'hauptgebaeude-2og',
+    'map-plan-oktogon-1og': 'oktogon-1og',
+    'map-plan-oktogon-2og': 'oktogon-2og'
   };
 
   class MapMarkerController {

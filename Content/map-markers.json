@@ -36,31 +36,129 @@
         "type": "single"
       },
       {
-        "id": "cluster-1",
+        "id": "5",
+        "artworkId": "005",
+        "exhibitionId": 1,
+        "xPct": 17.0,
+        "yPct": 80.2,
+        "type": "single"
+      }
+    ]
+  },
+  "hauptgebaeude-2og": {
+    "imageWidth": 328,
+    "imageHeight": 275,
+    "markers": [
+      {
+        "id": "cluster-2og",
         "type": "cluster",
         "artworks": [
           {
-            "id": "5",
-            "artworkId": "005",
-            "exhibitionId": 1,
-            "xPct": 12.7,
-            "yPct": 74.0
+            "id": "101",
+            "artworkId": "101",
+            "exhibitionId": 3,
+            "xPct": 34.6,
+            "yPct": 35.5
           },
           {
-            "id": "6",
-            "artworkId": "006",
-            "exhibitionId": 1,
-            "xPct": 24.6,
-            "yPct": 74.0
+            "id": "102",
+            "artworkId": "102",
+            "exhibitionId": 3,
+            "xPct": 34.6,
+            "yPct": 27.8
           },
           {
-            "id": "7",
-            "artworkId": "007",
-            "exhibitionId": 1,
-            "xPct": 18.6,
-            "yPct": 84.4
+            "id": "103",
+            "artworkId": "103",
+            "exhibitionId": 3,
+            "xPct": 34.6,
+            "yPct": 19.8
+          },
+          {
+            "id": "104",
+            "artworkId": "104",
+            "exhibitionId": 3,
+            "xPct": 34.6,
+            "yPct": 11.8
+          },
+          {
+            "id": "105",
+            "artworkId": "105",
+            "exhibitionId": 3,
+            "xPct": 65.4,
+            "yPct": 11.8
+          },
+          {
+            "id": "106",
+            "artworkId": "106",
+            "exhibitionId": 3,
+            "xPct": 65.4,
+            "yPct": 19.8
+          },
+          {
+            "id": "107",
+            "artworkId": "107",
+            "exhibitionId": 3,
+            "xPct": 65.4,
+            "yPct": 27.8
+          },
+          {
+            "id": "108",
+            "artworkId": "108",
+            "exhibitionId": 3,
+            "xPct": 65.4,
+            "yPct": 35.5
+          },
+          {
+            "id": "109",
+            "artworkId": "109",
+            "exhibitionId": 3,
+            "xPct": 58.1,
+            "yPct": 44.2
+          },
+          {
+            "id": "110",
+            "artworkId": "110",
+            "exhibitionId": 3,
+            "xPct": 50.8,
+            "yPct": 44.2
+          },
+          {
+            "id": "111",
+            "artworkId": "111",
+            "exhibitionId": 3,
+            "xPct": 42.8,
+            "yPct": 44.2
           }
         ]
+      }
+    ]
+  },
+  "oktogon-1og": {
+    "imageWidth": 310,
+    "imageHeight": 291,
+    "markers": [
+      {
+        "id": "ok1-1",
+        "artworkId": "006",
+        "exhibitionId": 1,
+        "xPct": 24.2,
+        "yPct": 48.1,
+        "type": "single"
+      }
+    ]
+  },
+  "oktogon-2og": {
+    "imageWidth": 295,
+    "imageHeight": 290,
+    "markers": [
+      {
+        "id": "ok2-1",
+        "artworkId": "007",
+        "exhibitionId": 1,
+        "xPct": 23.1,
+        "yPct": 50.3,
+        "type": "single"
       }
     ]
   }
