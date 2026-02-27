@@ -78,6 +78,9 @@
         }
       });
 
+      this._overlayScale      = config.overlayScale      !== undefined ? config.overlayScale      : 1;
+      this._overlayOffsetYPct  = config.overlayOffsetYPct  !== undefined ? config.overlayOffsetYPct  : 0;
+
       this.mapContainer.appendChild(overlay);
 
       // Initial position pass once image dimensions are known
@@ -160,11 +163,18 @@
       const rect = this._getImageRect();
       if (!rect || rect.width === 0) return;
 
+      const floorScale   = this._overlayScale;
+      const floorOffsetY = this._overlayOffsetYPct;
+
       this.markerEls.forEach(({ el, xPct, yPct }) => {
-        const x = rect.left + (xPct / 100) * rect.width;
-        // Compress vertical spread by 10% towards the vertical centre
-        const yPctAdjusted = 50 + (yPct - 50) * 0.9;
-        const y = rect.top  + (yPctAdjusted / 100) * rect.height;
+        // Apply floor-specific scale: compress both axes towards image centre
+        const xPctAdj = 50 + (xPct - 50) * floorScale;
+        // Base vertical compression (keeps all floors consistent) + floor scale + offset
+        const yPctBase = 50 + (yPct - 50) * 0.9;
+        const yPctAdj  = 50 + (yPctBase - 50) * floorScale + floorOffsetY;
+
+        const x = rect.left + (xPctAdj / 100) * rect.width;
+        const y = rect.top  + (yPctAdj  / 100) * rect.height;
         el.style.left = `${x}px`;
         el.style.top  = `${y}px`;
       });

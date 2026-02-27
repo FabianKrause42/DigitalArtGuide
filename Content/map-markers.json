@@ -48,6 +48,8 @@
   "hauptgebaeude-2og": {
     "imageWidth": 328,
     "imageHeight": 275,
+    "overlayScale": 0.85,
+    "overlayOffsetYPct": -1,
     "markers": [
       {
         "id": "cluster-2og",
@@ -139,7 +141,7 @@
     "imageHeight": 291,
     "markers": [
       {
-        "id": "ok1-1",
+        "id": "6",
         "artworkId": "006",
         "exhibitionId": 1,
         "xPct": 24.2,
@@ -153,7 +155,7 @@
     "imageHeight": 290,
     "markers": [
       {
-        "id": "ok2-1",
+        "id": "7",
         "artworkId": "007",
         "exhibitionId": 1,
         "xPct": 23.1,
