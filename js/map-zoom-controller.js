@@ -20,7 +20,7 @@ if (originalLoadScreen) {
       setTimeout(() => {
         console.log('MapZoomController: Map-Screen erkannt, initialisiere...');
         tryInitMapZoom();
-      }, 400);
+      }, 200);
     }
     
     return result;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
             console.log('MapZoomController: Map-Screen erkannt, initialisiere...');
             tryInitMapZoom();
-          }, 400);
+          }, 200);
         }
         
         return result;
@@ -148,6 +148,21 @@ function initMapZoom(mapContainer) {
     isInitialized = true;
     console.log('MapZoomController: ✅ Panzoom erfolgreich initialisiert');
     
+    // Artwork markers
+    if (typeof MapMarkerController !== 'undefined') {
+      if (window.mapMarkerController) {
+        window.mapMarkerController.destroy();
+      }
+      window.mapMarkerController = new MapMarkerController(mapContainer);
+    }
+    
+    // Forward zoom events to marker controller so markers counter-scale
+    mapContainer.addEventListener('panzoomzoom', (e) => {
+      if (window.mapMarkerController) {
+        window.mapMarkerController.onZoom(e.detail.scale);
+      }
+    });
+    
     // Mouse Wheel Zoom
     const parent = mapContainer.parentElement;
     wheelHandler = (event) => {
@@ -188,6 +203,12 @@ function destroyPanzoom() {
       mapContainer.parentElement.removeEventListener('wheel', wheelHandler);
     }
     wheelHandler = null;
+  }
+  
+  // Cleanup markers
+  if (window.mapMarkerController) {
+    window.mapMarkerController.destroy();
+    window.mapMarkerController = null;
   }
   
   isInitialized = false;

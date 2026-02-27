@@ -2,40 +2,65 @@
   "hauptgebaeude-1og": {
     "imageWidth": 338,
     "imageHeight": 288,
-    "rotated": true,
     "markers": [
       {
         "id": "1",
-        "x": 155,
-        "y": 245,
+        "artworkId": "001",
+        "exhibitionId": 1,
+        "xPct": 49.7,
+        "yPct": 26.7,
         "type": "single"
       },
       {
         "id": "2",
-        "x": 265,
-        "y": 263,
+        "artworkId": "002",
+        "exhibitionId": 1,
+        "xPct": 82.4,
+        "yPct": 33.0,
         "type": "single"
       },
       {
         "id": "3",
-        "x": 266,
-        "y": 399,
+        "artworkId": "003",
+        "exhibitionId": 1,
+        "xPct": 82.7,
+        "yPct": 80.2,
         "type": "single"
       },
       {
         "id": "4",
-        "x": 45,
-        "y": 261,
+        "artworkId": "004",
+        "exhibitionId": 1,
+        "xPct": 17.3,
+        "yPct": 32.3,
         "type": "single"
       },
       {
         "id": "cluster-1",
-        "x": 25,
-        "y": 381,
-        "width": 78,
-        "height": 59,
         "type": "cluster",
-        "artworks": ["5", "6", "7"]
+        "artworks": [
+          {
+            "id": "5",
+            "artworkId": "005",
+            "exhibitionId": 1,
+            "xPct": 12.7,
+            "yPct": 74.0
+          },
+          {
+            "id": "6",
+            "artworkId": "006",
+            "exhibitionId": 1,
+            "xPct": 24.6,
+            "yPct": 74.0
+          },
+          {
+            "id": "7",
+            "artworkId": "007",
+            "exhibitionId": 1,
+            "xPct": 18.6,
+            "yPct": 84.4
+          }
+        ]
       }
     ]
   }

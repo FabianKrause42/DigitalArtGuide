@@ -14,7 +14,8 @@ class ArtworkDetailController {
     this.currentExhibitionId = null;
     this.currentArtworkId = null;
     this.artworkData = null;
-    this.audioPlayer = null; // Audio-Player Instanz
+    this.audioPlayer = null;
+    this.lightboxPanzoom = null;
   }
 
   /**
@@ -73,6 +74,8 @@ class ArtworkDetailController {
       const img = document.createElement('img');
       img.src = basePath + artwork.images[0];
       img.alt = artwork.title;
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => this._openLightbox(img.src, artwork.title));
       imageContainer.appendChild(img);
     }
 
@@ -135,6 +138,76 @@ class ArtworkDetailController {
   }
 
   /**
+   * Öffnet die Vollbild-Lightbox
+   */
+  _openLightbox(src, alt) {
+    const lightbox  = document.getElementById('artworkLightbox');
+    const panzoomEl = document.getElementById('artworkLightboxPanzoom');
+    const img       = document.getElementById('artworkLightboxImg');
+    const closeBtn  = document.getElementById('artworkLightboxClose');
+    if (!lightbox || !img) return;
+
+    img.src = src;
+    img.alt = alt || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+
+    // Touch-Events nicht nach außen durchlassen (verhindert versehentliche Zurück-Wischgeste)
+    lightbox._stopTouch = (e) => e.stopPropagation();
+    lightbox.addEventListener('touchstart', lightbox._stopTouch, { passive: true });
+    lightbox.addEventListener('touchmove',  lightbox._stopTouch, { passive: true });
+    lightbox.addEventListener('touchend',   lightbox._stopTouch, { passive: true });
+
+    // Panzoom auf dem Wrapper-Div initialisieren
+    if (typeof Panzoom !== 'undefined' && panzoomEl) {
+      if (this.lightboxPanzoom) {
+        this.lightboxPanzoom.destroy();
+      }
+      this.lightboxPanzoom = Panzoom(panzoomEl, {
+        maxScale: 4,
+        minScale: 1,
+        startScale: 1,
+        contain: 'outside',
+        animate: false
+      });
+      // Pinch-Zoom auf Touch-Geräten
+      panzoomEl.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        this.lightboxPanzoom.zoomWithWheel(e);
+      }, { passive: false });
+    }
+
+    // Close-Button
+    closeBtn.onclick = () => this._closeLightbox();
+
+    // Tap auf dunklen Hintergrund schließt ebenfalls
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) this._closeLightbox();
+    }, { once: true });
+  }
+
+  /**
+   * Schließt die Vollbild-Lightbox
+   */
+  _closeLightbox() {
+    const lightbox = document.getElementById('artworkLightbox');
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    // Touch-Blocker wieder entfernen
+    if (lightbox._stopTouch) {
+      lightbox.removeEventListener('touchstart', lightbox._stopTouch);
+      lightbox.removeEventListener('touchmove',  lightbox._stopTouch);
+      lightbox.removeEventListener('touchend',   lightbox._stopTouch);
+      lightbox._stopTouch = null;
+    }
+    if (this.lightboxPanzoom) {
+      this.lightboxPanzoom.destroy();
+      this.lightboxPanzoom = null;
+    }
+  }
+
+  /**
    * Hole den Slug für eine Exhibition ID
    */
   getExhibitionSlug(exhibitionId) {
@@ -162,6 +235,7 @@ class ArtworkDetailController {
       this.audioPlayer.destroy();
       this.audioPlayer = null;
     }
+    this._closeLightbox();
   }
 }
 

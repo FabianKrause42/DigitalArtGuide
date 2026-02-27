@@ -1,4 +1,20 @@
 <div class="app-shell artwork-detail-screen">
+
+  <!-- Zurück-Button (Figma: left:17px top:37px, Kreis 36px) -->
+  <button class="artwork-detail-back-btn" id="artworkDetailBackBtn" aria-label="Zurück">
+    <img src="images/icons/back.png" alt="">
+  </button>
+
+  <!-- Vollbild-Lightbox -->
+  <div class="artwork-lightbox" id="artworkLightbox" aria-hidden="true">
+    <button class="artwork-lightbox-close" id="artworkLightboxClose" aria-label="Schließen">
+      <img src="images/icons/close.png" alt="">
+    </button>
+    <div class="artwork-lightbox-panzoom" id="artworkLightboxPanzoom">
+      <img class="artwork-lightbox-img" id="artworkLightboxImg" src="" alt="">
+    </div>
+  </div>
+
   <div class="artwork-detail-container">
     <!-- Artwork Hauptbild -->
     <div class="artwork-detail-image" id="artworkDetailImage">

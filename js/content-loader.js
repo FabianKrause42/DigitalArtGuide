@@ -234,6 +234,9 @@ class ContentLoader {
         if (options.artworkId) {
           newScreen.dataset.artworkId = options.artworkId;
         }
+        if (options.sourceScreen) {
+          newScreen.dataset.sourceScreen = options.sourceScreen;
+        }
 
         if (screenName.startsWith('exhibition')) {
           newScreen.classList.add('exhibition-screen');
@@ -632,6 +635,22 @@ class ContentLoader {
     if (!screenElement) return;
 
     const exhibitionId = parseInt(screenElement.dataset.exhibitionId);
+    const sourceScreen = screenElement.dataset.sourceScreen || null;
+
+    // Gemeinsame Zurück-Logik für Swipe und Button
+    const goBack = () => {
+      if (sourceScreen && sourceScreen.startsWith('map-')) {
+        window.loadScreen(sourceScreen);
+      } else if (exhibitionId) {
+        this.loadArtworksList(exhibitionId, true);
+      }
+    };
+
+    // Zurück-Button
+    const backBtn = document.getElementById('artworkDetailBackBtn');
+    if (backBtn) {
+      backBtn.addEventListener('click', goBack);
+    }
 
     screenElement.addEventListener('touchstart', (e) => {
       const touch = e.touches[0];
@@ -655,11 +674,12 @@ class ContentLoader {
       const dx = touch.clientX - touchStartX;
       const dy = touch.clientY - touchStartY;
 
-      // Right-Swipe: Zurück zur Artworks-Liste
+      // Right-Swipe: Zurück zur Karte (wenn von dort gekommen) oder zur Artworks-Liste
       if (dx > 80 && Math.abs(dx) > Math.abs(dy)) {
-        if (exhibitionId) {
-          this.loadArtworksList(exhibitionId, true); // isBackNavigation = true
-        }
+        // Nicht ausführen wenn Lightbox geöffnet ist
+        const lightbox = document.getElementById('artworkLightbox');
+        if (lightbox && lightbox.classList.contains('open')) return;
+        goBack();
       }
     }, { passive: true });
   }
@@ -679,7 +699,7 @@ class ContentLoader {
    * @param {string} artworkId - ID des Artworks
    * @param {boolean} isBackNavigation - Ob es eine Zurück-Navigation ist
    */
-  loadArtworkDetail(exhibitionId, artworkId, isBackNavigation = false) {
+  loadArtworkDetail(exhibitionId, artworkId, sourceScreen = null, isBackNavigation = false) {
     if (this.isAnimating) return;
 
     const screenName = `artwork-detail-${exhibitionId}-${artworkId}`;
@@ -688,7 +708,7 @@ class ContentLoader {
     // Artwork-Detail kommt von rechts (neue Page), außer bei Zurück-Navigation
     const isBackToHome = isBackNavigation;
 
-    this.loadContent(filePath, screenName, isBackToHome, { exhibitionId, artworkId });
+    this.loadContent(filePath, screenName, isBackToHome, { exhibitionId, artworkId, sourceScreen });
     
     // Update URL
     history.pushState({ screen: screenName, exhibitionId, artworkId }, '', `?view=artwork-detail&exhibition=${exhibitionId}&artwork=${artworkId}`);

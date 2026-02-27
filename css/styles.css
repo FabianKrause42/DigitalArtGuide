@@ -894,6 +894,95 @@ body.display-browser .exh-date {
   overflow-y: auto;
 }
 
+/* Back button – fixed so it stays visible while scrolling */
+.artwork-detail-back-btn {
+  position: fixed;
+  left: 17px;
+  top: 37px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 200;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.artwork-detail-back-btn img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---- Artwork Lightbox ---- */
+.artwork-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.artwork-lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.artwork-lightbox-close {
+  position: absolute;
+  right: 14px;
+  top: 13px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 510;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.artwork-lightbox-close img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.artwork-lightbox-panzoom {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  cursor: grab;
+}
+
+.artwork-lightbox-panzoom:active {
+  cursor: grabbing;
+}
+
+.artwork-lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
 .artwork-detail-container {
   width: 100%;
   display: flex;
@@ -1347,6 +1436,7 @@ body.display-browser .exh-date {
 }
 
 .map-plan-image {
+  position: relative;
   width: 100%;
   max-width: 400px;
   height: 45vh;
@@ -1365,11 +1455,70 @@ body.display-browser .exh-date {
   object-fit: contain;
   display: block;
   opacity: 0;
-  transition: opacity 0.15s ease-out;
+  transition: opacity 0.075s ease-out;
 }
 
 .map-plan-image img.panzoom-ready {
   opacity: 1;
+}
+
+/* ---- Map Artwork Markers ---- */
+
+/* Invisible overlay stretched over the whole Panzoom element.
+   pointer-events: none so the base overlay div itself doesn't block panning. */
+.map-marker-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Individual marker button – 30 px circle, visually centred on its coordinate */
+.map-marker {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E6E6E6;
+  border: 1.5px solid #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  cursor: pointer;
+  /* Centre the element on its percentage coordinate */
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  font-family: 'TWKLausanne', sans-serif;
+  font-size: 18px;
+  font-weight: 350;
+  color: #222222;
+  line-height: 1;
+  padding: 0;
+  /* Smooth LOD transition for cluster dots */
+  transition: width 0.2s ease, height 0.2s ease, font-size 0.2s ease;
+  /* Sit above the image */
+  z-index: 10;
+  /* No tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Collapsed cluster dot – small, no label */
+.map-marker.cluster-dot {
+  width: 12px;
+  height: 12px;
+  font-size: 0;
+  border-width: 1px;
+}
+
+/* Cluster dot after zooming past LOD threshold */
+.map-marker.cluster-dot.expanded {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
 }
 
 /* Tab Bar Container */
