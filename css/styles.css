@@ -469,6 +469,13 @@ body.exhibition-page .screen {
   text-align: center;
 }
 
+/* Tab-Button deaktiviert (z.B. Scan wenn keine scanbaren Exponate vorhanden) */
+.tab-button[data-disabled="true"] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* ====== CAMERA SCREEN ====== */
 
 .scan-title {

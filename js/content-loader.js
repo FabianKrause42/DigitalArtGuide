@@ -340,6 +340,9 @@ class ContentLoader {
     tabButtons.forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
+
+        // Button deaktiviert (data-disabled="true" in index.html gesetzt)
+        if (button.getAttribute('data-disabled') === 'true') return;
         
         // Lass Screen-Animation nicht zu, wenn gerade animiert
         if (this.isAnimating) return;

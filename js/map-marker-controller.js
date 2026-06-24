@@ -80,6 +80,7 @@
 
       this._overlayScale      = config.overlayScale      !== undefined ? config.overlayScale      : 1;
       this._overlayOffsetYPct  = config.overlayOffsetYPct  !== undefined ? config.overlayOffsetYPct  : 0;
+      this._markerSize         = config.markerSize          !== undefined ? config.markerSize          : MARKER_SIZE_PX;
 
       this.mapContainer.appendChild(overlay);
 
@@ -96,12 +97,20 @@
       el.dataset.yPct         = data.yPct;
       el.dataset.artworkId    = data.artworkId;
       el.dataset.exhibitionId = data.exhibitionId;
-      el.dataset.baseSize     = MARKER_SIZE_PX;
+      el.dataset.baseSize     = this._markerSize;
+
+      // Per-floor size override (z.B. bei dichteren Grundrissen mit vielen Markern)
+      if (this._markerSize !== MARKER_SIZE_PX) {
+        const scaledFont = Math.round(this._markerSize * (18 / MARKER_SIZE_PX));
+        el.style.width    = `${this._markerSize}px`;
+        el.style.height   = `${this._markerSize}px`;
+        el.style.fontSize = `${scaledFont}px`;
+      }
 
       el.addEventListener('click', () => this._navigate(data.exhibitionId, data.artworkId));
       parent.appendChild(el);
 
-      this.markerEls.push({ el, xPct: data.xPct, yPct: data.yPct, baseSize: MARKER_SIZE_PX });
+      this.markerEls.push({ el, xPct: data.xPct, yPct: data.yPct, baseSize: this._markerSize });
     }
 
     _createClusterDot(parent, data) {

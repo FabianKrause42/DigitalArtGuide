@@ -1,66 +1,213 @@
 {
   "exhibition": {
-    "id": "ausstellung-1-beispiel",
-    "title": "Licht und Schatten",
-    "year": 2025
+    "id": "ausstellung-2-RememberedNotReal",
+    "title": "Remembered, Not Real",
+    "year": 2026
   },
   "artworks": [
     {
-      "id": "101",
+      "id": "001",
+      "number": "1",
+      "title": "[Tiled]",
+      "artist": "Leonie Bolek",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "Computerspiel",
+      "description": {
+        "de": "Leonie Bolek führt mit ihrem Spiel [Tiled] (2026) durch eine digitale Landschaft. Nach Abschluss der Reise lässt sich das Spiel erneut beginnen – doch mit jedem neuen Durchlauf verändert sich die Welt zunehmend und wird immer textbasierter. Die Arbeit stellt die Frage, inwieweit die erste, unmittelbare Spielerfahrung zugunsten eines optimierten Endes aufgegeben wird. | Musik: Jurij Espenschied",
+        "en": "Leonie Bolek guides players through a digital landscape with her game [Tiled] (2026). Once the journey is complete, the game can be restarted – but with each new playthrough, the world changes increasingly and becomes more and more text-based. The work asks to what extent the initial, immediate gaming experience is sacrificed in favor of an optimized ending. | Music: Jurij Espenschied"
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "002",
+      "number": "2",
+      "title": "Myosotis: forget – me – not",
+      "artist": "Marco Verri",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "Klickspiel",
+      "description": {
+        "de": "Auf das Entfalten einer Erzählung setzt Marco Verris Klickspiel Myosotis: forget – me – not (2026). Aus verstreuten Bildern, Erinnerungen und Träumen der Protagonistin entsteht eine Narrative, welche die Spielenden selbst zusammensetzen müssen.",
+        "en": "Marco Verri's click-based game Myosotis: forget – me – not (2026) focuses on the unfolding of a narrative. From scattered images, memories, and dreams of the protagonist, a narrative emerges that players must piece together themselves."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "003",
+      "number": "3",
+      "title": "SpawnPoint",
+      "artist": "Sebastian Mira",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "Installation",
+      "description": {
+        "de": "Mit der raumgreifenden Installation SpawnPoint (2026) untersucht Sebastian Mira kontrastreiche Vorstellungen von Zuhause und Zugehörigkeit durch eine reduzierte, beinahe provisorisch wirkende Schlafsituation, die durch einen Laptop ergänzt wird, auf dem in Endlosschleife überfüllte Wohnräume zu sehen sind. Der Kontrast zwischen der spärlichen physischen Umgebung und den überladenen Innenräumen auf dem Bildschirm macht unterschiedliche Lebensrealitäten sichtbar und verhandelt Fragen von Raum, Sehnsucht und sozialer Wirklichkeit.",
+        "en": "With the expansive installation SpawnPoint (2026), Sebastian Mira explores contrasting notions of home and belonging through a minimalist, almost makeshift sleeping arrangement, complemented by a laptop displaying an endless loop of images of overcrowded living spaces. The contrast between the sparse physical environment and the cluttered interiors on the screen reveals different realities of life and addresses questions of space, longing, and social reality."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "004",
+      "number": "4",
+      "title": "The Little Brother is Watching",
+      "artist": "Valentin Serr",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "PlayStation 2, Fernseher, Controller",
+      "description": {
+        "de": "Valentin Serrs The Little Brother is Watching (2026) greift Momente gemeinsamer Spielerfahrungen auf und überführt sie in eine subtile Inszenierung von Macht. Die Arbeit besteht aus einer modifizierten Playstation 2, die mit einem alten Fernseher verbunden ist. Davor liegen zwei Controller, doch nur einer ist tatsächlich angeschlossen. Was zunächst wie ein gemeinsames Spiel erscheint, entpuppt sich als einseitige Erfahrung und verweist auf Hierarchien innerhalb familiärer Beziehungen.",
+        "en": "Valentin Serr's The Little Brother is Watching (2026) captures moments of shared gaming experiences and transforms them into a subtle exploration of power. The work consists of a modified PlayStation 2 connected to an old television. Two controllers lie in front of it, but only one is actually connected. What initially appears to be a shared game turns out to be a one-sided experience and points to hierarchies within family relationships."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "005",
+      "number": "5",
+      "title": "The Variety",
+      "artist": "Matin Varzegani-Safarzad",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "Skulptur, Glas",
+      "description": {
+        "de": "The Variety (2026) von Matin Varzegani-Safarzad untersucht die Illusion von Wahlmöglichkeiten. Drei formal unterschiedliche Gläser wirken zunächst wie Varianten eines Gebrauchsobjekts, scheitern jedoch allesamt an ihrer Funktion. Die Arbeit zeigt somit, dass vermeintliche Vielfalt oft nur Variationen desselben Systems hervorbringt.",
+        "en": "The Variety (2026) by Matin Varzegani-Safarzad examines the illusion of choice. Three formally distinct glasses initially appear to be variations of a utilitarian object, yet all fail in their function. The work thus demonstrates that supposed diversity often produces only variations of the same system."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "006",
+      "number": "6",
+      "title": "Slopbelisk",
+      "artist": "Jonas Eckert",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "Skulptur, 3D-Druck",
+      "description": {
+        "de": "In der Skulptur Slopbelisk (2026) verdichtet Jonas Eckert den KI-generierten Bildüberschuss des Internets zu einer 3D-gedruckten, unnatürlichen Masse aus ineinander verschmolzenen, nur noch teilweise erkennbaren Formen. Das Objekt wird so zum materiellen Rückstand des digitalen Überflusses.",
+        "en": "In the sculpture Slopbelisk (2026), Jonas Eckert condenses the AI-generated visual overload of the internet into a 3D-printed, unnatural mass of fused forms that are only partially recognizable. The object thus becomes the material residue of digital excess."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "007",
+      "number": "7",
+      "title": "Price loading …",
+      "artist": "Nikol Stanojevic",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2023",
+      "materials": "Pop-up-Store, digitale Mode",
+      "description": {
+        "de": "In Form eines Pop-up-Stores untersucht Price loading … (2023) von Nikol Stanojevic wie sich Wert und Preis von Mode verschieben, sobald materielle Kriterien wie Stofflichkeit oder Verarbeitung im digitalen Raum ihre Bedeutung verlieren. Dabei entstehen neue Formen der Preislogik: Was passiert mit dem Preis eines Kleides, wenn seine Materialien noch nicht geladen sind, und steigt der Preis, wenn ein Kleidungsstück aus mehreren digitalen Ebenen besteht?",
+        "en": "In the form of a pop-up store, Nikol Stanojevic's Price loading … (2023) explores how the value and price of fashion shift as soon as material criteria such as fabric or craftsmanship lose their significance in the digital space. This gives rise to new forms of pricing logic: What happens to the price of a dress if its materials have not yet been loaded, and does the price increase if a garment consists of multiple digital layers?"
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "008",
+      "number": "8",
+      "title": "Internet Cafés. Last days.",
+      "artist": "Florian Kröner, Benjamin Walther",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2010",
+      "materials": "Fotoserie",
+      "description": {
+        "de": "Die Fotoserie Internet Cafés. Last days. (2010) von Florian Kröner und Benjamin Walther dokumentiert die letzten verbliebenen Internetcafés Stuttgarts – Orte, die einst soziale Treffpunkte und Zugänge zum Netz waren und heute wie Hinterlassenschaften einer vergangenen Internetkultur erscheinen.",
+        "en": "The photo series Internet Cafés. Last days. (2010) by Florian Kröner and Benjamin Walther documents Stuttgart's last remaining internet cafés – places that were once social gathering spots and gateways to the web, and now appear as relics of a vanished internet culture."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "009",
+      "number": "9",
+      "title": "Submit Button",
+      "artist": "Johannes P. Osterhoff",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2003",
+      "materials": "Skulptur",
+      "description": {
+        "de": "In Johannes P. Osterhoffs Submit Button (2003) wird ein Klick vom digitalen Interface greifbar: Ein vergrößerter, aus dem Browser gelöster „Submit"-Button übersetzt die scheinbar beiläufige Geste in ein physisches Objekt und verweist damit auf eine frühe, prägende Erfahrung des World Wide Webs.",
+        "en": "In Johannes P. Osterhoff's Submit Button (2003), a click becomes physical: an enlarged \"Submit\" button, detached from the browser, transforms this seemingly casual gesture into a physical object, thereby evoking an early, formative experience of the World Wide Web."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "010",
+      "number": "10",
+      "title": "Pure <HTML>",
+      "artist": "Vanessa Schmidt",
+      "artistBorn": null,
+      "artistDied": null,
+      "year": "2024",
+      "materials": "Interaktive Website",
+      "description": {
+        "de": "In Pure <HTML> (2024) richtet Vanessa Schmidt den Blick auf die elementaren Bausteine des frühen Webdesigns und gibt Besuchenden die Möglichkeit, mit ihnen Kunstwerke aus eigens generierten Websites zu erstellen.",
+        "en": "In Pure <HTML> (2024), Vanessa Schmidt turns her attention to the basic building blocks of early web design and gives visitors the opportunity to use them to create artworks from websites generated specifically for this purpose."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
+    },
+    {
+      "id": "011",
       "number": "11",
-      "title": "Refraction I",
-      "artist": "Max Beispiel",
-      "artistBorn": 1985,
+      "title": "Naked Web",
+      "artist": "Leni Aigner, Vanessa Schmidt, Sutti Khongchuai, Sofija Cvetkovic, Yeonwoo Oh",
+      "artistBorn": null,
       "artistDied": null,
-      "year": 2024,
-      "materials": "Glas, LED-Licht, Stahl",
-      "description": "Ein abstraktes Werk, das sich mit der Brechung von Licht auseinandersetzt. Die Installation reagiert auf Bewegungen von Besuchern.",
-      "images": [
-        "media/images/artwork-101-01.jpg"
-      ],
-      "thumbnail": "media/images/artwork-101-01.jpg",
-      "audio": {
-        "de": "media/audio/artwork-001-de.mp3",
-        "en": null
-      }
+      "year": "2024",
+      "materials": "Werkreihe, Websites",
+      "description": {
+        "de": "Die Werkreihe Naked Web (2024) von Leni Aigner, Vanessa Schmidt, Sutti Khongchuai, Sofija Cvetkovic und Yeonwoo Oh greift die frühe Ästhetik des HTML auf und zeigt, wie bereits mit wenigen Tags und einfachen Elementen eigenständige visuelle Kompositionen entstehen können. Dabei wird sichtbar, wie sehr frühe Webgestaltung von Improvisation, Zweckentfremdung und Erfindung bestimmt war.",
+        "en": "The series Naked Web (2024) by Leni Aigner, Vanessa Schmidt, Sutti Khongchuai, Sofija Cvetkovic, and Yeonwoo Oh takes up the early aesthetics of HTML and demonstrates how independent visual compositions can emerge even with just a few tags and simple elements. This reveals just how much early web design was shaped by improvisation, repurposing, and invention."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
     },
     {
-      "id": "102",
+      "id": "012",
       "number": "12",
-      "title": "Shadow Dance",
-      "artist": "Elena Schatten",
-      "artistBorn": 1978,
+      "title": "Internet, here is a musical for you",
+      "artist": "Felina Russ",
+      "artistBorn": null,
       "artistDied": null,
-      "year": 2023,
-      "materials": "Acryl auf Leinwand, 120 x 80 cm",
-      "description": "Eine farbenfrohe Erkundung von Licht und Schatten in der urbanen Umgebung.",
-      "images": [
-        "media/images/artwork-202-01.jpg"
-      ],
-      "thumbnail": "media/images/thumb-002.jpg",
-      "audio": {
-        "de": null,
-        "en": null
-      }
-    },
-    {
-      "id": "103",
-      "number": "13",
-      "title": "Monochrome Serenity",
-      "artist": "Hans Monochrom",
-      "artistBorn": 1945,
-      "artistDied": 2020,
-      "year": 1998,
-      "materials": "Schwarzweiß-Fotografie",
-      "description": "Ein klassisches Werk aus den 1990er Jahren, das die Schönheit von Kontrasten erforscht.",
-      "images": [
-        "media/images/artwork-003-01.jpg"
-      ],
-      "thumbnail": "media/images/thumb-003.jpg",
-      "audio": {
-        "de": "media/audio/artwork-003-de.mp3",
-        "en": "media/audio/artwork-003-en.mp3"
-      }
+      "year": "2021",
+      "materials": "Browser, Software, Echtzeit-Performance",
+      "description": {
+        "de": "Felina Russ' Internet, here is a musical for you (2021) widmet sich dem Umgang mit geöffneten Tabs. Durch das permanente Offenhalten und Ansammeln von Fenstern entwickelt der Browser ein Eigenleben. Er wird zur Bühne und die einzelnen Fenster zu Akteuren, indem sich aus ihnen Musik und Bewegung in Echtzeit entfalten.",
+        "en": "Felina Russ's Internet, here is a musical for you (2021) explores the handling of open tabs. By constantly keeping windows open and collecting them, the browser develops a life of its own. It becomes a performance stage, and the individual windows become actors as music and movement unfold from them in real time."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": { "de": null, "en": null }
     }
   ]
 }

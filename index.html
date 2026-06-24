@@ -19,7 +19,9 @@
       <img src="images/icons/home.png" alt="Home">
       <span>Ausstellungen</span>
     </button>
-    <button class="tab-button" data-screen="scan" aria-label="Scannen">
+    <!-- SCAN-BUTTON: deaktiviert, solange keine scanbaren Exponate in der Ausstellung vorhanden sind.
+         Um den Button wieder zu aktivieren: data-disabled="true" entfernen und aria-disabled="false" setzen. -->
+    <button class="tab-button" data-screen="scan" data-disabled="true" aria-disabled="true" aria-label="Scannen (nicht verfügbar)">
       <img src="images/icons/camera.png" alt="Scannen">
       <span>Scannen</span>
     </button>
