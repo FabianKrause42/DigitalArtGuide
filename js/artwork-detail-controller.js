@@ -108,11 +108,16 @@ class ArtworkDetailController {
     }
 
     // Beschreibung (mit Paragraphen)
+    // Unterstützt altes Format (string) und neues Format ({ de, en })
     const descriptionContainer = document.getElementById('artworkDetailDescription');
     if (descriptionContainer && artwork.description) {
-      // Ersetze \n\n mit Paragraph-Breaks
-      const paragraphs = artwork.description.split('\\n\\n');
+      const lang = document.documentElement.lang || 'de';
+      const rawDesc = typeof artwork.description === 'object'
+        ? (artwork.description[lang] || artwork.description.de || '')
+        : artwork.description;
+      const paragraphs = rawDesc.split('\n\n');
       paragraphs.forEach(para => {
+        if (!para.trim()) return;
         const p = document.createElement('p');
         p.textContent = para.trim();
         descriptionContainer.appendChild(p);
@@ -167,7 +172,7 @@ class ArtworkDetailController {
         maxScale: 4,
         minScale: 1,
         startScale: 1,
-        contain: 'outside',
+        contain: false,
         animate: false
       });
       // Pinch-Zoom auf Touch-Geräten
@@ -212,8 +217,8 @@ class ArtworkDetailController {
    */
   getExhibitionSlug(exhibitionId) {
     const slugs = {
-      1: 'OfOtherPlaces',
-      2: 'VesselsOfUnbecoming',
+      1: 'OnlineSince1996',
+      2: 'RememberedNotReal',
       3: 'DenkeFreiSchaffeNeu'
     };
     return slugs[exhibitionId] || '';

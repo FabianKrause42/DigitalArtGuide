@@ -1,15 +1,15 @@
 [
   {
-    "id": "ausstellung-1-OfOtherPlaces",
-    "title": "Of Other Places",
-    "cover": "Content/ausstellung-1-OfOtherPlaces/cover.jpg",
-    "page": "Content/ausstellung-1-OfOtherPlaces/exhibition1.html"
+    "id": "ausstellung-1-OnlineSince1996",
+    "title": "online since 1996",
+    "cover": "Content/ausstellung-1-OnlineSince1996/cover.jpg",
+    "page": "Content/ausstellung-1-OnlineSince1996/exhibition1.html"
   },
   {
-    "id": "ausstellung-2-VesselsOfUnbecoming",
-    "title": "Vessels of Unbecoming",
-    "cover": "Content/ausstellung-2-VesselsOfUnbecoming/cover.jpg",
-    "page": "Content/ausstellung-2-VesselsOfUnbecoming/exhibition2.html"
+    "id": "ausstellung-2-RememberedNotReal",
+    "title": "Remembered Not Real",
+    "cover": "Content/ausstellung-2-RememberedNotReal/cover.jpg",
+    "page": "Content/ausstellung-2-RememberedNotReal/exhibition2.html"
   },
   {
     "id": "ausstellung-3-DenkeFreiSchaffeNeu",

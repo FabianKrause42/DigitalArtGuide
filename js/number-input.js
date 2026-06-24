@@ -237,8 +237,8 @@ class NumberInputController {
    */
   getExhibitionSlug(exhibitionId) {
     const slugs = {
-      1: 'OfOtherPlaces',
-      2: 'VesselsOfUnbecoming',
+      1: 'OnlineSince1996',
+      2: 'RememberedNotReal',
       3: 'DenkeFreiSchaffeNeu'
     };
     return slugs[exhibitionId] || '';

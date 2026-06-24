@@ -1,0 +1,509 @@
+{
+  "exhibition": {
+    "id": "ausstellung-1-OnlineSince1996",
+    "title": "online since 1996",
+    "year": 2026
+  },
+  "artworks": [
+    {
+      "id": "001",
+      "number": "1",
+      "title": "Best Effort Network",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2015/2020",
+      "materials": "Website",
+      "description": {
+        "de": "Best Effort Network visualisiert die normalerweise unsichtbaren Prozesse der Datenübertragung im Internet. Ruft man best.effort.network auf, so öffnet sich eine Website, die auf grau verlaufendem Hintergrund eine Animation der Künstlerin zeigt, die sich ununterbrochen auf einem Karussell im Kreis dreht. Verschwindet sie plötzlich, bedeutet dies, dass eine andere Person die Website aufgerufen hat und deren Anfrage vom Server priorisiert wurde. Da Olia nicht in mehreren Browsern gleichzeitig existieren kann, erscheint sie nun auf dem Bildschirm der anderen Person. Erst wenn die ursprüngliche Anfrage wieder an die Spitze der Warteschlange gelangt, kehrt sie zurück.\n\nDie Arbeit basiert auf dem Prinzip eines „Best-Effort-Netzwerks\", wie es dem Internet zugrunde liegt. In einem solchen Netzwerk werden Datenpakete ohne Garantie auf erfolgreiche Zustellung, Reihenfolge oder Geschwindigkeit weitergeleitet. Vielmehr kann ihre Übertragung verzögert sein, sie können verloren gehen oder erneut gesendet werden. Best Effort Network macht diese normalerweise verborgenen Abläufe sichtbar und erfahrbar. Die Besuchenden sind dazu eingeladen, den Link über ihr Handy aufzurufen und es selbst auszuprobieren.",
+        "en": "Best Effort Network visualizes the usually invisible processes of data transmission on the internet. When visiting best.effort.network, users encounter a website displaying an animation of the artist endlessly spinning on a carousel against a grey gradient background. If she suddenly disappears, it means that another person has accessed the website and their request has been prioritized by the server. Since Olia cannot exist simultaneously in multiple browsers, she now appears on the other visitor's screen. Only when the original request reaches the front of the queue again does she return.\n\nThe work is based on the principle of a \"best-effort network,\" which underlies the internet itself. In such a network, data packets are transmitted without guarantees regarding successful delivery, order, or speed. Their transmission may be delayed, packets may be lost, or they may need to be resent. Best Effort Network makes these normally hidden processes visible and tangible. Visitors are welcome to access the link on their smartphones and try it out for themselves."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-001-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "002",
+      "number": "2",
+      "title": "Lossless",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2018",
+      "materials": "Animierte GIFs, LED-Panels, ca. 160 × 1.000 cm",
+      "description": {
+        "de": "Lossless ist eine Installation aus LED-Panels, auf denen animierte GIFs der Website Blingee.com (2006–2024) gezeigt werden. Die Plattform richtete sich vor allem an junge Nutzerinnen und Nutzer, die Bilder mit glitzernden Effekten, blinkenden Stickern und eigenen Collagen gestalten und über soziale Netzwerke wie MySpace teilen konnten. Für Olia Lialina ist Blingee.com ein prägnantes Beispiel der „vernakulären Webästhetik\" und der „digitalen Folklore\". Die vernakuläre Webästhetik bezeichnet die von Nutzerinnen und Nutzern geprägten visuellen Ausdrucksformen des frühen Internets. Individuell gestaltete Webseiten, GIFs oder eben die Sticker und Collagen von Blingee.com entstanden jenseits professioneller Designstandards und verbreiteten sich durch Nachahmung und Weiterentwicklung innerhalb von Online-Communities. Als Form digitaler Folklore zeigen sie, wie Nutzer die Kultur und Ästhetik des Internets aktiv mitgestalteten.\n\nDie oft als kitschig oder amateurhaft wahrgenommenen GIFs stehen im Kontrast zu den standardisierten und hochglanzpolierten Oberflächen des heutigen Internets. Durch die fragmentierte Anordnung der LED-Panels, die an archäologische Fundstücke erinnert, präsentiert Lossless diese Bildwelten als digitale Artefakte einer vergangenen Internetkultur und verweist auf die Bedeutung ihrer Bewahrung als Teil der Geschichte des Webs. Die ausgestellten Elemente stammen aus den Dateien der legendären Blingee Stamp-Designerin Irina Kuleshova, deren Archiv von Olia Lialina bewahrt wird.",
+        "en": "Lossless is an installation consisting of LED panels displaying animated GIFs from the website Blingee.com (2006–2024). The platform primarily catered to young users, allowing them to decorate images with glitter effects, blinking stickers, and personalized collages that could then be shared on social networks such as MySpace.\n\nFor Olia Lialina, Blingee.com is a striking example of \"vernacular web aesthetics\" and digital folklore. Vernacular web aesthetics refers to the visual forms of expression shaped by users during the early internet era. Personalized websites, GIFs, and the stickers and collages created on Blingee.com emerged outside professional design standards and spread through imitation and adaptation within online communities. As forms of digital folklore, they demonstrate how users actively shaped the culture and aesthetics of the internet.\n\nThe GIFs, often perceived as kitschy or amateurish, stand in contrast to the standardized and highly polished interfaces of today's web. Through the fragmented arrangement of the LED panels, reminiscent of archaeological artifacts, Lossless presents these visual worlds as digital relics of a past internet culture and emphasizes the importance of preserving them as part of the history of the web. The elements exhibited come from the files uploaded by Blingee's legendary stamp maker Irina Kuleshova, whose archive is preserved by Olia Lialina."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-002-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "003",
+      "number": "3",
+      "title": "The Whole Internet",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2018",
+      "materials": "Zwei Bücher, je 22,86 × 18,42 × 2,54 cm",
+      "description": {
+        "de": "The Whole Internet präsentiert die erste und die letzte Ausgabe von The Whole Internet User's Guide and Catalog als interaktives Readymade. Das von Ed Krol verfasste und 1992 und 1999 bei O'Reilly veröffentlichte Buch gilt als eines der ersten populären Werke über das Internet und machte dessen damals noch wenig bekannten Strukturen einem breiten Publikum zugänglich. Der Titel und das Format sind von Stewart Brands Magazin Whole Earth Catalog inspiriert. Der Whole Earth Catalog war ein Gegenkultur-Magazin, das seit 1968 Wissen, Werkzeuge und Ressourcen für Selbstversorgung, Ökologie und eigenständiges Lernen bündelte. Aufgrund seines Prinzips „Access to Tools\" gilt der Katalog als wichtiger Vorläufer des World Wide Web, in dem Informationen kuratiert, bewertet und ähnlich wie später im Internet mit Bezugsquellen verknüpft wurden. Steve Jobs bezeichnete den Whole Earth Catalog daher als „eine Art Google in Taschenbuchform, 35 Jahre bevor es Google gab\".\n\nDurch die Gegenüberstellung der ersten und letzten Ausgabe von The Whole Internet User's Guide and Catalog verweist Olia Lialinas Arbeit auf den rasanten Wandel des World Wide Webs und seiner kulturellen Wahrnehmung von einem spezialisierten Netzwerk hin zu einem allgegenwärtigen Medium. Die Besucherinnen und Besucher sind angehalten, in den Büchern zu stöbern und zu lesen, und so in die Welt des The Whole Internet User's Guide and Catalog einzutauchen.",
+        "en": "The Whole Internet presents the first and last editions of The Whole Internet User's Guide and Catalog as an interactive readymade. Written by Ed Krol and published by O'Reilly in 1992 and 1999, the book is considered one of the first popular introductions to the Internet, making its then little-known structures accessible to a broader audience. Its title and format were inspired by Stewart Brand's magazine Whole Earth Catalog.\n\nThe Whole Earth Catalog was a countercultural magazine that, beginning in 1968, compiled knowledge, tools, and resources for self-sufficiency, ecology, and independent learning. Owing to its principle of \"Access to Tools\" the catalogue is often regarded as an important precursor to the World Wide Web as it curated, reviewed, and linked information sources in a way that anticipated how people would later navigate the internet. Steve Jobs therefore described the Whole Earth Catalog as \"a sort of Google in paperback form, 35 years before Google came along\".\n\nBy juxtaposing the first and final editions of The Whole Internet User's Guide and Catalog, Olia Lialina's work highlights the rapid transformation of the World Wide Web and its cultural perception — from a specialized network to an omnipresent medium. Visitors are encouraged to browse and read the books, immersing themselves in the world of The Whole Internet User's Guide and Catalog."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-003-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "004",
+      "number": "4",
+      "title": "Web Pages That Suck / Son of Web Pages That Suck",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2026",
+      "materials": "Zwei Webdesign-Handbücher, je 19,69 × 1,91 × 24,77 cm",
+      "description": {
+        "de": "Der Bestseller Web Pages That Suck von Vincent Flanders und Michael Willis sowie Son of Web Pages That Suck von Flanders und Dean Peters lehren Webdesign anhand von Negativbeispielen: Gutes Layout soll man lernen, indem man „schlechte\" Websites untersucht. Mit kritischem Humor machen die Autoren auf die wiederkehrenden Gestaltungsmuster früherer Websites aufmerksam – auf überladene Startseiten, schwer lesbare Typografie oder unklare Navigation. Anstelle festgeschriebener Gestaltungsdogmen rücken sie einfache Prinzipien wie Klarheit, Nutzbarkeit und inhaltlichen Fokus in den Vordergrund. Auch wenn sich Suchmaschinen, Geräte und Oberflächen seitdem stark verändert haben, bleibt die Grundidee bestehen: Bereits das Design entscheidet darüber, wie zugänglich und verständlich Inhalte präsentiert werden.",
+        "en": "The bestselling books Web Pages That Suck by Vincent Flanders and Michael Willis, and Son of Web Pages That Suck by Vincent Flanders and Dean Peters, teach web design through negative examples: good design is learned by studying \"bad\" websites.\n\nWith critical humour, the authors draw attention to recurring design patterns found on early websites—overcrowded homepages, difficult-to-read typography, and confusing navigation. Rather than promoting rigid design dogmas, they emphasize simple principles such as clarity, usability, and a focus on content. Although search engines, devices, and interfaces have changed dramatically since then, the underlying idea remains relevant: design fundamentally shapes how accessible and understandable information becomes."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-004-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "005",
+      "number": "5",
+      "title": "My Boyfriend Came Back from the War",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "1996",
+      "materials": "Website",
+      "description": {
+        "de": "Olia Lialinas My Boyfriend Came Back from the War gilt als eines der bedeutendsten Werke der frühen Net Art. Ausgehend von ihrem Studium der Filmkritik und ersten Erfahrungen im Erstellen von Websites verstand Lialina das Internet bereits in den 1990er-Jahren nicht nur als Speicherort, sondern als eigenständiges narratives Medium. Die Beschäftigung mit dem Internet führte dazu, dass die Künstlerin keine Filmkritiken mehr schreiben, sondern Filme online erschaffen wollte. Das Werk erzählt mithilfe von HTML, Hypertext, schwarz-weißen Bitmap-Bildern und Browser-Frames die Begegnung eines Paares nach dem Krieg. Durch Klicks bewegen sich die Nutzerinnen und Nutzer durch immer kleinere Frames, in denen ein Monolog sichtbar wird, der Traumata, Untreue und Entfremdung thematisiert. Olia Lialina erschuf so ein neues Genre, das sie „Net.Film\" taufte.\n\nSie verband Stilmittel aus dem Film wie Montage mit der Struktur des Webs. Anders als im Kino existieren in der Arbeit Bilder und Zeitebenen gleichzeitig nebeneinander im Browserfenster, wodurch eine multilineare und offene Erzählweise entsteht, die nicht immer in einen kausalen Zusammenhang zu bringen ist. Obwohl die Nutzerinnen und Nutzer durch das Werk navigieren, können sie den Verlauf der Geschichte nicht verändern. Sie legen aber dennoch die Fragmente des Monologs frei und schaffen dabei, je nachdem in welcher Reihenfolge sie die Hyperlinks anklicken, neue Zusammenhänge und Erzählstränge.",
+        "en": "Olia Lialina's My Boyfriend Came Back from the War is widely regarded as one of the most important works of early net art. Drawing on her background in film criticism and her first experiences creating websites, Lialina understood the internet in the 1990s not merely as a storage medium but as a distinct narrative medium in its own right. Her engagement with the web led her to stop writing film criticism and instead create films online.\n\nUsing HTML, hypertext, black-and-white bitmap images, and browser frames, the work tells the story of a couple reuniting after a war. By clicking hyperlinks, users navigate through increasingly smaller frames in which a monologue unfolds, addressing themes of trauma, infidelity, and alienation. In doing so, Lialina created a new genre that she termed \"net.film.\"\n\nShe combined cinematic techniques such as montage with the structure of the web. Unlike cinema, where images unfold sequentially, the work allows images and temporal layers to coexist simultaneously within the browser window, creating a multilinear and open-ended narrative that cannot always be reduced to clear causal relationships. Although users navigate through the work, they cannot alter the story itself. Instead, they reveal fragments of the monologue and, depending on the order in which hyperlinks are clicked, create new connections and narrative pathways."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-005-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "006",
+      "number": "6",
+      "title": "Agatha Appears",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "1997",
+      "materials": "Website, Webring",
+      "description": {
+        "de": "Olia Lialinas Agatha Appears ist ebenfalls ein frühes Werk der Netzkunst, das die Möglichkeiten des Internets als erzählerisches Medium untersucht. Die Geschichte folgt Agatha, einem jungen Mädchen vom Land, das in der Stadt auf einen arbeitslosen Systemadministrator trifft. Dieser versucht sie ins Internet hochzuladen, woraufhin Agatha durch verschiedene Netzwerke und Server reist, bis sie schließlich verschwindet und später ins Internet zurückkehrt. Die Erzählung entfaltet sich linear über Webseiten, Hyperlinks, Mouseover-Texte und Dialogfelder.\n\nBesonders zentral ist die Verbindung von Erzählung und technischer Struktur des Webs. Elemente wie die Status- und Adressleisten oder Fehlermeldungen werden Teil der Geschichte und verschmelzen die narrativen und technischen Ebenen miteinander. Agathas Reise durch das Internet ist dabei nicht nur fiktional, sondern spiegelt auch die reale Verteilung des Kunstwerks auf verschiedenen internationalen Servern wider. Trotz der einfachen, fast kindlich wirkenden Ästhetik und der minimalen Interaktivität nutzt das Werk die Möglichkeiten von HTML auf eine zuvor noch nie dagewesene Weise und reflektiert Themen wie digitale Kommunikation, virtuelle Räume und die Materialität des frühen Internets.",
+        "en": "Olia Lialina's Agatha Appears is another early net art work that explores the internet's potential as a storytelling medium. The story follows Agatha, a young girl from the countryside who encounters an unemployed system administrator in the city. He attempts to upload her to the internet, after which Agatha travels through various networks and servers until she eventually disappears and later returns online. The narrative unfolds linearly through web pages, hyperlinks, mouseover texts, and dialog boxes within the browser pop-ups.\n\nParticularly significant is the close relationship between narrative and the technical structure of the web. Elements such as status and address bars, or error messages become part of the story, merging technical and narrative layers. Agatha's journey through the internet is not only fictional but also reflects the actual distribution of the artwork across multiple international servers.\n\nDespite its simple, almost childlike aesthetic and minimal interactivity, the work uses the possibilities of HTML in a previously unprecedented way and reflects on themes such as digital communication, virtual spaces, and the materiality of the early internet."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-006-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "007",
+      "number": "7",
+      "title": "Online Newspapers – Wall Street Journal, 2008",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2004 - fortlaufend",
+      "materials": "Webpage",
+      "description": {
+        "de": "Die fortlaufende Serie Online Newspapers überführt die Erscheinungsbilder wichtiger Zeitungen in die Bildsprache früher Web-Amateurseiten. Ausgehend von den eigensinnigen Interfaces der 1990er-Jahre, stellt Olia Lialina die Frage, wie Nachrichtenseiten aussähen, wären sie von jenen Hobbyjournalist*innen gestaltet worden, deren visuelle Eigenarten die frühe Webkultur prägten. Wenn Inhalte der FAZ, des Wall Street Journal oder der New Yorker Tageszeitungen auf low-res-Grafiken und flackernde Animationen treffen, entstehen widersprüchliche Bild-Text-Konstellationen, die sichtbar machen, wie sehr Gestaltung unsere Wahrnehmung von Information beeinflusst. Zugleich entwirft die Arbeit eine fiktive Vorgeschichte der heutigen Online-Medien und verweist auf die permanente Veralterung von Technologien und Stilen.",
+        "en": "The ongoing series Online Newspapers translates the visual identities of major newspapers into the aesthetic language of early amateur web pages. Drawing on the idiosyncratic, glittering interfaces of the 1990s, Olia Lialina asks what news websites might have looked like if they had been designed by the hobbyist publishers whose visual quirks shaped early web culture.\n\nWhen content from newspapers such as the Frankfurter Allgemeine Zeitung, The Wall Street Journal, or New York Daily newspapers encounters low-resolution graphics and flickering animations, contradictory image-text constellations emerge. They reveal the extent to which design influences our perception of information. At the same time, the work imagines a fictional prehistory of contemporary online media and points to the continual obsolescence of technologies and styles."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-007-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "008",
+      "number": "8",
+      "title": "Self-Portrait",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2018",
+      "materials": "GIF für drei Netzwerke",
+      "description": {
+        "de": "Self-Portrait lenkt die Aufmerksamkeit auf die unterschiedlichen Ebenen des Internets und macht sichtbar, dass es aus verschiedenen Netzwerken, Protokollen und Zugangsformen besteht, die über das gewöhnliche Web hinausgehen und normalerweise verborgen bleiben.\n\nUm das Werk in seiner Gesamtheit betrachten zu können, müssen drei verschiedene Browser installiert und gleichzeitig geöffnet werden: ein herkömmlicher Browser wie Firefox oder Chrome für das normale Web, der anonyme Tor-Browser für den Zugriff auf im Dark Web gehostete Seiten sowie der Peer-to-Peer-Browser Agregore, der Daten anzeigt, die über Peer-to-Peer-Dateisysteme verteilt werden. Jedes dieser Protokolle enthält einen anderen Teil des Porträts der Künstlerin, sodass ihr Gesicht erst durch die Anordnung aller drei Browserfenster als vollständiges Bild erscheint. Die leicht verzerrten Bildfragmente veranschaulichen, dass Daten über unterschiedliche Netzwerke übertragen werden.\n\nDa Daten mit unterschiedlicher Geschwindigkeit übertragen werden und Browser Inhalte auf verschiedene Weise verarbeiten und darstellen, erscheint dieselbe Website niemals exakt identisch. Faktoren wie die Netzwerkverbindung, Serverauslastung, Hardware und Browsertechnologie beeinflussen, wann und wie Inhalte sichtbar werden. Self-Portrait zeigt, dass digitale Kommunikation kein einheitlicher, stabiler Prozess ist, sondern von technischen Bedingungen geprägt wird, die bestimmen, wer was wann und in welcher Software sieht. Gleichzeitig macht das Werk die fragmentierte Struktur des Internets erfahrbar und fordert die Nutzerinnen und Nutzer dazu auf, selbst aktiv zu werden, indem sie unterschiedliche Browser auf ihrem eigenen Computer installieren und anordnen.",
+        "en": "Self-Portrait draws attention to the different layers of the internet and makes visible the fact that it consists of various networks, protocols, and modes of access beyond the regular web that usually remain hidden. In order to view the work in its entirety, three different browsers must be installed and opened simultaneously: a conventional browser such as Firefox or Chrome to view the regular web, the anonymous Tor Browser for access to sites hosted on the darknet, and the peer-to-peer browser Agregore, which displays data distributed via peer-to-peer file systems. Each protocol holds a different section of the artist's portrait, so that her face only emerges as a complete image through the arrangement of all three browser windows. The slightly distorted image fragments illustrate that data travels through different networks.\n\nBecause data is transmitted at varying speeds and browsers process and display content differently, the same website never appears exactly identical. Factors such as network connectivity, server load, hardware, and browser technology influence when and how content becomes visible. Self-Portrait demonstrates that digital communication is not a uniform, stable process but is shaped by technical conditions that determine who sees what, when, and in what software. At the same time, the work makes the fragmented structure of the internet tangible and encourages users to exercise their own agency when installing and arranging different browsers on their own desktop."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-008-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "009",
+      "number": "9",
+      "title": "Something for Everyone",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016",
+      "materials": "Drei ready-made Adventskalender, je 18 × 24 cm",
+      "description": {
+        "de": "Something for Everyone besteht aus drei individuell gestalteten Adventskalendern, die über einen Print-on-Demand-Dienst in Deutschland produziert wurden. Jedes Jahr bestellt Dragan Espenschied, der Ehemann der Künstlerin, einen Kalender für jedes Familienmitglied und stellt diese aus online gefundenen Bildern zusammen. Dabei wählt er Motive aus, die persönliche Erinnerungen hervorrufen und humorvolle Reaktionen (LULZ) erzeugen sollen.\n\nDie Bilder werden aus ihrem ursprünglichen Kontext gelöst und mithilfe der Gestaltungsoptionen der Online-Druckerei auf die leeren Pappkalender übertragen. Die 2016 entstandenen Kalender werden als Readymades im kunstinstitutionellen Kontext gezeigt und verweisen auf die allgegenwärtige Verfügbarkeit digitaler Bilder sowie deren ständige Umdeutung durch Plattformen und Nischenmärkte. Der Titel spielt sowohl auf die von Theodor Adorno und Max Horkheimer in der Dialektik der Aufklärung formulierten Kritik der Kulturindustrie an: „Für jeden wird etwas bereitgestellt, damit niemand entkommen kann\", als auch auf den Slogan This is for everyone des Erfinders des World Wide Webs, Tim Berners-Lee, und verbindet somit die Versprechen und Widersprüche digitaler Massenkultur.",
+        "en": "Something for Everyone consists of three individually designed advent calendars produced through a print-on-demand service. Each year, Dragan Espenschied, the artist's husband, orders one calendar for each family member and compiles them using images found online. He selects motifs intended to evoke personal memories and provoke humorous reactions (LULZ).\n\nThe images are removed from their original contexts and transferred onto blank cardboard calendars using the customization tools provided by the online printing service. Created in 2016, the calendars are presented as readymades within an institutional art context, drawing attention to the ubiquitous availability of digital images and their constant reinterpretation through platforms and niche markets.\n\nThe title references both the critique of the culture industry formulated by Theodor Adorno and Max Horkheimer in Dialectic of Enlightenment – \"Something is provided for everyone so that no one may escape\" – and the slogan This Is for Everyone of the World Wide Web's inventor Tim Berners-Lee. In doing so, the work brings together the promises and contradictions of digital mass culture."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-009-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "010",
+      "number": "10",
+      "title": "Online Newspapers – Postfactual Edition, 2016/2018",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2018",
+      "materials": "Drei Webpages (Serie seit 2004, fortlaufend)",
+      "description": {
+        "de": "Die 2004 gestartete Serie Online Newspapers, Postfactual Edition antizipiert auf fiktionale Weise die Dynamiken der heutigen Online-Medienwelt. Sie verhandelt die tiefgreifenden Umbrüche des Journalismus im Zuge der Digitalisierung ebenso wie die Verschiebung der Nutzerrolle hin zum bloßen „Kommentator\" im medialen Mainstream.",
+        "en": "Initiated in 2004, Online Newspapers, Postfactual Edition offers a fictional prefiguration of the dynamics that characterize today's digital media environment. The series engages with the profound upheavals of journalism in the wake of digitalization, while also addressing the reduction of users to the role of mere \"commentators\" within the mainstream media landscape."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-010-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "011",
+      "number": "11",
+      "title": "Summer",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2013",
+      "materials": "Soziales Netzwerk",
+      "description": {
+        "de": "Summer zeigt eine Animation von Olia Lialina auf einer Schaukel vor einem Hintergrund mit blau-weißem Farbverlauf. Die Schaukel ist so platziert, als hinge sie direkt an der Browserleiste, während sich in der Adresszeile mit jedem Bildwechsel eine neue URL mit der Endung „/olia/summer\" einträgt. Das GIF ist über die Websites von insgesamt 25 Künstlerinnen und Künstlern verteilt und besteht aus 18 Frames. Jede Seite hostet nur ein Einzelbild, doch gemeinsam ergeben sie eine perfekte Schleife. Lialina „schaukelt\" somit über Server, Domains und Distanzen hinweg und lenkt den Blick auf die URL als zentralen Ort des Netzes und auf verteilte Inhalte, die nicht nur gepostet, sondern als Teil eines Layouts in Webseiten integriert werden können. Während die Künstlerin ruhig hin und her schwingt, rasen die Webadressen immer schneller vorbei und machen die Bewegung in der Adresszeile selbst zum eigentlichen Schauplatz der Arbeit.",
+        "en": "Summer presents an animation of Olia Lialina swinging against a blue-and-white gradient background. The swing is positioned as if suspended directly from the browser interface, while a new URL ending in \"/olia/summer\" appears in the address bar with each frame change.\n\nThe GIF is distributed across the websites of twenty-five artists and consists of 18 frames. Each website hosts only a single frame, yet together they form a seamless loop. Lialina thus \"swings\" across servers, domains, and geographical distances, drawing attention to the URL as a central site of the web and to distributed content that can be integrated into web page layouts rather than merely posted online.\n\nWhile the artist gently swings back and forth, the web addresses flash by at increasing speed, transforming the movement within the browser's address bar into the true stage of the work."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-011-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "012",
+      "number": "12",
+      "title": "<HR>, Chrome / <HR>, Firefox (Diptychon)",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2014/2026",
+      "materials": "Digitaldrucke auf Papier, Alu-Dibond, je 148 × 105 × 0,3 cm",
+      "description": {
+        "de": "<HR> ist Teil von Olia Lialinas Serie Print to PDF und verweist mit seinem Titel auf das HTML-Element „horizontal rule\", eine horizontale Linie, die im frühen Web häufig zur Strukturierung und Trennung von Inhalten verwendet wurde. Die Arbeit knüpft an Lialinas langjährige Auseinandersetzung mit der vernakulären Webästhetik, den Strukturen von Browsern und der visuellen Sprache des frühen Internets an.\n\nDer Begriff vernakuläre oder volkstümliche Webästhetik beschreibt die alltäglichen, von Nutzerinnen und Nutzern geprägten Gestaltungsformen des frühen Internets. Anders als heutige standardisierte Plattformen war das Web der 1990er-Jahre von individuellen Websites, experimentellen Layouts und sichtbaren technischen Strukturen geprägt. Navigationsleisten, Scrollbalken, Frames oder Ladeanzeigen waren nicht nur funktionale Elemente, sondern Teil der visuellen Erfahrung des Netzes. Aus den technischen Möglichkeiten und Beschränkungen der Zeit entstand eine eigene visuelle Sprache aus GIF-Animationen, Hyperlinks, Icons und einfachen HTML-Layouts.\n\nIndem <HR> ein scheinbar unscheinbares HTML-Element in den Mittelpunkt rückt, verweist die Arbeit auf diese oft übersehenen Bestandteile der frühen Webkultur. Sie macht deutlich, dass selbst grundlegende technische Strukturen die Ästhetik und Wahrnehmung des Internets prägen und heute als Zeugnisse seiner kulturellen und gestalterischen Geschichte gelesen werden können.",
+        "en": "<HR> is part of Olia Lialina's Print to PDF series and takes its title from the HTML element \"horizontal rule\", a horizontal line frequently used in the early web to structure and separate content. The work continues Lialina's long-standing engagement with vernacular web aesthetics, browser structures, and the visual language of the early Internet.\n\nThe term \"vernacular web aesthetics\" refers to the everyday design practices shaped by users during the early years of the Internet. Unlike today's standardized platforms, the web of the 1990s was characterized by individually created websites, experimental layouts, and visible technical structures. Navigation bars, scroll bars, frames, and loading indicators were not merely functional elements but integral parts of the visual experience of the web.\n\nOut of the technological possibilities and limitations of the period emerged a distinct visual language consisting of GIF animations, hyperlinks, icons, and simple HTML layouts. By placing a seemingly inconspicuous HTML element at the centre of attention, <HR> points to these often-overlooked components of early web culture. The work demonstrates that even the most basic technical structures shape the aesthetics and perception of the internet and can nowadays be read as testimonies to its cultural and design history."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-012-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "013",
+      "number": "13",
+      "title": "Hosted",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2020",
+      "materials": "Netzwerk-Performance, Clouds, Buckets",
+      "description": {
+        "de": "Die Browser-Performance Hosted entfaltet sich über eine lange Liste von URLs, von denen jede ein Bild der Künstlerin beim Schwimmen zeigt. Durch die Abfolge der Tabs zieht die Künstlerin ihre Bahnen. Somit entsteht eine filmische Sequenz, deren Geschwindigkeit und Stabilität von der technischen Umgebung abhängen – von Clouds, Hosting-Diensten und Buckets, also Datencontainern. Immer wieder kommt es dabei zu Störungen, da Server Daten verändern oder begrenzen können, was zu Verschiebungen in der Bildgröße und Darstellung führt. Die Sprünge im Bildfluss verweisen nicht nur auf unterschiedliche Computer und Serverräume, sondern auch auf die Störungen der Cloud.",
+        "en": "The browser performance Hosted unfolds through a long list of URLs, each displaying an image of the artist swimming. Through the sequence of browser tabs, the artist swims laps. A cinematic sequence emerges whose speed and stability depend on the surrounding technical environment—on clouds, hosting services, and buckets, the data containers that store and distribute online content. Disruptions repeatedly occur, as servers may alter or limit data, leading to changes in image size and appearance.\n\nThese interruptions in the flow of images point not only to different computers and server spaces but also to the disruptions of the cloud."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-013-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "014",
+      "number": "14",
+      "title": "ENGWB51",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2017",
+      "materials": "Vier A4 PDF-Drucke, Glas, 160 × 40 cm",
+      "description": {
+        "de": "Vier bedruckte A4-Seiten zeigen die Spuren eines scheinbar einfachen, jedoch missglückten Versuchs eine Bordkarte für einen Flug auszudrucken. ENGWB51 macht sichtbar, wie abhängig der „einfache\" Online-Check-in von störanfälligen technischen Abläufen ist.",
+        "en": "Four printed A4 sheets document the traces of an apparently simple yet unsuccessful attempt to print a boarding pass for a flight. ENGWB51 makes visible how dependent the seemingly straightforward and easy process of online check-in is on fragile and failure-prone technical procedures."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-014-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "015",
+      "number": "15",
+      "title": "Give me time / This page is no more",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2015",
+      "materials": "160 35mm Dias, zwei synchronisierte Diaprojektoren, Maße variabel",
+      "description": {
+        "de": "Mit Give me time / This page is no more hat Olia Lialina ein fortlaufendes Archiv von 160 Webseiten auf GeoCities.com geschaffen, einem frühen, inzwischen eingestellten Webhosting-Dienst. Sie richten den Blick auf Homepages, die entweder eine baldige Fertigstellung versprechen oder ihren Abschied bekanntgeben. Zwischen Mitteilungen wie „check back later\" oder wütenden Botschaften, in denen Betreiberinnen und Betreiber ihren Seiten symbolisch den Tod erklären, wird offensichtlich, wie sehr bereits die frühe Netzkultur von persönlichen Empfindungen beeinflusst war.",
+        "en": "With Give me time / This page is no more Olia Lialina created an ongoing archive of 160 websites from GeoCities.com, an early web-hosting service that has since been discontinued. They focus on homepages that either promise future completion or announce their own disappearance. Between messages such as \"check back later\" and angry declarations in which site owners symbolically pronounce the death of their pages, it becomes evident how strongly even the early internet culture was shaped by personal emotions and individual expression."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-015-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "016",
+      "number": "16",
+      "title": "Animated GIF Model",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2005",
+      "materials": "Drei animierte GIFs",
+      "description": {
+        "de": "Tanzend, mit Hula-Hoop-Reifen oder Akkordeon spielend – Lialina wird selbst zum GIF-Model und lädt andere Web-Master dazu ein, die Animation auf ihren eigenen Webseiten zu verwenden. Ausgehend von der frühen Webkultur, in der animierte GIFs zentrale Gestaltungselemente persönlicher Websites waren, verweist Animated GIF Model auf eine ästhetische Praxis, die zunehmend von der aufkommenden Meme-Kultur verdrängt wurde. Durch ihre transparenten Hintergründe lassen sich die GIFs kopieren, in neue Zusammenhänge einfügen und als einfache, aber ausdrucksvolle Form früher Internetkultur immer weiterverbreiten.",
+        "en": "Dancing, twirling a hula hoop, or playing the accordion—Lialina herself becomes a GIF model inviting other web masters to use her on their web pages. Drawing on early web culture, in which animated GIFs were central design elements of personal websites, Animated GIF Model refers to an aesthetic practice that was increasingly displaced by the rise of meme culture. Thanks to their transparent backgrounds, the GIFs can be copied, inserted into new contexts, and endlessly redistributed, serving as a simple yet expressive form of early internet culture."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-016-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "017",
+      "number": "17",
+      "title": "Taking your Talent to the Web",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2010",
+      "materials": "Bücher, Maße variabel",
+      "description": {
+        "de": "Taking your Talent to the Web besteht aus einer Ansammlung von Webdesign-Ratgebern aus den Anfängen der Netzkultur – von Anleitungen für frühe Hosting-Plattformen wie GeoCities über Handbücher zur Erstellung von 3D-Welten, bis hin zu Schnellratgebern für spektakuläre Internetauftritte. Die Besuchenden sind eingeladen, in diesen Büchern zu blättern und sich von längst überholten, aber aufschlussreichen Vorstellungen von „gutem\" Webdesign zu eigenen Entwürfen anregen zu lassen. Zwischen diesen Werken findet sich auch Jeffrey Zeldmans Manifest Taking Your Talent to the Web von 2001, das der Installation ihren Titel verleiht und den Übergang von spielerischen Experimenten hin zu einem professionellen Verständnis von Webgestaltung markiert.",
+        "en": "Taking your Talent to the Web consists of a collection of web design guidebooks from the early days of internet culture—from manuals for early hosting platforms such as GeoCities to guides for creating 3D worlds and quick-reference books promising spectacular online presences.\n\nVisitors are invited to browse these publications and draw inspiration from their now outdated yet revealing ideas of \"good\" web design. Among these books is Jeffrey Zeldman's 2001 manifesto Taking Your Talent to the Web, which lends the installation its title and marked the transition from playful experimentation to a professional understanding of web design."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-017-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "018",
+      "number": "18",
+      "title": "Treasure Trove",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2017/2026",
+      "materials": "7-Kanal-Videoinstallation",
+      "description": {
+        "de": "Hunderte glitzernde, sich überlagernde GIFs, die in der Installation Treasure Trove auf den Wänden tanzen, flackern und kreisen. Ausgangspunkt ist die Plattform Blingee.com, auf der Nutzerinnen und Nutzer animierte GIF-Collagen aus einer nahezu endlos erscheinenden Sammlung von Cliparts, Icons und Stickern, also kleinen Illustrationen, Symbolen und expressiven Bildchen, erstellen konnten. Im Gegensatz zur exklusiven Navigation innerhalb der Website, überführt Treasure Trove die funkelnden GIFs in eine reizüberflutende 360° Projektion, die im oktogonalen Anbau des Museums erfahrbar wird. Dabei erscheinen neu angeordnete Kombinationen zusammen mit dem eingeblendeten Benutzernamen der Person, die die Stamps erstellt und hochgeladen hat. Die Collage bildet eine bildgewaltige Akkumulation individueller Kreativität ab, die sich damals mit einer eigenwilligen, aber charakteristischen Ästhetik im Netz formte.",
+        "en": "Hundreds of glittering, overlapping GIFs dance, flicker, and swirl across the walls in the installation Treasure Trove. The work draws on Blingee.com, a platform where users could create animated GIF collages from an apparently endless collection of clip art, icons, stickers, and other expressive visual elements. In contrast to the exclusive navigation experience of the website itself, Treasure Trove transforms these sparkling GIFs into an immersive 360-degree projection that fills the museum's octagonal annex.\n\nNewly arranged combinations appear alongside the username of the person who originally created and uploaded the stamp. The resulting collage forms a visually overwhelming accumulation of individual creativity, reflecting the distinctive and highly characteristic aesthetic culture that once flourished online."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-018-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "019",
+      "number": "19",
+      "title": "Body Class Pimp: damlos",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "020",
+      "number": "20",
+      "title": "Body Class Pimp: henessy",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "021",
+      "number": "21",
+      "title": "Body Class Pimp: halim71",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "022",
+      "number": "22",
+      "title": "Body Class Pimp: naoualtje89",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "023",
+      "number": "23",
+      "title": "Body Class Pimp: lisamariiej402",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "024",
+      "number": "24",
+      "title": "Body Class Pimp: gekregen2012",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    },
+    {
+      "id": "025",
+      "number": "25",
+      "title": "Body Class Pimp: voelmegoed",
+      "artist": "Olia Lialina",
+      "artistBorn": 1971,
+      "artistDied": null,
+      "year": "2016/2026",
+      "materials": "Digitaldruck auf Plexiglas, 150 × 84 × 1 cm",
+      "description": {
+        "de": "Farbige, eigenwillige und schrille Profilseiten prägten die niederländische soziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutzerinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke wie Facebook vereinheitlichten ihr Design und verdrängten so personalisierbare „pimp my profile\"-Plattformen wie Hyves. Jedes der Werke erinnert daran, dass Online-Auftritte einst experimentelle, von den Userinnen und Usern gestaltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 2013 eingestellt.",
+        "en": "Colourful, eccentric, and visually striking profile pages characterized the Dutch social networking platform Hyves, which from 2004 onward offered extensive customization options to users. Through freely chosen backgrounds, profile pictures, short text descriptions, and emojis, users created diverse visual self-portraits in which they consciously and creatively staged their online identities. The series Body Class Pimp preserves these individual appearances as networks such as Facebook standardized their design and displaced the customizable \"pimp my profile\" aesthetics of platforms like Hyves.\n\nEach work serves as a reminder that online presences were once experimental spaces shaped directly by users themselves, spaces for making aspects of the self visible through design. As competition from Facebook intensified, however, Hyves ceased operations in 2013."
+      },
+      "images": [],
+      "thumbnail": null,
+      "audio": {
+        "de": "media/audio/artwork-019-de.mp3",
+        "en": null
+      }
+    }
+  ]
+}
