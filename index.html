@@ -41,6 +41,9 @@
     <div class="screen active" id="currentScreen"></div>
   </div>
 
+  <!-- Language Controller: Muss als erstes Script geladen werden, damit lang gesetzt ist -->
+  <script src="js/language-controller.js"></script>
+
   <!-- TensorFlow.js Library (muss vor recognition.js geladen werden) -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0"></script>
   

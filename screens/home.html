@@ -1,15 +1,18 @@
 <!-- HOME SCREEN CONTENT (reine Content, kein HTML/Body/Nav) -->
 <div class="app-shell">
-  <!-- Header mit Logo & Burger-Menü -->
+  <!-- Header mit Logo & Language-Toggle -->
   <header class="header">
     <h1 class="logo">Galerie<br>Stadt<br>Sindelfingen</h1>
-    <button class="burger-menu" aria-label="Menü öffnen">
-      <img src="images/icons/menue.png" alt="Menü">
+    <button class="language-toggle-btn" aria-label="Sprache wechseln" onclick="toggleLanguage()">
+      <img src="images/icons/language.png" alt="Sprache">
     </button>
   </header>
 
   <!-- Überschrift "Aktuelle Ausstellungen" -->
-  <h2 class="section-title">Aktuelle Ausstellungen</h2>
+  <h2 class="section-title">
+    <span data-lang="de">Aktuelle Ausstellungen</span>
+    <span data-lang="en">Current Exhibitions</span>
+  </h2>
 
   <!-- Image Slider -->
   <div class="image-slider">
@@ -35,6 +38,7 @@
   </div>
 
   <p class="intro-text">
-    Herzlich Willkommen in der Galerie Stadt Sindelfingen! Dieser digitale Ausstellungsguide bietet Ihnen die Möglichkeit, tiefer in die Ausstellungen einzutauchen und zahlreiche Hintergrundinformationen zu entdecken. 
+    <span data-lang="de">Herzlich Willkommen in der Galerie Stadt Sindelfingen! Dieser digitale Ausstellungsguide bietet Ihnen die Möglichkeit, tiefer in die Ausstellungen einzutauchen und zahlreiche Hintergrundinformationen zu entdecken.</span>
+    <span data-lang="en">Welcome to the Galerie Stadt Sindelfingen! This digital exhibition guide gives you the opportunity to explore the exhibitions in depth and discover a wealth of background information.</span>
   </p>
 </div>

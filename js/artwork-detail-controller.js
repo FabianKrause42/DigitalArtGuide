@@ -16,6 +16,7 @@ class ArtworkDetailController {
     this.artworkData = null;
     this.audioPlayer = null;
     this.lightboxPanzoom = null;
+    this._langHandler = null;
   }
 
   /**
@@ -109,20 +110,11 @@ class ArtworkDetailController {
 
     // Beschreibung (mit Paragraphen)
     // Unterstützt altes Format (string) und neues Format ({ de, en })
-    const descriptionContainer = document.getElementById('artworkDetailDescription');
-    if (descriptionContainer && artwork.description) {
-      const lang = document.documentElement.lang || 'de';
-      const rawDesc = typeof artwork.description === 'object'
-        ? (artwork.description[lang] || artwork.description.de || '')
-        : artwork.description;
-      const paragraphs = rawDesc.split('\n\n');
-      paragraphs.forEach(para => {
-        if (!para.trim()) return;
-        const p = document.createElement('p');
-        p.textContent = para.trim();
-        descriptionContainer.appendChild(p);
-      });
-    }
+    this._renderDescription();
+
+    // Bei Sprachwechsel Beschreibung neu rendern
+    this._langHandler = () => this._renderDescription();
+    document.addEventListener('languageChanged', this._langHandler);
 
     // Audio-Player (falls audioFile vorhanden)
     if (artwork.audio && artwork.audio.de) {
@@ -140,6 +132,28 @@ class ArtworkDetailController {
         console.log(`🎵 Audio player initialized: ${audioPath}`);
       }
     }
+  }
+
+  /**
+   * Rendert die Beschreibung in der aktuellen Sprache
+   */
+  _renderDescription() {
+    const artwork = this.artworkData;
+    if (!artwork || !artwork.description) return;
+    const descriptionContainer = document.getElementById('artworkDetailDescription');
+    if (!descriptionContainer) return;
+    descriptionContainer.innerHTML = '';
+    const lang = document.documentElement.lang || 'de';
+    const rawDesc = typeof artwork.description === 'object'
+      ? (artwork.description[lang] || artwork.description.de || '')
+      : artwork.description;
+    const paragraphs = rawDesc.split('\n\n');
+    paragraphs.forEach(para => {
+      if (!para.trim()) return;
+      const p = document.createElement('p');
+      p.textContent = para.trim();
+      descriptionContainer.appendChild(p);
+    });
   }
 
   /**
@@ -236,6 +250,10 @@ class ArtworkDetailController {
    * Cleanup beim Verlassen der Seite
    */
   cleanup() {
+    if (this._langHandler) {
+      document.removeEventListener('languageChanged', this._langHandler);
+      this._langHandler = null;
+    }
     if (this.audioPlayer) {
       this.audioPlayer.destroy();
       this.audioPlayer = null;

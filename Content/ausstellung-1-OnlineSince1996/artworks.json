@@ -22,7 +22,7 @@
       "thumbnail": null,
       "audio": {
         "de": "media/audio/artwork-001-de.mp3",
-        "en": null
+        "en": "media/audio/artwork-001-en.mp3"
       }
     },
     {
@@ -42,7 +42,7 @@
       "thumbnail": null,
       "audio": {
         "de": "media/audio/artwork-002-de.mp3",
-        "en": null
+        "en": "media/audio/artwork-002-en.mp3"
       }
     },
     {
@@ -62,7 +62,7 @@
       "thumbnail": null,
       "audio": {
         "de": "media/audio/artwork-003-de.mp3",
-        "en": null
+        "en": "media/audio/artwork-003-en.mp3"
       }
     },
     {
