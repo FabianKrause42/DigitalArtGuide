@@ -196,8 +196,8 @@ class NumberInputController {
    */
   async loadAllArtworksFromExhibitions() {
     const exhibitions = [
-      { id: 1, slug: 'OfOtherPlaces' },
-      { id: 2, slug: 'VesselsOfUnbecoming' },
+      { id: 1, slug: 'OnlineSince1996' },
+      { id: 2, slug: 'RememberedNotReal' },
       { id: 3, slug: 'DenkeFreiSchaffeNeu' }
     ];
 
