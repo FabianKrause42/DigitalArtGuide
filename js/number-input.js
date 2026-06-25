@@ -131,7 +131,7 @@ class NumberInputController {
       return;
     }
 
-    const match = artworks.find((artwork) => String(artwork.number) === inputNumber);
+    const match = artworks.find((artwork) => parseInt(artwork.number, 10) === parseInt(inputNumber, 10));
 
     if (match) {
       this.renderResult(match);
@@ -195,10 +195,9 @@ class NumberInputController {
    * Lade alle Artworks aus allen drei Ausstellungen und führe sie zusammen
    */
   async loadAllArtworksFromExhibitions() {
+    // Vorerst nur Ausstellung 1 – weitere Ausstellungen nach Bedarf ergänzen
     const exhibitions = [
-      { id: 1, slug: 'OnlineSince1996' },
-      { id: 2, slug: 'RememberedNotReal' },
-      { id: 3, slug: 'DenkeFreiSchaffeNeu' }
+      { id: 1, slug: 'OnlineSince1996' }
     ];
 
     try {

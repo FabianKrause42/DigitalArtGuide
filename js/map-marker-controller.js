@@ -20,6 +20,7 @@
 
   // Map from container-id suffix → JSON key
   const FLOOR_ID_MAP = {
+    'map-plan-eg':          'hauptgebaeude-eg',
     'map-plan-1og':         'hauptgebaeude-1og',
     'map-plan-2og':         'hauptgebaeude-2og',
     'map-plan-oktogon-1og': 'oktogon-1og',

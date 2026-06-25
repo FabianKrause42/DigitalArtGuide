@@ -1,7 +1,7 @@
 {
   "name": "Galerie Stadt Sindelfingen",
   "short_name": "GalerieSindelfingen",
-  "version": "20260625.1635",
+  "version": "20260625.1752",
   "description": "Digitaler Ausstellungsguide für die Galerie Stadt Sindelfingen",
   "start_url": "/index.html",
   "display": "standalone",

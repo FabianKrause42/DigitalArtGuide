@@ -1,4 +1,23 @@
 {
+  "hauptgebaeude-eg": {
+    "imageWidth": 1191,
+    "imageHeight": 1000,
+    "markerSize": 27,
+    "markers": [
+      { "id": "101", "artworkId": "101", "exhibitionId": 2, "xPct": 88.7, "yPct": 56.9, "type": "single" },
+      { "id": "102", "artworkId": "102", "exhibitionId": 2, "xPct": 91.8, "yPct": 32.2, "type": "single" },
+      { "id": "103", "artworkId": "103", "exhibitionId": 2, "xPct": 85.8, "yPct": 24.7, "type": "single" },
+      { "id": "104", "artworkId": "104", "exhibitionId": 2, "xPct": 72.6, "yPct": 24.7, "type": "single" },
+      { "id": "105", "artworkId": "105", "exhibitionId": 2, "xPct": 72.6, "yPct": 35.2, "type": "single" },
+      { "id": "106", "artworkId": "106", "exhibitionId": 2, "xPct": 82.4, "yPct": 32.2, "type": "single" },
+      { "id": "107", "artworkId": "107", "exhibitionId": 2, "xPct": 78.6, "yPct": 43.1, "type": "single" },
+      { "id": "108", "artworkId": "108", "exhibitionId": 2, "xPct": 27.4, "yPct": 32.2, "type": "single" },
+      { "id": "109", "artworkId": "109", "exhibitionId": 2, "xPct": 24.2, "yPct": 24.0, "type": "single" },
+      { "id": "110", "artworkId": "110", "exhibitionId": 2, "xPct": 15.7, "yPct": 24.0, "type": "single" },
+      { "id": "111", "artworkId": "111", "exhibitionId": 2, "xPct": 15.7, "yPct": 42.3, "type": "single" },
+      { "id": "112", "artworkId": "112", "exhibitionId": 2, "xPct":  8.5, "yPct": 27.0, "type": "single" }
+    ]
+  },
   "hauptgebaeude-1og": {
     "imageWidth": 1050,
     "imageHeight": 895,
