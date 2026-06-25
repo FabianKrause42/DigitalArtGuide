@@ -1,0 +1,551 @@
+=PAGE1=
+online since 
+1996
+Galerie
+Stadt
+Sindelfingen
+28.06.–11.10.26
+DE
+
+=PAGE2=
+Wir freuen uns, mit online since 1996 eine groß ange- 
+legte Überblicksausstellung von Olia Lialina zu prä-
+sentieren, die anhand von zahlreichen Arbeiten aus 
+den vergangenen 30 Jahren einen umfassenden Ein-
+blick in das Schaffen der Netzkunst-Pionierin gibt. 
+Als Teil der ersten Generation von Net-Art-Künstle-
+rinnen und -Künstlern nutzte Lialina von Beginn an die 
+technischen Komponenten des Internets, um brow-
+serbasierte Arbeiten zu schaffen, die in den 1990er- 
+und 2000er-Jahren maßgeblich zur Etablierung eines 
+vollkommen neuen künstlerischen Mediums und einer 
+neuen Immaterialität in der Kunst beitrugen. Schon 
+früh erforschte sie sowohl die erzählerischen Mög-
+lichkeiten des Webs als auch die Erscheinungen einer 
+Online-Kultur, die gerade erst im Begriff war sich zu 
+formieren und die eigenen Strukturen und Daseins-
+formen zu entwickeln. Dementsprechend archiviert 
+und konserviert sie in vielen Werken und Serien wie 
+eine digitale Archäologin die ästhetischen Potentiale 
+dieser Anfänge. 
+Ihre Arbeiten zeigen, dass das Web zunächst ein hete- 
+rogener, demokratischer Raum war, der die Kreativität 
+der Nutzerinnen und Nutzer sowie individuelle Aus-
+drucksweisen gleichermaßen herausforderte und  
+ermöglichte. Erst die Vereinnahmung durch kommer- 
+zielle Interessen, verbunden mit der Prämisse der 
+„Nutzerfreundlichkeit“, führte zu jenen glatten Benut- 
+zeroberflächen, die das Internet, wie wir es heute 
+kennen, prägen.
+1
+
+=PAGE3=
+In Olia Lialinas Praxis schwingt somit stets eine medi-
+enkritische Dimension mit, die offenlegt, was für ge-
+wöhnlich im Verborgenen bleibt. Ihre Werke sind so-
+mit auch ein Plädoyer an uns Nutzerinnen und Nutzer, 
+uns selbst zu ermächtigen und die technischen Me-
+chanismen hinter den digitalen Benutzeroberflächen 
+zu verstehen, um uns so den freien und dezentralen 
+Charakter des World Wide Webs wieder anzueignen.
+Diese Intuition der Künstlerin zeigt sich auch in der 
+Tatsache, dass ein Großteil der gezeigten Arbeiten 
+online frei zugänglich ist. Die Internetadressen sind 
+unter der jeweiligen Werkangabe in diesem Guide 
+angegeben.
+Sehr herzlich bedanke ich mich – auch im Namen 
+von Olia Lialina – bei den Leihgeberinnen und Leih-
+gebern der Ausstellung: Cory Arcangel, Nina Roehrs 
+von Roehrs & Boetsch, Zürich, sowie dem Garage 
+Museum of Contemporary Art, Moskau. 
+Werke, die eigentlich für einen Browser geschaffen 
+wurden, sind nicht immer einfach in einem musealen 
+Kontext, wie dem unsrigen, zu präsentieren. Für die 
+wertvolle Unterstützung hinsichtlich der technischen 
+Umsetzung gilt unser Dank deswegen Dragan 
+Espenschied, Mona Ulrich und der Medienrestaurie-
+rung der Staatlichen Akademie der Bildenden Künste 
+Stuttgart sowie Marco Verri.
+Hannah Eckstein
+Leiterin
+Galerie Stadt Sindelfingen
+3
+1. Obergeschoss
+1
+2
+3
+4
+5
+6
+7
+10
+12
+14
+13
+16
+17
+15
+11
+8
+9
+2
+
+=PAGE4=
+5
+4
+1
+Best Effort Network, 2015/2020
+Website
+https://best.effort.network/
+Courtesy: Garage Museum of Contemporary Art, 
+Moskau
+Best Effort Network visualisiert die normalerweise unsichtbaren Prozesse der 
+Datenübertragung im Internet. Ruft man best.effort.network auf, so öffnet sich 
+eine Website, die auf grau verlaufendem Hintergrund eine Animation der Künst-
+lerin zeigt, die sich ununterbrochen auf einem Karussell im Kreis dreht. Ver-
+schwindet sie plötzlich, bedeutet dies, dass eine andere Person die Website 
+aufgerufen hat und deren Anfrage vom Server priorisiert wurde. Da Olia nicht 
+in mehreren Browsern gleichzeitig existieren kann, erscheint sie nun auf dem 
+Bildschirm der anderen Person. Erst wenn die ursprüngliche Anfrage wieder an 
+die Spitze der Warteschlange gelangt, kehrt sie zurück.
+Die Arbeit basiert auf dem Prinzip eines „Best-Effort-Netzwerks“, wie es dem 
+Internet zugrunde liegt. In einem solchen Netzwerk werden Datenpakete ohne 
+Garantie auf erfolgreiche Zustellung, Reihenfolge oder Geschwindigkeit wei-
+tergeleitet. Vielmehr kann ihre Übertragung verzögert sein, sie können verloren 
+gehen oder erneut gesendet werden. Best Effort Network macht diese norma-
+lerweise verborgenen Abläufe sichtbar und erfahrbar. Die Besuchenden sind 
+dazu eingeladen, den Link über ihr Handy aufzurufen und es selbst auszupro-
+bieren.
+2
+Lossless, 2018
+Animierte GIFs, LED-Panels
+Ca. 160 × 1.000 cm
+Courtesy: Die Künstlerin, Roehrs & Boetsch, Zürich
+Lossless ist eine Installation aus LED-Panels, auf denen animierte GIFs der 
+Website Blingee.com (2006–2024) gezeigt werden. Die Plattform richtete sich 
+vor allem an junge Nutzerinnen und Nutzer, die Bilder mit glitzernden Effekten, 
+blinkenden Stickern und eigenen Collagen gestalten und über soziale Netz-
+werke wie MySpace teilen konnten. Für Olia Lialina ist Blingee.com ein präg-
+nantes Beispiel der „vernakulären Webästhetik“ und der „digitalen Folklore“. 
+Die vernakuläre Webästhetik bezeichnet die von Nutzerinnen und Nutzern ge-
+prägten visuellen Ausdrucksformen des frühen Internets. Individuell gestaltete 
+Webseiten, GIFs oder eben die Sticker und Collagen von Blingee.com ent-
+standen jenseits professioneller Designstandards und verbreiteten sich durch 
+Nachahmung und Weiterentwicklung innerhalb von Online-Communities. Als 
+Form digitaler Folklore zeigen sie, wie Nutzer die Kultur und Ästhetik des Inter-
+nets aktiv mitgestalteten.
+Die oft als kitschig oder amateurhaft wahrgenommenen GIFs stehen im Kont-
+rast zu den standardisierten und hochglanzpolierten Oberflächen des heutigen 
+Internets. Durch die fragmentierte Anordnung der LED-Panels, die an archäo-
+logische Fundstücke erinnert, präsentiert Lossless diese Bildwelten als digita-
+le Artefakte einer vergangenen Internetkultur und verweist auf die Bedeutung 
+ihrer Bewahrung als Teil der Geschichte des Webs. Die ausgestellten Elemen-
+te stammen aus den Dateien der legendären Blingee Stamp-Designerin Irina  
+Kuleshova, deren Archiv von Olia Lialina bewahrt wird. 
+3
+The Whole Internet, 2018
+Zwei Bücher
+Je 22,86 × 18,42 × 2,54 cm 
+The Whole Internet präsentiert die erste und die letzte Ausgabe von The Whole 
+Internet User‘s Guide and Catalog als interaktives Readymade. Das von Ed Krol 
+verfasste und 1992 und 1999 bei O’Reilly veröffentlichte Buch gilt als eines der 
+ersten populären Werke über das Internet und machte dessen damals noch 
+wenig bekannten Strukturen einem breiten Publikum zugänglich. Der Titel und 
+das Format sind von Stewart Brands Magazin Whole Earth Catalog inspiriert. 
+Der Whole Earth Catalog war ein Gegenkultur-Magazin, das seit 1968 Wissen, 
+Werkzeuge und Ressourcen für Selbstversorgung, Ökologie und eigenständi-
+ges Lernen bündelte. Aufgrund seines Prinzips „Access to Tools“ gilt der Ka-
+talog als wichtiger Vorläufer des World Wide Web, in dem Informationen kura-
+tiert, bewertet und ähnlich wie später im Internet mit Bezugsquellen verknüpft 
+wurden. Steve Jobs bezeichnete den Whole Earth Catalog daher als „eine Art 
+Google in Taschenbuchform, 35 Jahre bevor es Google gab“.
+Durch die Gegenüberstellung der ersten und letzten Ausgabe von The Whole 
+Internet User‘s Guide and Catalog verweist Olia Lialinas Arbeit auf den rasan-
+ten Wandel des World Wide Webs und seiner kulturellen Wahrnehmung von 
+einem spezialisierten Netzwerk hin zu einem allgegenwärtigen Medium. Die 
+Besucherinnen und Besucher sind angehalten, in den Büchern zu stöbern und 
+zu lesen, und so in die Welt des The Whole Internet User‘s Guide and Catalog 
+einzutauchen.
+
+=PAGE5=
+7
+6
+4
+Web Pages That Suck / Son of Web Pages  
+That Suck, 2026 
+Zwei Webdesign-Handbücher 
+Je 19,69 × 1,91 × 24,77 cm
+Der Bestseller Web Pages That Suck von Vincent Flanders und Michael Willis 
+sowie Son of Web Pages That Suck von Flanders und Dean Peters lehren Web-
+design anhand von Negativbeispielen: Gutes Layout soll man lernen, indem 
+man „schlechte“ Websites untersucht. Mit kritischem Humor machen die Au-
+toren auf die wiederkehrenden Gestaltungsmuster früherer Websites aufmerk-
+sam – auf überladene Startseiten, schwer lesbare Typografie oder unklare Na-
+vigation. Anstelle festgeschriebener Gestaltungsdogmen rücken sie einfache 
+Prinzipien wie Klarheit, Nutzbarkeit und inhaltlichen Fokus in den Vordergrund. 
+Auch wenn sich Suchmaschinen, Geräte und Oberflächen seitdem stark ver-
+ändert haben, bleibt die Grundidee bestehen: Bereits das Design entscheidet 
+darüber, wie zugänglich und verständlich Inhalte präsentiert werden.
+5
+My Boyfriend Came Back from the War, 1996
+Website
+http://www.teleportacia.org/war/
+Olia Lialinas My Boyfriend Came Back from the War gilt als eines der bedeu-
+tendsten Werke der frühen Net Art. Ausgehend von ihrem Studium der Filmkritik 
+und ersten Erfahrungen im Erstellen von Websites verstand Lialina das Internet 
+bereits in den 1990er-Jahren nicht nur als Speicherort, sondern als eigenstän-
+diges narratives Medium. Die Beschäftigung mit dem Internet führte dazu, dass 
+die Künstlerin keine Filmkritiken mehr schreiben, sondern Filme online erschaf-
+fen wollte. Das Werk erzählt mithilfe von HTML, Hypertext, schwarz-weißen 
+Bitmap-Bildern und Browser-Frames die Begegnung eines Paares nach dem 
+Krieg. Durch Klicks bewegen sich die Nutzerinnen und Nutzer durch immer 
+kleinere Frames, in denen ein Monolog sichtbar wird, der Traumata, Untreue 
+und Entfremdung thematisiert. Olia Lialina erschuf so ein neues Genre, das sie 
+„Net.Film“ taufte.
+Sie verband Stilmittel aus dem Film wie Montage mit der Struktur des Webs. 
+Anders als im Kino existieren in der Arbeit Bilder und Zeitebenen gleichzeitig 
+nebeneinander im Browserfenster, wodurch eine multilineare und offene Er-
+zählweise entsteht, die nicht immer in einen kausalen Zusammenhang zu brin-
+gen ist. Obwohl die Nutzerinnen und Nutzer durch das Werk navigieren, kön-
+nen sie den Verlauf der Geschichte nicht verändern. Sie legen aber dennoch 
+die Fragmente des Monologs frei und schaffen dabei, je nachdem in welcher 
+Reihenfolge sie die Hyperlinks anklicken, neue Zusammenhänge und Erzähl-
+stränge.
+6
+Agatha Appears, 1997
+Website, Webring 
+https://www.c3.hu/collection/agatha/
+Olia Lialinas Agatha Appears ist ebenfalls ein frühes Werk der Netzkunst, das 
+die Möglichkeiten des Internets als erzählerisches Medium untersucht. Die Ge-
+schichte folgt Agatha, einem jungen Mädchen vom Land, das in der Stadt auf 
+einen arbeitslosen Systemadministrator trifft. Dieser versucht sie ins Internet 
+hochzuladen, woraufhin Agatha durch verschiedene Netzwerke und Server 
+reist, bis sie schließlich verschwindet und später ins Internet zurückkehrt. Die 
+Erzählung entfaltet sich linear über Webseiten, Hyperlinks, Mouseover-Texte 
+und Dialogfelder. 
+Besonders zentral ist die Verbindung von Erzählung und technischer Struktur 
+des Webs. Elemente wie die Status- und Adressleisten oder Fehlermeldungen 
+werden Teil der Geschichte und verschmelzen die narrativen und technischen 
+Ebenen miteinander. Agathas Reise durch das Internet ist dabei nicht nur fiktio-
+nal, sondern spiegelt auch die reale Verteilung des Kunstwerks auf verschiede-
+nen internationalen Servern wider. Trotz der einfachen, fast kindlich wirkenden 
+Ästhetik und der minimalen Interaktivität nutzt das Werk die Möglichkeiten von 
+HTML auf eine zuvor noch nie dagewesene Weise und reflektiert Themen wie 
+digitale Kommunikation, virtuelle Räume und die Materialität des frühen Inter-
+nets.
+7
+Online Newspapers, 2004 – fortlaufend  
+Wall Street Journal, 2008
+Webpage
+Die fortlaufende Serie Online Newspapers überführt die Erscheinungsbilder 
+wichtiger Zeitungen in die Bildsprache früher Web-Amateurseiten. Ausgehend 
+von den eigensinnigen Interfaces der 1990er-Jahre, stellt Olia Lialina die Frage, 
+wie Nachrichtenseiten aussähen, wären sie von jenen Hobbyjournalist*innen 
+gestaltet worden, deren visuelle Eigenarten die frühe Webkultur prägten. Wenn 
+
+=PAGE6=
+9
+8
+Inhalte der FAZ, des Wall Street Journal oder der New Yorker Tageszeitungen 
+auf low-res-Grafiken und flackernde Animationen treffen, entstehen wider-
+sprüchliche Bild-Text-Konstellationen, die sichtbar machen, wie sehr Gestal-
+tung unsere Wahrnehmung von Information beeinflusst. Zugleich entwirft die 
+Arbeit eine fiktive Vorgeschichte der heutigen Online-Medien und verweist auf 
+die permanente Veralterung von Technologien und Stilen.
+8
+Self-Portrait, 2018
+GIF für drei Netzwerke 
+http://olia.lialina.work/
+Self-Portrait lenkt die Aufmerksamkeit auf die unterschiedlichen Ebenen des 
+Internets und macht sichtbar, dass es aus verschiedenen Netzwerken, Proto-
+kollen und Zugangsformen besteht, die über das gewöhnliche Web hinausge-
+hen und normalerweise verborgen bleiben.
+Um das Werk in seiner Gesamtheit betrachten zu können, müssen drei ver-
+schiedene Browser installiert und gleichzeitig geöffnet werden: ein herkömm-
+licher Browser wie Firefox oder Chrome für das normale Web, der anonyme 
+Tor-Browser für den Zugriff auf im Dark Web gehostete Seiten sowie der Peer-
+to-Peer-Browser Agregore, der Daten anzeigt, die über Peer-to-Peer-Datei-
+systeme verteilt werden. Jedes dieser Protokolle enthält einen anderen Teil des 
+Porträts der Künstlerin, sodass ihr Gesicht erst durch die Anordnung aller drei 
+Browserfenster als vollständiges Bild erscheint. Die leicht verzerrten Bildfrag-
+mente veranschaulichen, dass Daten über unterschiedliche Netzwerke über-
+tragen werden.
+Da Daten mit unterschiedlicher Geschwindigkeit übertragen werden und Brow-
+ser Inhalte auf verschiedene Weise verarbeiten und darstellen, erscheint die-
+selbe Website niemals exakt identisch. Faktoren wie die Netzwerkverbindung, 
+Serverauslastung, Hardware und Browsertechnologie beeinflussen, wann und 
+wie Inhalte sichtbar werden. Self-Portrait zeigt, dass digitale Kommunikation 
+kein einheitlicher, stabiler Prozess ist, sondern von technischen Bedingungen 
+geprägt wird, die bestimmen, wer was wann und in welcher Software sieht. 
+Gleichzeitig macht das Werk die fragmentierte Struktur des Internets erfahrbar 
+und fordert die Nutzerinnen und Nutzer dazu auf, selbst aktiv zu werden, indem 
+sie unterschiedliche Browser auf ihrem eigenen Computer installieren und an-
+ordnen.
+9
+Something for Everyone, 2016
+Drei ready-made Adventskalender
+Je 18 × 24 cm 
+Something for Everyone besteht aus drei individuell gestalteten Adventskalen-
+dern, die über einen Print-on-Demand-Dienst in Deutschland produziert wur-
+den. Jedes Jahr bestellt Dragan Espenschied, der Ehemann der Künstlerin, ei-
+nen Kalender für jedes Familienmitglied und stellt diese aus online gefundenen 
+Bildern zusammen. Dabei wählt er Motive aus, die persönliche Erinnerungen 
+hervorrufen und humorvolle Reaktionen (LULZ) erzeugen sollen.
+Die Bilder werden aus ihrem ursprünglichen Kontext gelöst und mithilfe der Ge-
+staltungsoptionen der Online-Druckerei auf die leeren Pappkalender übertra-
+gen. 
+Die 2016 entstandenen Kalender werden als Readymades im kunstinstituti-
+onellen Kontext gezeigt und verweisen auf die allgegenwärtige Verfügbar-
+keit digitaler Bilder sowie deren ständige Umdeutung durch Plattformen und 
+Nischenmärkte. Der Titel spielt sowohl auf die von Theodor Adorno und Max 
+Horkheimer in der Dialektik der Aufklärung formulierten Kritik der Kulturindus-
+trie an: „Für jeden wird etwas bereitgestellt, damit niemand entkommen kann“, 
+als auch auf den Slogan This is for everyone des Erfinders des World Wide 
+Webs, Tim Berners-Lee, und verbindet somit die Versprechen und Widersprü-
+che digitaler Massenkultur.
+10
+Online Newspapers, 2004 – fortlaufend 
+Postfactual Edition, 2016/2018
+Drei Webpages
+Die 2004 gestartete Serie Online Newspapers, Postfactual Edition antizipiert 
+auf fiktionale Weise die Dynamiken der heutigen Online-Medienwelt. Sie ver-
+handelt die tiefgreifenden Umbrüche des Journalismus im Zuge der Digitalisie-
+rung ebenso wie die Verschiebung der Nutzerrolle hin zum bloßen „Kommen-
+tator“ im medialen Mainstream.
+
+=PAGE7=
+11
+10
+11
+Summer, 2013
+Soziales Netzwerk 
+http://saskia-aldinger.com/olia/summer/
+Summer zeigt eine Animation von Olia Lialina auf einer Schaukel vor einem 
+Hintergrund mit blau-weißem Farbverlauf. Die Schaukel ist so platziert, als hin-
+ge sie direkt an der Browserleiste, während sich in der Adresszeile mit jedem 
+Bildwechsel eine neue URL mit der Endung „/olia/summer“ einträgt. Das GIF 
+ist über die Websites von insgesamt 25 Künstlerinnen und Künstlern verteilt 
+und besteht aus 18 Frames. Jede Seite hostet nur ein Einzelbild, doch gemein-
+sam ergeben sie eine perfekte Schleife. Lialina „schaukelt“ somit über Server, 
+Domains und Distanzen hinweg und lenkt den Blick auf die URL als zentralen 
+Ort des Netzes und auf verteilte Inhalte, die nicht nur gepostet, sondern als Teil 
+eines Layouts in Webseiten integriert werden können. Während die Künstlerin 
+ruhig hin und her schwingt, rasen die Webadressen immer schneller vorbei und 
+machen die Bewegung in der Adresszeile selbst zum eigentlichen Schauplatz 
+der Arbeit.
+12
+Diptychon 
+<HR>, Chrome, 2014/2026
+<HR>, Firefox, 2014/2026
+Digitaldrucke auf Papier, Alu-Dibond
+Je 148 × 105 × 0,3 cm 
+https://art.teleportacia.org/hr.html 
+<HR> ist Teil von Olia Lialinas Serie Print to PDF und verweist mit seinem Titel 
+auf das HTML-Element „horizontal rule“, eine horizontale Linie, die im frühen 
+Web häufig zur Strukturierung und Trennung von Inhalten verwendet wurde. 
+Die Arbeit knüpft an Lialinas langjährige Auseinandersetzung mit der vernaku-
+lären Webästhetik, den Strukturen von Browsern und der visuellen Sprache des 
+frühen Internets an.
+Der Begriff vernakuläre oder volkstümliche Webästhetik beschreibt die all-
+täglichen, von Nutzerinnen und Nutzern geprägten Gestaltungsformen des 
+frühen Internets. Anders als heutige standardisierte Plattformen war das Web 
+der 1990er-Jahre von individuellen Websites, experimentellen Layouts und 
+sichtbaren technischen Strukturen geprägt. Navigationsleisten, Scrollbalken, 
+Frames oder Ladeanzeigen waren nicht nur funktionale Elemente, sondern Teil 
+der visuellen Erfahrung des Netzes. Aus den technischen Möglichkeiten und 
+Beschränkungen der Zeit entstand eine eigene visuelle Sprache aus GIF-Ani-
+mationen, Hyperlinks, Icons und einfachen HTML-Layouts.
+Indem <HR> ein scheinbar unscheinbares HTML-Element in den Mittelpunkt 
+rückt, verweist die Arbeit auf diese oft übersehenen Bestandteile der frühen 
+Webkultur. Sie macht deutlich, dass selbst grundlegende technische Strukturen 
+die Ästhetik und Wahrnehmung des Internets prägen und heute als Zeugnisse 
+seiner kulturellen und gestalterischen Geschichte gelesen werden können.
+13
+Hosted, 2020
+Netzwerk-Performance, Clouds, Buckets 
+https://hosted.z21.web.core.windows.net/
+Die Browser-Performance Hosted entfaltet sich über eine lange Liste von URLs, 
+von denen jede ein Bild der Künstlerin beim Schwimmen zeigt. Durch die Abfol-
+ge der Tabs zieht die Künstlerin ihre Bahnen. Somit entsteht eine filmische Se-
+quenz, deren Geschwindigkeit und Stabilität von der technischen Umgebung 
+abhängen – von Clouds, Hosting-Diensten und Buckets, also Datencontainern. 
+Immer wieder kommt es dabei zu Störungen, da Server Daten verändern oder 
+begrenzen können, was zu Verschiebungen in der Bildgröße und Darstellung 
+führt. Die Sprünge im Bildfluss verweisen nicht nur auf unterschiedliche Com-
+puter und Serverräume, sondern auch auf die Störungen der Cloud. 
+14
+ENGWB51, 2017
+Vier A4 PDF-Drucke, Glas  
+160 × 40 cm
+Courtesy: Cory Arcangel
+Vier bedruckte A4-Seiten zeigen die Spuren eines scheinbar einfachen, jedoch 
+missglückten Versuchs eine Bordkarte für einen Flug auszudrucken. ENGWB51 
+macht sichtbar, wie abhängig der „einfache“ Online-Check-in von störanfälli-
+gen technischen Abläufen ist.
+
+=PAGE8=
+12
+15
+Give me time / This page is no more, 2015 –  
+fortlaufend
+160 35mm Dias, zwei synchronisierte Diaprojektoren
+Maße variabel
+Mit Give me time / This page is no more hat Olia Lialina ein fortlaufendes Ar-
+chiv von 160 Webseiten auf GeoCities.com geschaffen, einem frühen, inzwi-
+schen eingestellten Webhosting-Dienst. Sie richten den Blick auf Homepages, 
+die entweder eine baldige Fertigstellung versprechen oder ihren Abschied 
+bekanntgeben. Zwischen Mitteilungen wie „check back later“ oder wütenden 
+Botschaften, in denen Betreiberinnen und Betreiber ihren Seiten symbolisch 
+den Tod erklären, wird offensichtlich, wie sehr bereits die frühe Netzkultur von 
+persönlichen Empfindungen beeinflusst war.
+16
+Animated GIF Model, 2005
+Drei animierte GIFs
+https://art.teleportacia.org/exhibition/AGM/
+Tanzend, mit Hula-Hoop-Reifen oder Akkordeon spielend – Lialina wird selbst 
+zum GIF-Model und lädt andere Web-Master dazu ein, die Animation auf ih-
+ren eigenen Webseiten zu verwenden. Ausgehend von der frühen Webkultur, in 
+der animierte GIFs zentrale Gestaltungselemente persönlicher Websites waren, 
+verweist Animated GIF Model auf eine ästhetische Praxis, die zunehmend von 
+der aufkommenden Meme-Kultur verdrängt wurde. Durch ihre transparenten 
+Hintergründe lassen sich die GIFs kopieren, in neue Zusammenhänge einfügen 
+und als einfache, aber ausdrucksvolle Form früher Internetkultur immer weiter-
+verbreiten.  
+17
+Taking your Talent to the Web, 2010 – fortlaufend
+Bücher
+Maße variabel
+Taking your Talent to the Web besteht aus einer Ansammlung von Webdesign- 
+Ratgebern aus den Anfängen der Netzkultur – von Anleitungen für frühe Hos-
+ting-Plattformen wie GeoCities über Handbücher zur Erstellung von 3D-Welten, 
+Oktogon
+OG 1
+OG 2
+13
+18
+21
+22
+23
+24
+25
+20
+19
+
+=PAGE9=
+bis hin zu Schnellratgebern für spektakuläre Internetauftritte. Die Besuchenden 
+sind eingeladen, in diesen Büchern zu blättern und sich von längst überholten, 
+aber aufschlussreichen Vorstellungen von „gutem“ Webdesign zu eigenen Ent-
+würfen anregen zu lassen. Zwischen diesen Werken findet sich auch Jeffrey 
+Zeldmans Manifest Taking Your Talent to the Web von 2001, das der Installation 
+ihren Titel verleiht und den Übergang von spielerischen Experimenten hin zu 
+einem professionellen Verständnis von Webgestaltung markiert. 
+Oktogon
+18
+Treasure Trove, 2017/2026
+7-Kanal-Videoinstallation 
+http://blingee.geocities.institute/treasure_trove/
+Hunderte glitzernde, sich überlagernde GIFs, die in der Installation Treasure  
+Trove auf den Wänden tanzen, flackern und kreisen. Ausgangspunkt ist die Platt- 
+form Blingee.com, auf der Nutzerinnen und Nutzer animierte GIF-Collagen aus 
+einer nahezu endlos erscheinenden Sammlung von Cliparts, Icons und Sti-
+ckern, also kleinen Illustrationen, Symbolen und expressiven Bildchen, erstellen 
+konnten. Im Gegensatz zur exklusiven Navigation innerhalb der Website, über-
+führt Treasure Trove die funkelnden GIFs in eine reizüberflutende 360° Projek-
+tion, die im oktogonalen Anbau des Museums erfahrbar wird. Dabei erscheinen 
+neu angeordnete Kombinationen zusammen mit dem eingeblendeten Benut-
+zernamen der Person, die die Stamps erstellt und hochgeladen hat. Die Colla-
+ge bildet eine bildgewaltige Akkumulation individueller Kreativität ab, die sich 
+damals mit einer eigenwilligen, aber charakteristischen Ästhetik im Netz formte.
+19
+Body Class Pimp: damlos, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 × 1 cm 
+20
+Body Class Pimp: henessy, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 × 1 cm 
+21
+Body Class Pimp: halim71, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 × 1 cm 
+22
+Body Class Pimp: naoualtje89, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 × 1 cm 
+23
+Body Class Pimp: lisamariiej402, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 × 1 cm 
+24
+Body Class Pimp: gekregen2012, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 × 1 cm 
+25
+Body Class Pimp: voelmegoed, 2016/2026
+Digitaldruck auf Plexiglas 
+50 × 84 x 1 cm
+Farbige, eigenwillige und schrille Profilseiten prägten die niederländische so-
+ziale Plattform Hyves, die ab 2004 vielseitige Gestaltungsmöglichkeiten bot. 
+Durch frei wählbare Hintergründe, Profilfotos, kurze Textbeschreibungen und 
+Emojis entstanden unterschiedlichste visuelle Selbstportraits, in denen Nutze-
+rinnen und Nutzer ihre Online-Identität bewusst kreativ inszenierten. Die Serie 
+Body Class Pimp hält diese individuellen Erscheinungen fest, denn Netzwerke 
+wie Facebook vereinheitlichten ihr Design und verdrängten so personalisier-
+bare „pimp my profile“-Plattformen wie Hyves. Jedes der Werke erinnert daran, 
+dass Online-Auftritte einst experimentelle, von den Userinnen und Usern ge-
+staltete Räume zur Sichtbarmachung des eigenen Selbst waren. Aufgrund der 
+wachsenden Konkurrenz durch Facebook wurde der Betrieb von Hyves jedoch 
+2013 eingestellt.
+14
+15
+
+=PAGE10=
+16
+Galerie Stadt Sindelfingen
+Marktplatz 1
+71063 Sindelfingen
+galerie-sindelfingen.de
+galerie@sindelfingen.de 
++49 7031 94325
+      facebook.com/galeriestadtsindelfingen 
+      instagram.com/galeriestadtsindelfingen 
+Öffnungszeiten 
+Mo–Fr 10–18 Uhr 
+Sa–So, Feiertage 10–17 Uhr 
+Kuratorin 
+Hannah Eckstein
+Kuratorische Assistentin 
+Roberta Čebatavičiūtė
+Ausstellungstechnik 
+Fabian Krause
+Ralf Mezödi
+Yasin Mutlu 
+Medientechnik
+Fabian Krause
+Aufsichten
+Mihyun Hwang
+Nils Körner
+Silvia Restorff
+Herausgeberin
+Galerie Stadt Sindelfingen
+Redaktion 
+Hannah Eckstein
+Roberta Čebatavičiūtė
+Texte
+Hannah Eckstein
+Roberta Čebatavičiūtė
+Lektorat
+Malte Pawelczyk
+Übersetzung 
+Leonie Schmied
+Gestaltung 
+Studio Martin Steiner
+© 2026 
+Galerie der Stadt Sindelfingen, die Künstlerin 
+und die Autorinnen / the artist and authors
+© 2026 für die Werke von Olia Lialina: die 
+Künstlerin, Cory Arcangel, Roehrs & Boetsch, 
+Zürich, Garage Museum of Contemporary Art, 
+Moskau
+Alle Rechte vorbehalten
+

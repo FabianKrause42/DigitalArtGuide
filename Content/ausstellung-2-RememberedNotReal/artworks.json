@@ -6,8 +6,8 @@
   },
   "artworks": [
     {
-      "id": "001",
-      "number": "1",
+      "id": "101",
+      "number": "101",
       "title": "[Tiled]",
       "artist": "Leonie Bolek",
       "artistBorn": null,
@@ -23,8 +23,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "002",
-      "number": "2",
+      "id": "102",
+      "number": "102",
       "title": "Myosotis: forget – me – not",
       "artist": "Marco Verri",
       "artistBorn": null,
@@ -40,8 +40,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "003",
-      "number": "3",
+      "id": "103",
+      "number": "103",
       "title": "SpawnPoint",
       "artist": "Sebastian Mira",
       "artistBorn": null,
@@ -57,8 +57,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "004",
-      "number": "4",
+      "id": "104",
+      "number": "104",
       "title": "The Little Brother is Watching",
       "artist": "Valentin Serr",
       "artistBorn": null,
@@ -74,8 +74,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "005",
-      "number": "5",
+      "id": "105",
+      "number": "105",
       "title": "The Variety",
       "artist": "Matin Varzegani-Safarzad",
       "artistBorn": null,
@@ -91,8 +91,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "006",
-      "number": "6",
+      "id": "106",
+      "number": "106",
       "title": "Slopbelisk",
       "artist": "Jonas Eckert",
       "artistBorn": null,
@@ -108,8 +108,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "007",
-      "number": "7",
+      "id": "107",
+      "number": "107",
       "title": "Price loading …",
       "artist": "Nikol Stanojevic",
       "artistBorn": null,
@@ -125,8 +125,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "008",
-      "number": "8",
+      "id": "108",
+      "number": "108",
       "title": "Internet Cafés. Last days.",
       "artist": "Florian Kröner, Benjamin Walther",
       "artistBorn": null,
@@ -142,8 +142,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "009",
-      "number": "9",
+      "id": "109",
+      "number": "109",
       "title": "Submit Button",
       "artist": "Johannes P. Osterhoff",
       "artistBorn": null,
@@ -159,8 +159,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "010",
-      "number": "10",
+      "id": "110",
+      "number": "110",
       "title": "Pure <HTML>",
       "artist": "Vanessa Schmidt",
       "artistBorn": null,
@@ -176,8 +176,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "011",
-      "number": "11",
+      "id": "111",
+      "number": "111",
       "title": "Naked Web",
       "artist": "Leni Aigner, Vanessa Schmidt, Sutti Khongchuai, Sofija Cvetkovic, Yeonwoo Oh",
       "artistBorn": null,
@@ -193,8 +193,8 @@
       "audio": { "de": null, "en": null }
     },
     {
-      "id": "012",
-      "number": "12",
+      "id": "112",
+      "number": "112",
       "title": "Internet, here is a musical for you",
       "artist": "Felina Russ",
       "artistBorn": null,

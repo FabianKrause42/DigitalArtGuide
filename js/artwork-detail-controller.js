@@ -17,6 +17,7 @@ class ArtworkDetailController {
     this.audioPlayer = null;
     this.lightboxPanzoom = null;
     this._langHandler = null;
+    this._basePath = null;
   }
 
   /**
@@ -68,6 +69,7 @@ class ArtworkDetailController {
     const artwork = this.artworkData;
     const slug = this.getExhibitionSlug(this.currentExhibitionId);
     const basePath = `Content/ausstellung-${this.currentExhibitionId}-${slug}/`;
+    this._basePath = basePath;
 
     // Hauptbild (erstes Image aus images-Array)
     const imageContainer = document.getElementById('artworkDetailImage');
@@ -112,26 +114,33 @@ class ArtworkDetailController {
     // Unterstützt altes Format (string) und neues Format ({ de, en })
     this._renderDescription();
 
-    // Bei Sprachwechsel Beschreibung neu rendern
-    this._langHandler = () => this._renderDescription();
+    // Bei Sprachwechsel Beschreibung und Audio neu laden
+    this._langHandler = () => { this._renderDescription(); this._initAudio(); };
     document.addEventListener('languageChanged', this._langHandler);
 
-    // Audio-Player (falls audioFile vorhanden)
-    if (artwork.audio && artwork.audio.de) {
-      const audioContainer = document.getElementById('artworkDetailAudio');
-      if (audioContainer) {
-        const audioPath = basePath + artwork.audio.de;
-        
-        // Cleanup alter Instanz falls vorhanden
-        if (this.audioPlayer) {
-          this.audioPlayer.destroy();
-        }
-        
-        // Neue AudioPlayer-Instanz erstellen
-        this.audioPlayer = new AudioPlayer(audioContainer, audioPath);
-        console.log(`🎵 Audio player initialized: ${audioPath}`);
-      }
+    // Audio-Player initialisieren
+    this._initAudio();
+  }
+
+  /**
+   * Initialisiert den Audio-Player in der aktuellen Sprache
+   */
+  _initAudio() {
+    const artwork = this.artworkData;
+    if (!artwork || !artwork.audio) return;
+    const audioContainer = document.getElementById('artworkDetailAudio');
+    if (!audioContainer) return;
+
+    const lang = document.documentElement.lang || 'de';
+    const audioFile = (lang === 'en' && artwork.audio.en) ? artwork.audio.en : artwork.audio.de;
+    if (!audioFile) return;
+
+    const audioPath = this._basePath + audioFile;
+    if (this.audioPlayer) {
+      this.audioPlayer.destroy();
     }
+    this.audioPlayer = new AudioPlayer(audioContainer, audioPath);
+    console.log(`🎵 Audio player initialized [${lang}]: ${audioPath}`);
   }
 
   /**
